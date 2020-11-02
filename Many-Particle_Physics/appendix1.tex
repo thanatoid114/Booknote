@@ -1,0 +1,115 @@
+\chapter{Appendix: Complex analysis}
+
+\section{Residue}
+In complex analysis, the \textbf{residue} is a complex number proportional to the contour integral of a meromorphic function along a path enclosing one of its singularities.
+
+\subsection{Definition}
+The residue of a \href{https://en.wikipedia.org/wiki/Meromorphic_function}{meromorphic function} $f$ at an isolated singularity $a$, denoted as $\Res(f,a)$, is the unique value $R$ such tat $f(z)-R/(z-a)$ has an analytic antiderivative in a punctured disk $0<\abs{z-a}<\delta$.
+
+Alternatively, residues can be calculated by Laurent series expansions, and one can define the residue as the coefficient $a_{-1}$ of a Laurent series.
+
+\subsection{Examples}
+\textbf{Eaxmple.1}\\
+Computing the residue of a monomial,
+\begin{equation*}
+  \oint_C z^k dz
+\end{equation*}
+Since path integral computations are homotopy invariant, let $C$ be the radius of $1$, and $dz \to d(e^{i\theta}) = ie^{i\theta} d\theta$.
+The result is
+\begin{equation*}
+  \oint_C z^k dz = \int_0^{2\pi} i e^{i(k+1)\theta} d\theta =
+  \begin{cases}
+    2\pi i ~ ~ ~ &(k=-1) \\
+    0 ~ ~ ~ &(\mathrm{otherwise})
+  \end{cases}
+\end{equation*}
+\textbf{Example.2}
+Consider the contour integral, where $C$ is some simple closed curve about $0$.
+\begin{eqnarray*}
+  &&\oint_C \frac{e^z}{z^5}dz  \\
+  &=&\oint_C \frac{1}{z^5}(1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\dots)dz \\
+  &=& \oint_C \frac{1}{4! z} dz \frac{\pi i}{12}
+\end{eqnarray*}
+The last formula is based on the previous result.
+
+\subsection{Calculating residues}
+For residue theorem,
+\begin{equation*}
+  \Res(f,c) = \frac{1}{2\pi i} \oint_\gamma f(z) dz
+\end{equation*}
+where $\gamma$ traces out a circle around $c$ in a counterclockwise manner.
+
+\textbf{Removeable singularities}\\
+If function $f$ can be continued to a holomorphic function on the whole disk, then $\Res(f,c)=0$.
+The converse is not generally true.
+
+\textbf{Simple poles}\\
+At a \href{https://en.wikipedia.org/wiki/Zeros_and_poles}{simple pole} $c$, the residue of $f$ is given by
+\begin{equation*}
+  \Res(f,c) = \lim_{z\to c}(z-c)f(z)
+\end{equation*}
+It may be that the function $f$ can be expressed as a quotient of two function, $f(z)=\frac{g(z)}{h(z)}$, where $g$ and $h$ are \href{https://en.wikipedia.org/wiki/Holomorphic_function}{holomorphic functions} in a neighborhood of $c$, with $h(c)=0$ and $h'(c)\neq 0$.
+  In such case, \href{https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule}{L'H\^{o}pital's rule} can be use to simplify the formula to
+\begin{equation*}
+  \Res(f,c)= \frac{g(c)}{h'(c)}
+\end{equation*}
+More generally, if $c$ is a pole of order $n$, the residue of $f$ around $z=c$ can be found by the formula
+\begin{equation*}
+  \Res(f,c)=\frac{1}{(n-1)!} \lim_{z\to c} \frac{d^{n-1}}{dz^{n-1}} \left[(z-c)^n f(z) \right]
+\end{equation*}
+
+In general, the residue at infinity is given by
+\begin{equation*}
+  \Res(f(z),\infty) = - \Res(\frac{1}{z^2}f(\frac{1}{z}),0)
+\end{equation*}
+
+\textbf{Series methods}\\
+If parts or all of a function can be expand into a Taylor series or \href{https://en.wikipedia.org/wiki/Laurent_series}{Laurent series}, which may be possible if the parts or the whole of the function has a standard series expansion, the calculating the residue is significantly simpler than by other methods.
+
+Considering the integral
+\begin{equation*}
+  f(z)= \frac{\sin z}{z^2-z}
+\end{equation*}
+where $z=0$ is the removable singularity and the residue at this point is $0$.
+The Taylor expansion gives, at point $z=1$,
+\begin{eqnarray*}
+    \sin z &=& \sin 1 + \cos 1 (z-1) + \frac{-\sin 1}{2!}(z-1)^2 + \dots \\
+    \frac{1}{z} &=& \frac{1}{(z-1)+1} = 1 -(z-1) +(z-1)^2 -(z-1)^3 + \dots \\
+\end{eqnarray*}
+Multiplying those two series and introducing $1/(z-1)$ gives
+\begin{equation*}
+  \frac{\sin z}{z(z-1)} = \frac{\sin 1}{z-1} + (\cos 1 - \sin 1) + (z-1)(-\frac{\sin 1}{2!} - \cos 1 + \sin 1) + \dots
+\end{equation*}
+So the residue of $f(z)$ at $z=1$ is $\sin 1$.
+
+\section{Sokhotski-Plemelj theorem}
+Let $f$ be a complex-valued function which is defined and continuous on the real line and let $a$ and $b$ be real constants with $a<0<b$, then
+\begin{equation*}
+  \lim_{\varepsilon\to 0^+} \int_a^b \frac{f(x)}{x\pm i\varepsilon}dx = \mp i\pi f(0) + \mathcal{P} \int_a^b \frac{f(x)}{x} dx,
+\end{equation*}
+where $\mathcal{P}$ denotes the \href{https://en.wikipedia.org/wiki/Cauchy_principal_value}{Cauchy principal value}.
+
+One important relation is for the Green's functions,
+\begin{equation*}
+  \frac{1}{\omega + E_n - E_m + i\delta} = \mathcal{P} \frac{1}{\omega + E_n -E_m} - i\pi \delta(\omega +E_n -E_m)
+\end{equation*}
+
+\section{Kramers-Kronig relations}
+The Kramers-Kronig relations are bidirectional mathematical relations, connection the real and imaginary parts of any complex funtion that is analytic in the upper half-plane.
+The relations are often used to compute the real part from the imaginary part of response functions in physical systems, because for stable system, causality implies the condition of analyticity and conversely, analyticity implies causality of the corresponding stable physical system.
+
+Let $\chi(\omega) = \chi_1(\omega) + i \chi_2(\omega)$ be a complex function of the complex variable $\omega$, where $\chi_1$ and $\chi_2$ are real.
+Suppose this function is analytic in the upper half-plane of $\omega$ and vanishes like $1/\abs{\omega}$ or faster as $\abs{\omega}\to \infty$.
+The Kramers-Kronig relations are given by
+\begin{equation*}
+  \chi_1(\omega) = \frac{1}{\pi} \mathcal{P}\int_{-\infty}^\infty \frac{\chi_2(\omega')}{\omega'-\omega} d\omega'
+\end{equation*}
+and
+\begin{equation*}
+  \chi_2(\omega) = -\frac{1}{\pi} \mathcal{P} \int_{-\infty}^\infty \frac{\chi(\omega')}{\omega'-\omega} d\omega'
+\end{equation*}
+alternatively, we have the following formulas
+\begin{eqnarray*}
+    \chi_1(\omega) &=& \frac{2}{\pi} \mathcal{P} \int_0^\infty \frac{\omega' \chi_1(\omega')}{\omega'^2-\omega^2} d\omega' \\
+    \chi_2(\omega) &=& -=\frac{2\omega}{\pi} \mathcal{P} \int_0^\infty \frac{\chi_1(\omega')}{\omega'^2 -\omega^2} d\omega'
+\end{eqnarray*}

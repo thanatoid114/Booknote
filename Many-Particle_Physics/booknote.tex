@@ -1,0 +1,49 @@
+\documentclass{tufte-book}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=red,
+urlcolor=olive,
+}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+\usetikzlibrary{decorations.markings}
+\tikzset{middlearrow/.style={ decoration={markings, mark= at position 0.575 with {\arrow{#1}} , }, postaction={decorate} } }
+\usepackage{amsmath,amssymb}
+\usepackage{physics}
+\usepackage{marginfix}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{1}
+
+\title{Notes on: Many Particle Physics --by D. Mahan}
+\author{Meng Sun}
+
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\cd}{\mathcal{D}}
+\newcommand{\cg}{\mathcal{G}}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\include{chapter2}
+\include{chapter3}
+
+\include{appendix1}
+
+\bibliography{mybib}{}
+\bibliographystyle{plain}
+\end{document}

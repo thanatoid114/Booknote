@@ -1,0 +1,400 @@
+\chapter{Nonzero Temperatures}
+
+\section{Introduction}\label{s3.1}
+At nonzero temperature, whether electron, phonon, or spin, is interacting with a bath of other particles which have an average energy.
+The exact state of all these other particles is not known, since they are fluctuating between different configurations.
+All that is know is the temperature, which is related to the mean energy.
+
+\marginnote{
+Important knowledge, the expansion
+\begin{eqnarray*}
+  &&\frac{1}{e^x-1}\\
+  &=&\frac{1}{1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots -1}\\
+  &=&\frac{1}{x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots}\\
+  &=&\frac{1}{x(1+\frac{x}{2!}+\frac{x^2}{3!}+\dots)}\\
+  &\approx&\frac{1}{x(1+\frac{x}{2})}\\
+  &\approx&\frac{1}{x}(1-\frac{x}{2}) = \frac{1}{x}-\frac{1}{2}
+\end{eqnarray*}
+}
+
+When defining the Green's function, one must average over all possible configurations of the system. A possible Green's function for electron is
+\begin{eqnarray}
+  \frac{\Tr[e^{-\beta H} C_{\bp \sigma}(t) C^\dagger_{\bp \sigma}(t')]}{Tr(e^{-\beta H})}  \label{3.1} \\
+  C_{\bp \sigma}(t) = e^{itH}C_{\bp\sigma}e^{-itH}  \label{3.2}
+\end{eqnarray}
+where "$\Tr$" denotes trace and is summation over some complete set of states.
+
+The Matsubara method treats time as a complex temperature, the object is treat $t$ and $\beta$ as the real and imaginary parts of a complex variable, which will require only one $S$-matrix expansion.
+
+The expansion of the series for bosons and fermions give
+\begin{eqnarray}
+  \eta_F(\xi_\bp) &=& \frac{1}{e^{\beta \xi_\bp}+1} = \frac{1}{2} + \frac{1}{\beta} \sum_{n=-\infty}^\infty \frac{1}{(2n+1)i\pi/\beta -\xi_\bp} \label{3.5} \\
+  \eta_B(\omega_\bq) &=& \frac{1}{e^{\beta \omega_\bq}-1} = -\frac{1}{2} + \frac{1}{\beta} \sum_{n=-\infty}^\infty \frac{1}{2ni\pi/\beta -\omega_\bq} \label{3.6}
+\end{eqnarray}
+\textit{These series can be derived from a theorem which states that any meromorphic function may be expanded as a summation over its poles and residues at those poles}. \footnote{\textcolor{red}{Need to be more clear about this.}}
+It is convenient to define the frequencies at the pole
+\begin{equation}
+  p_n = (2n+1)\pi/\beta,~ ~ ~ ~ \omega_n = 2n\pi/\beta \label{3.7}
+\end{equation}
+
+In Matsubara method, time becomes a complex quantity which is usually called $\tau$, where $\tau = it$.
+Green's functions are function of $\tau$ with domain
+\begin{equation}
+  \label{3.10}
+  -\beta \leq \tau \leq \beta
+\end{equation}
+Fourier transform theory states that if a function $f(\tau)$ is defined over such a range, then its Fourier expansion is
+\begin{equation}
+  \label{3.11}
+  f(\tau) = \frac{1}{2}a_0 + \sum_{n=1}^\infty \left[a_n \cos(\frac{n\pi\tau}{\beta}) + b_n \sin(\frac{n\pi\tau}{\beta})\right]
+\end{equation}
+where
+\begin{eqnarray}
+  a_n &=& \frac{1}{\beta} \int_{-\beta}^\beta d\tau f(\tau) \cos(\frac{n\pi\tau}{\beta}) \label{3.12} \\
+  b_n &=& \frac{1}{\beta} \int_{-\beta}^\beta d\tau f(\tau) \sin(\frac{n\pi\tau}{\beta}) \label{3.13}
+\end{eqnarray}
+or \textbf{equivently}. we have
+\begin{equation}
+  f(i\omega_n) = \frac{1}{2} \beta(a_n + ib_n ) \label{3.14}
+\end{equation}
+with
+\begin{eqnarray}
+  f(\tau)&=&\frac{1}{\beta} \sum_{n=-\infty}^\infty e^{-in\pi\tau/\beta} f(i\omega_n) \label{3.15} \\
+  f(i\omega_n)&=& \frac{1}{2} \int_{-\beta}^\beta d\tau f(\tau) e^{in\pi\tau/\beta}   \label{3.16}
+\end{eqnarray}
+
+\subsection{Boson}
+There is still a further simplification can be achieved.
+For boson Green's functions have the additional property that
+\begin{equation}
+  \label{3.17}
+  \mathrm{boson:}~ f(\tau) = f(\tau+ \beta),~ ~ -\beta<\tau<0
+\end{equation}
+Further we have
+\begin{eqnarray}
+    f(i\omega_n)&=&\int_0^\beta d\tau e^{i\omega_n\tau} f(\tau) \nonumber \\
+    f(\tau) &=& \frac{1}{\beta} \sum_n e^{-i\omega_n\tau} f(i\omega_n) \label{3.20} \\
+    \omega_n &=& 2n\pi k_BT\nonumber
+\end{eqnarray}
+
+\subsection{Fermion}
+Similarly, the fermion Green's function will have the property that
+\begin{equation}
+  \label{3.21}
+  \mathrm{fermions:}~ f(\tau) = - f(\tau+ \beta),~ ~ -\beta<\tau<0
+\end{equation}
+and the result give
+\begin{eqnarray}
+  f(i\omega_n)&=&\int_0^\beta d\tau e^{i\omega_n\tau}f(\tau) \nonumber \\
+  f(\tau)&=&\frac{1}{\beta}\sum_n e^{-i\omega_n\tau}f(i\omega_n) \label(3.23) \\
+  \omega_n &=&(2n+1)\pi k_B T \nonumber
+\end{eqnarray}
+
+\section{Matsubara Green's functions}\label{s3.2}
+The electron Green's function is defined as
+\begin{eqnarray}
+  \cg(\bp,\tau-\tau') &=& - \langle T_\tau C_{\bp\sigma}(\tau)C^\dagger_{\bp\sigma}(\tau') \rangle  \label{3.24} \\
+  \cg(\bp,\tau-\tau')&=& -\Tr \big[e^{-\beta(H-\mu N -\Omega)} T_\tau e^{\tau(H-\mu N)} C_{\bp\sigma}e^{-(\tau-\tau')(H-\mu N)} \nonumber \\
+  &\times& C^\dagger_{\bp\sigma} e^{-\tau'(H-\mu N)} \big] \label{3.25} \\
+  e^{-\beta \Omega} &=& \Tr(e^{-\beta(H-\mu N)}) \label{3.26}
+\end{eqnarray}
+The definition is equivalent between \eqref{3.24} and \eqref{3.25}, and it is the thermodynamic average, which is the trace over the complete set of states.
+The $\mu$ is the chemical potential and $N$ is the particle number operator.
+A grand canonical ensemble is used, where the number of particles is variable.
+This many-particle system can be successfully used for one particle in an empty band.
+In this case, the analytical continuation si taken as $i\omega_n \to E+ \mu + i\delta$, and the chemical potential will vanish from all expressions.
+One is not bothered by the fact that $\beta \mu \ll 0$ in one-particle systems at nonzero temperatures.
+
+In a many-electron system, the chemical potential is retained in the formalism.
+The analytical continuation is $i\omega_n \to E+ i\delta$ and energy is measured from the chemical potential.
+
+With some derivation\footnote{P.112~P.114}, we have the Green's functions
+\begin{eqnarray}
+  \cg(\bp,\tau)&=&-\langle T_\tau C_{\bp\sigma}(\tau) C^\dagger_{\bp\sigma}(0) \rangle \label{3.33}\\
+    &=& -\Tr \left[ e^{-\beta (K-\Omega)} T_\tau (e^{\tau K} C_{\bp\sigma} e^{-\tau K} C^\dagger_{\bp\sigma})\right] \label{3.34} \\
+  \cg(\bp,i\omega_n) &=& \int_0^\beta d\tau e^{i\omega_n \tau} \cg(\bp,\tau)  \label{3.39} \\
+  \cg(\bp,\tau) &=& \frac{1}{\beta} \sum_n e^{-i\omega_n \tau} \cg(\bp,i\omega_n) \label{3.40}
+\end{eqnarray}
+
+For noninteracting Green's function, the $\tau$ evolution of the operators is\footnote{Derived from the Baker-Hausdorff theorem
+\begin{equation*}
+  e^ACe^{-A} = C+ [A,C] + \frac{1}{2!}[A,[A.C]]+\dots
+\end{equation*}}
+\begin{eqnarray}
+  C_{\bp\sigma}(\tau) &=& e^{\tau K_0} C_{\bp\sigma} e^{-\tau K_0} = e^{-\xi_\bp \tau} C_{\bp \sigma } \label{3.44} \\
+  C^\dagger_{\bp\sigma}(\tau) &=& e^{\tau K_0} C^\dagger_{\bp\sigma} e^{-\tau K_0} = e^{\xi_\bp \tau} C_{\bp \sigma }^\dagger \label{3.45}
+\end{eqnarray}
+Then the Green's function is
+\begin{equation}
+  \cg^0(\bp,\tau)= -e^{-\xi_\bp \tau}[\Theta(\tau)-\eta_F(\xi_\bp)] \label{3.49}
+\end{equation}
+and
+\begin{equation}
+  \cg^0(\bp,i\omega_n) = \frac{1}{i\omega_n -\xi_\bp}   \label{3.55}
+\end{equation}
+
+The phonon and photon Green's functions are defined in the same fashion,
+\begin{eqnarray}
+    \cd (\bq,\tau-\tau') &=& - \langle T_\tau \mathbf{A}(\bq,\tau) \mathbf{A}(-\bq,\tau') \rangle \label{3.56} \\
+    \mathbf{A}(\bq,\tau) &=& e^{\tau H}(a_\bq+ a^\dagger_{-\bq})e^{-\tau H} \label{3.57}
+\end{eqnarray}
+and with the relation in \eqref{3.17}, we have
+\begin{equation}
+  \cd (\bq,\tau) = \cd (\bq, \tau+\beta)~ ~ ~ ~ -\beta<\tau<0 \label{3.63}
+\end{equation}
+
+For noninteracting system the Green's function of \textbf{phonons} is
+\begin{equation}
+  \cd^0(\bq,i\omega_n) = -\frac{2\omega_\bq}{\omega_n^2 + \omega_\bq} \label{3.76}
+\end{equation}
+Notice that it is almost identical to the zero-temperature case \eqref{2.73}.
+
+The \textbf{photon} Green's function is also identical to its zero-temperature result, except for complex frequencies.
+The  fundamental definition is
+\begin{eqnarray}
+  \cd_{\mu\nu}(\bk,\tau) &=& -\sum_\lambda \langle T_\tau \mathbf{A}_\mu(\bk,\lambda,\tau) \mathbf{A}_\nu(-\bk,\lambda,0)\rangle \label{3.77}\\
+  \mathbf{A}_\mu(\bk,\lambda,0) &=& \xi_\mu(\bk,\lambda) (\frac{2\pi}{\omega_\bk})(a_{\bk \lambda}+ a^\dagger_{\bk \lambda}) \label{3.78}\\
+  \cd^0_{\mu\nu}(\bk,i\omega_n)&=&-\frac{4\pi(\delta_{\mu\nu}-k_\mu k_\nu/k^2)}{\omega_n^2+\omega_\bk^2} \label{3.79}
+\end{eqnarray}
+
+\section{Retarded and advance Green's functions}\label{s3.3}
+The retarded and advanced Green's functions were introduced in \ref{s2.9}.
+All measurable quantities, such as conductivities or susceptibilities, are actually retarded correlation functions.
+The Green's function by Matsubara function can be easily convert to retarded and advanced Green's function.
+
+The retarded Green's functions may be defined for both zero and nonzero temperature.
+The retarded Green's function for an electron in state $\bp$ is
+\begin{eqnarray}
+  G_{ret}(\bp,t-t') &=& G_t(\bp,t-t') - G^<(\bp,t-t')  \\
+  &=&-i\Theta(t-t')\langle [C_{\bp\sigma}(t)C^\dagger_{\bp\sigma}(t') + C^\dagger_{\bp\sigma}(t')C_{\bp\sigma}(t)] \rangle \nonumber \\
+  &=&-i\Theta(t-t')\Tr \{ e^{-\beta (K-\Omega)} [C_{\bp\sigma}(t) C^\dagger_{\bp\sigma}(t') + C^\dagger_{\bp\sigma}(t')C_{\bp\sigma}(t)]\} \nonumber \label{3.82} \\
+  K&=&H-\mu N, ~ ~ ~ ~ C_{\bp\sigma}(t) = e^{iKt}C_{\bp\sigma}e^{-iKt} \label{3.83}
+\end{eqnarray}
+The Green's function operates only for $t>t'$, which makes it \textbf{causal}.
+In the limit that times becomes equal, the anticommutator becomes unity.
+The plus sign in the middle of the two terms is an important feature for retarded Green's functions of fermion operators.
+
+For phonons, the retarded Green's function is
+\begin{equation}
+  D_{ret}(\bq,t-t') = -i\Theta(t-t')\langle A(\bq,t)A(-\bq,t') - A(-\bq,t')A(\bq,t)\rangle \label{3.85}
+\end{equation}
+The sign in the middle is minus, which corresponding the bosons' commutation relations.
+
+Retarded Green's functions are needed for many types of operators with products of electron or boson operators.
+\begin{eqnarray}
+  U&=& \sum_{ij}M_{ij}C^\dagger_iC_j \label{3.86}\\
+  V&=& \sum_{ijk}M_{ijk}C^\dagger_i C_j C_k \label{3.87}
+\end{eqnarray}
+The operator $U$ is bilinear in operator $C_i$, this can be regarded as having boson properties.
+However, operator $V$ can be regarded as fermion operators.
+\begin{eqnarray}
+  \bar{U}_{ret}(t-t') &=& -i\Theta(t-t')\langle [U(t)U^\dagger(t') - U^\dagger(t')U(t)] \rangle \label{3.88} \\
+  \bar{V}_{ret}(t-t') &=& -i\Theta(t-t')\langle [V(t)V^\dagger(t') + V^\dagger(t')V(t)] \rangle \label{3.89}
+\end{eqnarray}
+All these retarded function have the Fourier transforms defined by the usual convention:
+\begin{equation}
+  G_{ret}(\bp,E) = \int_{-\infty}^\infty dt e^{iE(t-t')} G_{ret}(\bp,t-t') \label{3.90}
+\end{equation}
+
+THe advanced Green's function for each is defined
+\begin{eqnarray}
+  G_{adv}(\bp,t-t')&=&i\Theta(t-t')\langle [C_{\bp\sigma}(t)C^\dagger_{\bp\sigma}(t') \nonumber \\
+  &+& C^\dagger_{\bp\sigma}(t')C_{\bp\sigma}(t)] \rangle \label{3.93} \\
+  D_{adv}(\bq,t-t') &=& i\Theta(t-t')\langle A(\bq,t)A(-\bq,t') \nonumber \\
+  &-& A(-\bq,t')A(\bq,t)\rangle \label{3.94}
+\end{eqnarray}
+The only two differences are the sign change in front and that the time domain is now $t'>t$, which is just opposite of that for retarded function.
+
+The advanced functions of energy is defined as usual Fourier transform, and turn out to be \textit{complex conjugate} of the corresponding retarded function.
+\begin{equation}
+  U_{ret}(\omega) = U_{adv}^\dagger(\omega) \label{3.98}
+\end{equation}
+
+The Matsubara function can be changed to a retarded one with just this alteration:
+\begin{equation}
+  i\omega_n \to \omega + i\delta~ ~ ~ ~ \mathcal{U}(i\omega_n) = U_{ret}(\omega)  \label{3.110}
+\end{equation}
+This step is called an analytic continuation.
+The advanced Green's function can be changed by $i\omega_n \to \omega - i\delta$, since the advanced Green's function is the complex conjugate of the retarded one.
+
+Another quantity is \textbf{spectral function}, it is imaginary part of any retarded function multiplied by 2:
+\begin{equation}
+  A(\bp,\omega) = -2\Im [G_{ret}(\bp,\omega)]  \label{3.115}
+\end{equation}
+An expression of this form is called \textbf{Lehmann representation}:
+\begin{eqnarray}
+  U_{ret}(\omega) &=& \int_{-\infty}^\infty \frac{d\omega'}{2\pi} \frac{A(\omega')}{\omega-\omega'+i\delta} \nonumber \\
+  \mathcal{U}(i\omega_n) &=& \int_{-\infty}^\infty \frac{d\omega'}{2\pi} \frac{A(\omega')}{i\omega_n -\omega'} \label{3.118}
+\end{eqnarray}
+
+For fermions, the spectral density function is positive, $A(\bp,\omega)>0$.
+This positiveness is an important feature, since $A(\bp,\omega)$ is interpreted as a probability function.
+\begin{equation}
+    1 = \int \frac{d\omega}{2\pi} A(\bp,\omega) \label{3.121}
+\end{equation}
+For bosons spectral function do not have this property, however, they are always positive for $\omega>0$ and negative for $\omega<0$.
+
+For noninteracting electron the Green's function is
+\begin{equation}
+  G_{ret}^0 (\bp,E)= \frac{1}{E-\xi_\bp + i\delta} \label{3.129}
+\end{equation}
+It has one sign $\delta>0$, even in may electron system with a Fermi surface.
+The retarded functions do not have $\delta_\bp$ changing sign at the Fermi surface, which makes them easier to use than the zero-temperature Green's function.
+
+The spectral function for the noninteracting Green's function is \footnote{\begin{equation*}
+\frac{1}{E-\xi_\bp + i\delta} = \frac{1}{E-\xi_\bp} - 2\pi i \delta(E-\xi_\bp)
+\end{equation*}}
+\begin{equation}
+    A^0(\bp, E) = 2\pi \delta(E-\xi_\bp) \label{3.130}
+\end{equation}
+When $A(\bp,E)$ is computed for interacting systems, there is a broad of the delta function.
+This means there is a band of $E$ values for each $\bp$,.
+When the electron scatters, it has a nonzero mean free path, and there is some uncertainty in its momentum or energy or both.
+So $bp$ and $E$ are treated as separate variables and both are summed over when evaluating physical quantities.
+
+Another quantity to evaluate, for an interacting electron system, is the number of electrons in a momentum state $\bp$, which is
+\begin{equation}
+  n_\bp = \int \frac{dE}{2\pi} \eta_F(E) A(\bp,E) \label{3.135}
+\end{equation}
+
+For phonons, the average number of phonons in a state $\bq$ is
+\begin{equation}
+  2N_\bq +1  = \langle A^\dagger_\bq A_\bq \rangle = \int \frac{d\omega}{2\pi} \eta_B(\omega)A(\bq,\omega) \label{3.136}
+\end{equation}
+The noninteracting phonon spectral function is
+\begin{equation}
+  A^0(\bq,\omega) = 2\pi [\delta(\omega-\omega_\bq) - \delta(\omega+ \omega_\bq)] \label{3.137}
+\end{equation}
+
+In later sections the Green's function in Matsubara form have a Dyson form
+\begin{eqnarray}
+    \cg(\bp,ip_n) &=& \frac{1}{ip_n -\xi_\bp -\Sigma(\bp,ip_n)}     \label{3.138} \\
+    \cd (\bq,i\omega_n) &=& \frac{-2\omega_\bq}{\omega_n^2 + \omega_\bq^2 +2\omega_\bq P(\bq,i\omega_n)} \label{3.139}
+\end{eqnarray}
+Define the retarded self-energies according to \eqref{3.110}
+\begin{equation}
+  ip_n \to E + i\delta ~ ~ ~ ~ \Sigma(\bp,ip_n) \to \Sigma_{ret}(\bp,E) = \Re \Sigma_{ret} + i \Im \Sigma_{ret}    \label{3.140}
+\end{equation}
+Consider the retarded Green's function will have a Dyson equation
+\begin{equation}
+  G_{ret}(\bp,E) = \frac{1}{E+i\delta-\xi_\bp - \Sigma_{ret}(\bp,E)} \label{3.141}
+\end{equation}
+as derived from \eqref{3.110}.
+The spectral function for the electron is rewritten in terms of the retarded self-energy,
+\begin{equation}
+  A(\bp,E) = \frac{-2 \Im \Sigma_{ret}(\bp,E)}{[E-\xi_\bp - \Re \Sigma_{ret}(\bp,E)]^2 + [\Im\Sigma_{ret}(\bp,E)]^2}  \label{3.142}
+\end{equation}
+
+Simple examples to distinguish Matsubara, retarded, and advanced Green's function.
+There are some simple functions which have the correct analytical properties.
+Considering a self-energy operator has the following functional form,
+\begin{equation}
+  \Sigma(\bp,Z) = C \ln [f(\bp) -Z] \label{3.143}
+\end{equation}
+where $Z$ is a complex variable representing the frequency. Take $C$ as a constant and $f(\bp)$ as some function of momentum.
+The Matsubara self-energy is evaluated at the points
+\begin{equation}
+  \Sigma(\bp,ip_n) = C \ln [f(\bp)-ip_n] \label{3.144}
+\end{equation}
+The analytic continuation $ip_n \to E  \pm i\delta$ to the real axis has the following values.
+For retarded function \footnote{
+To get this relation
+\begin{eqnarray*}
+    \Sigma_{ret} &=& C \ln [f(\bp)-E-i\delta]\\
+    &=& C \int \frac{dE}{f(\bp)-E-i\delta} + \mathbf{C}
+\end{eqnarray*}
+}, using $ip_n \to E + i \delta$
+\begin{equation}
+  \Sigma_{ret}(\bp,E) = C \ln \abs{f(\bp) -E} - i\pi C \Theta[E-f(\bp)] \label{3.145}
+\end{equation}
+and for advanced
+\begin{equation}
+  \Sigma_{adv(\bp,E)} = C \ln \abs{f(\bp)-E} + i\pi C \Theta[E-f(\bp)]  \label{3.146}
+\end{equation}
+These two self-energies differ in the region $E>f(\bp)$, because their imaginary parts have the opposite sign. This difference agrees with the general theorem that
+\begin{equation}
+  G^*_{ret}(\bp,E) = G_{adv}(\bp,E) \label{3.147}
+\end{equation}
+and also implies that
+\begin{equation}
+  \Sigma_{ret}^*(\bp,E) = \Sigma_{adv}(\bp,E) \label{3.148}
+\end{equation}
+There is a branch cut on the real axis for $E>f(\bp)$. This branch cut just expresses the fact that $\ln(f-Z)$ is not a continuous function of $Z$ across the real axis.
+
+Another example which has the similar analytical properties is
+\begin{equation}
+  \Sigma(\bp,Z) = C[f(\bp) -Z]^{\frac{1}{2}} \label{3.149}
+\end{equation}
+This function also has a branch cut for $E>f(\bp)$, with $\Im\Sigma<0$ and $\Im\Sigma>0$.
+In fact, a branch cut is a necessary feature whenever $\Im \Sigma \neq 0$, which gives
+\begin{equation}
+  \Sigma(\bp,E+i\delta) \neq \Sigma(\bp,E-i\delta)  \label{3.150}
+\end{equation}
+One should be aware that when self-energy functions are evaluated, they are often given by logarithmic or square root function.
+
+When a branch cut occurs and $\Im\Sigma \neq 0$, then the spectral function is given by \eqref{3.142}.
+In other regions where there is no branch cut, then take the limit of $\Im\to 0$ and obtain
+\begin{equation}
+  \lim_{\Im\Sigma=0}A(\bp,E)=2\pi \delta(E-\xi_\bp-\Re\Sigma_{ret}(\bp,E))   \label{3.151}
+\end{equation}
+Here the spectral function is a delta function, but the real part of the self-energy may be nonzero, so that it affects the spectral function.
+Denote by $E(\bp)$ the solution to the equation
+\begin{equation}
+  E(\bp) -\mu = \xi_\bp + \Re\Sigma(\bp,E(\bp)-\mu) \label{3.152}
+\end{equation}
+Assume that there is a problem in which \eqref{3.152} is satisfied when $\Im\Sigma=0$.
+Then with the properties of delta function, the spectral function is written as
+\begin{eqnarray}
+  A(\bp,E)&=&2\pi Z(\bp) \delta(E-E(\bp)+\mu) \label{3.154} \\
+  Z(\bp)&=&\frac{1}{\abs{1- \frac{\partial}{\partial E} \Sigma_{ret}(\bp,E)}_{E=E(\bp)-\mu}}  \label{3.155}
+\end{eqnarray}
+The factor $Z(\bp)$ is called \textbf{renormalization factor}.
+Because of \eqref{3.121} and $A(\bp,E)>0$, we have $Z(\bp)<1$.
+The strength of the delta function peak is always less than or equal to unity.
+
+Equation \eqref{3.152} may be used to define the effective mass. Assume that the noninteracting states are free particles
+\begin{equation}
+  \xi_\bp = \frac{p^2}{2m} -\mu = \varepsilon_\bp -\mu  \label{3.156}
+\end{equation}
+Furthermore, assume at low momentum that $E(\bp)$ in \eqref{3.152} varies quadratically wit momentum,
+\begin{equation}
+  E(\bp) = E_0 + \frac{p^2}{2m^*} +\mathcal{O}(p^4)  \label{3.157}
+\end{equation}
+The proportionality constant is the inverse effective mass $m^*$
+\begin{equation}
+  \frac{m}{m^*} = \frac{\partial E(\bp)}{\partial \varepsilon_\bp}  \label{3.158}
+\end{equation}
+from the definition of \eqref{3.152}, we get
+\begin{equation}
+  \frac{\partial E(\bp)}{\partial \varepsilon_\bp} = \lim_{\varepsilon_\bp \to 0} \left(1 + \frac{\partial}{\partial \varepsilon_\bp} \Re\Sigma_{ret}(\bp,E) + \left[ \frac{\partial}{\partial E}\Re\Sigma_{ret}(\bp,E) \right] \frac{\partial E(\bp) }{\partial \varepsilon_\bp} \right)  \label{3.159}
+\end{equation}
+With \eqref{3.158}, the final term is arrived
+\begin{equation}
+  \frac{m}{m^*} = \lim_{\varepsilon_\bp \to 0} \left[ \frac{1 + (\partial_{\varepsilon_\bp}) \Re \Sigma_{ret}(\bp,E_0-\mu)}{1 - (\partial_{E_0}) \Re \Sigma_{ret}(\bp,E_0-\mu)}\right]  \label{3.160}
+\end{equation}
+
+\section{Frequency Summations}
+When using the Matsubara Green's functions, one must evaluate frequency summations over combinations of unperturbed Green's functions.
+The technique for evaluating these summations is discussed for both cases of unperturbed functions and also Green's functions with self-energies.
+There is a table of results for combinations which often occur.
+\begin{eqnarray}
+  -\frac{1}{\beta} \sum_m \cd^0(\bq,i\omega_m)\cg^0(\bp,ip_n+i\omega_m) &=& \frac{N_\bq + \eta_F(\xi_\bp)}{ip_n-\xi_\bp+\omega_\bq} \nonumber \\
+  &+& \frac{N_\bq + 1 - \eta_F(\xi_\bp)}{ip_n -\xi_\bp-\omega_\bq} \label{3.216} \\
+  \frac{1}{\beta} \sum_n \cg^0(\bp,ip_n) \cg^0(\bk,ip_n+i\omega_m) &=& \frac{\eta_F(\xi_\bp)-\eta_F(\xi_\bk)}{i\omega_m + \xi_\bp -\xi_\bk} \label{3.217} \\
+  -\frac{1}{\beta} \sum_n \cg^0(\bp,ip_n) \cg^0(\bk,i\omega_m-ip_n) &=& \frac{1-\eta_F(\xi_\bp) - \eta_F(\xi_\bk)}{i\omega_m -\xi_\bp -\xi_\bk} \label{3.218}\\
+  \frac{1}{\beta} \sum_n \cg^0(\bp,ip_n) &=& \eta_F(\xi_\bp)\label{3.219}
+\end{eqnarray}
+
+First consider the summation over a boson series, considering \eqref{3.216},
+\begin{equation}
+  S = \frac{1}{\beta} \sum_m \frac{2\omega_\bq}{\omega_m^2+\omega_\bq^2} \frac{1}{ip_n+i\omega_m -\xi_\bp} \label{3.220}
+\end{equation}
+Denote this equation as
+\begin{equation}
+  S = -\frac{1}{\beta} \sum_m f(i\omega_m) \label{3.221}
+\end{equation}
+where $f(i\omega_m)$ is the product of Green's function in \eqref{3.220}. This summation si evaluated by a contour integration. The integral has the form,
+\begin{equation}
+  I = \lim_{R\to \infty} \oint \frac{dz}{2\pi i} f(z) \eta_B(z)  \label{3.222}
+\end{equation}
+The function $\eta_B(z)$ is chosen to generate poles at the points $i\omega_m$ for all even integer $m$.
