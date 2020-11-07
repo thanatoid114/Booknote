@@ -372,6 +372,81 @@ With \eqref{3.158}, the final term is arrived
 \begin{equation}
   \frac{m}{m^*} = \lim_{\varepsilon_\bp \to 0} \left[ \frac{1 + (\partial_{\varepsilon_\bp}) \Re \Sigma_{ret}(\bp,E_0-\mu)}{1 - (\partial_{E_0}) \Re \Sigma_{ret}(\bp,E_0-\mu)}\right]  \label{3.160}
 \end{equation}
+This formula will be frequently to obtain the effective mass from self-energy calculations.
+
+\section{Dyson's Equation} \label{s3.4}
+The Matsubara Green's functions are evaluated by the same method of Feynman diagram techniques.
+The ideas behind expanding the $S$ matrix are presented, and Dyson's equation is rederived for the Matsubara Green's function in this section.
+
+Consider the case of the electron Green's function:
+\begin{eqnarray}
+    \cg(\bp,\tau) &=& -e^{\beta \Omega} \Tr\left[ e^{-\beta K} T_\tau (e^{\tau K} C_{\bp}e^{-\tau K} C^\dagger_\bp) \right] \label{3.161} \\
+    e^{-\beta \Omega} &=& \Tr(e^{-\beta K}) \label{3.162}
+\end{eqnarray}
+where we consider the general case
+\begin{equation}
+    K = K_0 + V = H_0 -\mu N + V \label{3.163}
+\end{equation}
+where $K_0$ is a problem which can be solved.
+The Hamiltonians under consideration usually have the property that they commute with the number operator
+\begin{equation}
+    \left[H_0,N\right] = \left[H,N\right] = 0 \label{3.166}
+\end{equation}
+where $H$ and $N$ can be defined in same eigenstates.
+Consider the evaluation operations in interaction picture \eqref{2.10}, we have
+\begin{equation}
+  U(\tau) = e^{\tau K_0} e^{\tau K} ~ ~ ~ U^{-1}(\tau) = e^{\tau K}e^{-\tau K_0}  \label{3.168}
+\end{equation}
+ant the time dependence of operators
+\begin{equation}
+  \hat{C}_\bp (\tau ) = e^{\tau K_0}C_\bp e^{-\tau K_0} = e^{-\tau \xi_\bp} C_\bp \label{3.169}
+\end{equation}
+Then the Green's function in \eqref{3.161}, is written for $\tau>0$ as
+\begin{equation}
+  \cg(\bp,\tau) = -\frac{\Tr\left[ e^{-\beta K_0} U(\beta) U^{-1}(\tau) \hat{C}_\bp(\tau) U(\tau) C^\dagger_\bp \right]}{\Tr \left[  e^{-\beta K_0} U(\beta)\right]} \label{3.170}
+\end{equation}
+
+The operator $U(\tau)$ can be solved in terms of $\tau$-ordered products.
+\begin{equation}
+  \partial_\tau U(\tau) = -\hat{V}(\tau) U(\tau)  \label{3.173}
+\end{equation}
+This equation for $U(\tau)$ is given as
+\begin{equation}
+  U(\tau) = T_\tau \exp\left[- \int_0^\tau d\tau_1 \hat{V}(\tau_1) \right]  \label{3.177}
+\end{equation}
+Next consider the definition
+\begin{equation}
+  S(\tau_1,\tau_2) = T_\tau \exp\left[ -\int_{\tau_1}^{\tau_2} d\tau \hat{V}(\tau) \right] \label{3.178}
+\end{equation}
+as discussed in previous section.
+Then with the rearrange terms of \eqref{3.169},
+\begin{equation}
+  \cg (\bp,\tau) = - \frac{\langle T_\tau S(\beta) \hat{C}_\bp(\tau) \hat{C}^\dagger_\bp \rangle_0}{\langle S(\beta) \rangle_0} \label{3.185}
+\end{equation}
+This form of the Green's function is similar to the zero-temperature result \eqref{2.50}.
+
+The Green's function is evaluated, at least formally, by expanding the $S$ matrix in the numerator
+\begin{eqnarray}
+  &&\langle T_\tau S(\beta) \hat{C}_\bp (\tau) \hat{C}^\dagger_\bp \rangle_0  \label{3.186}\\
+  &=& \sum_{n=0}^\infty \frac{(-1)^n}{n!} \int_0^\beta d\tau_1 \dots \int_0^\beta d\tau_n  \langle T_\tau \hat{C}_\bp(\tau) \hat{V}(\tau_1) \dots \hat{V}(\tau_n) \hat{C}^\dagger_\bp \rangle_0 \nonumber
+\end{eqnarray}
+Each of the $n$th terms are evaluated by applying Wick's theorem.
+The disconnected diagrams are canceled by the vacuum polarization diagrams which is $e^{-\beta \Omega}$.
+
+Then the Matsubara Green's function can be reduced to an evaluation of all connected different diagrams
+\begin{equation}
+  \cg(\bp,\tau) = - \sum_{n=0}^\infty (-1)^n \int_0^\beta d\tau_1 \dots \int_0^\beta d\tau_n \langle T_\tau \hat{C}_\bp(\tau)\hat{V}(\tau_1)\dots\hat{V}(\tau_n)\hat{C}_\bp(0) \rangle_0 \label{3.196}
+\end{equation}
+and the Green's function of energy is found by Fourier transform
+\begin{equation}
+  \cg(\bp,ip_n) = \int_0^\beta d\tau e^{ip_n\tau}\cg(\bp,\tau) ~ ~ ~ \cg(\bp,\tau) = \frac{1}{\beta} \sum_{p_n} e^{-ip_n\tau} \cg(\bp,ip_n)  \label{3.197}
+\end{equation}
+The terms in the series \eqref{3.196} yield self-energy diagrams, which may be collected into Dyson equation
+\begin{eqnarray}
+  \cg(\bp,ip_n) &=& \frac{\cg^0(\bp,ip_n)}{1 - \cg^0(\bp,ip_n) \Sigma(\bp,ip_n)} \label{3.198} \\
+  \cd (\bq,i\omega_n) &=& \frac{\cd^0(\bq,i\omega_n)}{1-\cd^0(\bq,i\omega_n) \Pi(\bq,i\omega_n)} \label{3.199}
+\end{eqnarray}
+The rules for constructing diagrams, are similar in the non-zero temperature cases.
 
 \section{Frequency Summations}
 When using the Matsubara Green's functions, one must evaluate frequency summations over combinations of unperturbed Green's functions.
@@ -385,7 +460,7 @@ There is a table of results for combinations which often occur.
   \frac{1}{\beta} \sum_n \cg^0(\bp,ip_n) &=& \eta_F(\xi_\bp)\label{3.219}
 \end{eqnarray}
 
-First consider the summation over a boson series, considering \eqref{3.216},
+First consider the summation over a boson series, considering \eqref{3.216}, we have this term
 \begin{equation}
   S = \frac{1}{\beta} \sum_m \frac{2\omega_\bq}{\omega_m^2+\omega_\bq^2} \frac{1}{ip_n+i\omega_m -\xi_\bp} \label{3.220}
 \end{equation}
@@ -398,3 +473,29 @@ where $f(i\omega_m)$ is the product of Green's function in \eqref{3.220}. This s
   I = \lim_{R\to \infty} \oint \frac{dz}{2\pi i} f(z) \eta_B(z)  \label{3.222}
 \end{equation}
 The function $\eta_B(z)$ is chosen to generate poles at the points $i\omega_m$ for all even integer $m$.
+The function $f(z)$ is
+\begin{equation}
+  f(z) = \frac{2\omega_\bq}{z^2-\omega_\bq^2} \frac{1}{ip_n + z - \xi_\bp}  \label{3.224}
+\end{equation}
+The corresponding poles and residues of integral $I$ in \eqref{3.222} are
+\begin{eqnarray}
+  z_m &=& i 2\pi m k_B T,~ ~ ~ R_i = \frac{1}{\beta}f(i\omega_m)  \nonumber\\
+  z_1 &=& \omega_\bq, ~ ~ ~ ~ R_1 = \frac{N_\bq}{ip_n- \xi_\bp+ \omega_\bq} \nonumber \\
+  z_2 &=& -\omega_\bq, ~ ~ ~ R_2 = \frac{N_\bq+1}{ip_n -\xi_\bp-\omega_\bq} \nonumber \\
+  z_3 &=& \xi_\bp - ip_n, ~ ~ ~ R_3 = \frac{-2\omega_\bq \eta_F(\xi_\bp)}{(ip_n-\xi_\bp)^2-\omega_\bq^2} \label{3.225}
+\end{eqnarray}
+Then, $I = \frac{1}{\beta} \sum_m f(i\omega)m + R_1 + R_2 + R_3$, and with \eqref{3.221}.
+\begin{equation}
+  S = R_1 + R_2 + R_3 \label{3.228}
+\end{equation}
+
+The method of evaluating these boson series is quite simple.
+To evaluate a series such as \eqref{3.221} on just finds all the simple poles of $f(z)$ which are at points $z_j$ with residues $r_j$ and then
+\begin{equation}
+  S = \sum_J r_j \eta_B(z_j)  \label{3.229}
+\end{equation}
+The same procedure is used to evaluate fermion series. Then the summations are of the form
+\begin{equation}
+  S = - \sum_i r_i \eta_F(z_i)  \label{3.231}
+\end{equation}
+The minus sign in font occurs because the residue of the fermion $\eta_F$ is $-\frac{1}{\beta}$ and is $\frac{1}{\beta}$ for boson $\eta_B$.

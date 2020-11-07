@@ -1,0 +1,104 @@
+\chapter{Basic properties}
+In what follows, we have $\hbar = k_B=1$.
+
+\section{Bogoliubov coefficient}\label{sec:BovCoef}
+Bogoliubov coefficient is defined in~\cite{Giorgini1998}
+
+\begin{eqnarray}\label{eq:bov_coe}
+&&u^2_{\mathbf{p}}=1+v^2_{\mathbf{p}}=\frac{1}{2}\left(1+\left[1+\left(\frac{Ms^2}{\omega_{\mathbf{p}}}\right)^2\right]^{1/2}\right),
+\\
+&&u_{\mathbf{p}}v_{\mathbf{p}}=-\frac{Ms^2}{2\omega_{\mathbf{p}}},
+\end{eqnarray}
+where the $M$ is the effective mass of the condensed particle; $s$ is the sound velocity of bogolons and $s= \sqrt{\frac{\kappa n_c}{M}}$; the $n_c$ is the density of condensed particle; $\kappa$ is the interaction strength; and the dispersion of the bogolons are\footnote{
+Usually, if we consider the exciton condensation, $\kappa$ is exciton-exciton interaction, for indirect exciton, the result is $\kappa = \frac{e_0^2 d}{\epsilon}$.
+}
+%
+\begin{equation}\label{eq:bov_disp}
+  \omega_\bp = s\bp \sqrt{1+\bp^2 \xi_h^2}.
+\end{equation}
+The healing length is defined as $\xi_h=\frac{1}{2Ms}$.
+
+\section{Green's function}\label{sec:Green}
+Bogolons are bosons.
+The Green's function is defined like phonons,
+First, introducing the following operators
+\begin{equation}\label{eq:Aq}
+  A_\bq = u_\bq b_\bp + v_\bq b^\dagger_{-\bq}
+\end{equation}
+unlike the phonons where $u_\bq =v_\bq=1$, we do \textbf{not} have $A_\bq^\dagger = A_{-\bq}$.
+These corresponding operators are
+\begin{eqnarray}
+  A_{-\bq} &=& u_\bq b_{-\bq} + v_\bq b^\dagger_\bq \label{eq:Aq1} \\
+  A_{\bq}^\dagger &=& u_\bq b_\bq^\dagger + v_\bq b_{-\bq} \label{eq:Aq2}
+\end{eqnarray}
+where we see from \eqref{eq:bov_coe}, $u_\bp$ and $v_\bp$ are only magnitude depended.
+
+From here, we have two definitions of the Green's function
+\begin{equation}
+  \cf(\bq,\tau) = -\langle T A_\bq(\tau) A_{-\bq} \rangle \label{eq:N_Green_tau}
+\end{equation}
+The corresponding Green's function in Matsubara frequency is
+\begin{equation}
+  \cd(\bq,i\omega_n) =u_\bq v_\bq \left[ \frac{1}{i\omega_n-\omega_\bq} - \frac{1}{i\omega_n + \omega_\bq} \right]= \frac{2 u_\bq v_\bq \omega_\bq}{(i\omega_n)^2 -\omega_\bq^2}  \label{eq:N_Green}
+\end{equation}
+However, if we consider this
+\begin{equation}
+  \cg(\bq,\tau) = - \langle T A_\bq(\tau) A_\bq^\dagger \rangle \label{eq:F_Green_tau}
+\end{equation}
+The corresponding result is
+\begin{equation}
+  \cg(\bq,i\omega_n) = \frac{u_\bq^2}{i\omega_n - \omega_\bq} - \frac{v_\bq^2}{i\omega_n + \omega_\bq} \label{eq:F_Green}
+\end{equation}
+With another notation, we found
+\begin{equation}
+  \cg'(\bq,\tau) = -\langle T A^\dagger_\bq(\tau)A_\bq \rangle \label{eq:F_Green2_tau}
+\end{equation}
+the result is
+\begin{equation}
+  \cg'(\bp,i\omega_n) = \frac{v^2_\bq}{i\omega_n-\omega_\bq} - \frac{u_\bq^2}{i\omega_n + \omega_\bq} \label{eq:F_Green2}
+\end{equation}
+We can make a table for the result of the Green's function in Matsubara frequency
+
+\begin{center}
+{\Large
+\begin{fullwidth}
+\begin{tabular}{||c|c|c|c|c|c||}
+    \hline
+    $\int d\tau e^{i\omega_n \tau}$ & $-\langle T A_\bq(\tau) \cdot$ & $ -\langle T A_\bq^\dagger(\tau) \cdot$ & $-\langle T A_{-\bq}(\tau) \cdot$ & $ -\langle T A_{-\bq}^\dagger(\tau) \cdot$ & $\times$ \\
+    \hline
+    ~ & $0$ &  \textcolor{NavyBlue}{$\frac{v_\bq^2}{i\omega_n -\omega_\bq} - \frac{u_\bq^2}{i\omega_n+\omega_\bq}$} & $\frac{u_\bq v_\bq}{i\omega_n-\omega_\bq} - \frac{u_\bq v_\bq}{i\omega_n + \omega_\bq}$ & \textcolor{NavyBlue}{$\frac{v_\bq^2}{i\omega_n -\omega_\bq} - \frac{u^2_\bq}{i\omega_n+\omega_\bq}$} & $A_\bq\rangle$ \\
+    \hline
+    ~ & \textcolor{OliveGreen}{$\frac{u_\bq^2}{i\omega_n-\omega_\bq} - \frac{v_\bq^2}{i\omega_n+\omega_\bq}$} & $0$ & \textcolor{OliveGreen}{$\frac{u_\bq^2}{i\omega_n-\omega_\bq} - \frac{v_\bq^2}{i\omega_n+\omega_\bq}$} & $\frac{u_\bq v_\bq}{i\omega_n - \omega_\bq} - \frac{u_\bq v_\bq}{i\omega_n + \omega_\bq}$ & $A_\bq^\dagger \rangle$ \\
+    \hline
+    ~ & $\frac{u_\bq v_\bq}{i\omega_n-\omega_\bq} - \frac{u_\bq v_\bq}{i\omega_n + \omega_\bq}$ & \textcolor{NavyBlue}{$\frac{v_\bq^2}{i\omega_n -\omega_\bq} - \frac{u_\bq^2}{i\omega_n+\omega_\bq}$} & $0$ & \textcolor{NavyBlue}{$\frac{v_\bq^2}{i\omega_n -\omega_\bq} - \frac{u^2_\bq}{i\omega_n+\omega_\bq}$} & $A_{-\bq}\rangle$ \\
+    \hline
+    ~ & \textcolor{OliveGreen}{$\frac{u_\bq^2}{i\omega_n-\omega_\bq} - \frac{v_\bq^2}{i\omega_n+\omega_\bq}$} & $\frac{u_\bq v_\bq}{i\omega_n-\omega_\bq} - \frac{u_\bq v_\bq}{i\omega_n + \omega_\bq}$ & \textcolor{OliveGreen}{$\frac{u_\bq^2}{i\omega_n-\omega_\bq} - \frac{v_\bq^2}{i\omega_n+\omega_\bq}$} & $0$ & $A^\dagger_{-\bq} \rangle$\\
+    \hline
+\end{tabular}
+\end{fullwidth}
+}
+\end{center}
+
+By looking the \eqref{eq:F_Green} and \eqref{eq:F_Green2}, we realized that this two Green's function are identical
+\begin{equation}
+  \cg(\bq,i\omega_n) = \cg'(\bq,-i\omega_n) \label{eq:F_Green_realition}.
+\end{equation}
+Using the \eqref{eq:bov_coe}, with some calculation we can write down the Green's function in a matrix form~\cite{Christensen2015}
+\begin{equation}
+\hat{\cg}=
+  \begin{pmatrix}
+    \cg & \cf \\
+    \cf & \cg'
+  \end{pmatrix}
+\end{equation}
+
+Another method to calculate the Green's function is based on the the discussion in~\cite{Giorgini1998}\cite{Kovalev2013}.
+The result is given as the retarded Green's function
+\begin{equation}
+\hat{\cg}_{ret} =
+  \begin{pmatrix}
+    \frac{E+(q^2/2M) + \kappa n_c}{E^2-\omega_\bq + i\delta} & \frac{-\kappa n_c}{E^2-\omega_\bq^2 + i\delta} \\
+    \frac{-\kappa n_c}{E^2-\omega_\bq^2+i\delta} & \frac{-E+(q^2/2M)+ \kappa n_c}{E^2 - \omega_\bq^2+i\delta}
+  \end{pmatrix}
+\end{equation}
+It is still not clear how to get it.
