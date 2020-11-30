@@ -2,7 +2,7 @@
 In what follows, we have $\hbar = k_B=1$.
 
 \section{Bogoliubov coefficient}\label{sec:BovCoef}
-Bogoliubov coefficient is defined in~\cite{Giorgini1998}
+Bogoliubov coefficient is defined in~\cite{giorgini:98di}
 
 \begin{eqnarray}\label{eq:bov_coe}
 &&u^2_{\mathbf{p}}=1+v^2_{\mathbf{p}}=\frac{1}{2}\left(1+\left[1+\left(\frac{Ms^2}{\omega_{\mathbf{p}}}\right)^2\right]^{1/2}\right),
@@ -83,7 +83,7 @@ By looking the \eqref{eq:F_Green} and \eqref{eq:F_Green2}, we realized that this
 \begin{equation}
   \cg(\bq,i\omega_n) = \cg'(\bq,-i\omega_n) \label{eq:F_Green_realition}.
 \end{equation}
-Using the \eqref{eq:bov_coe}, with some calculation we can write down the Green's function in a matrix form~\cite{Christensen2015}
+Using the \eqref{eq:bov_coe}, with some calculation we can write down the Green's function in a matrix form~\cite{christensen:15qp}
 \begin{equation}
 \hat{\cg}=
   \begin{pmatrix}
@@ -92,13 +92,28 @@ Using the \eqref{eq:bov_coe}, with some calculation we can write down the Green'
   \end{pmatrix}
 \end{equation}
 
-Another method to calculate the Green's function is based on the the discussion in~\cite{Giorgini1998}\cite{Kovalev2013}.
+Another method to calculate the Green's function is based on the the discussion in~\cite{giorgini:98di,kovalev:13lo}
 The result is given as the retarded Green's function
-\begin{equation}
+\begin{equation}\label{Green_ret_vad}
 \hat{\cg}_{ret} =
   \begin{pmatrix}
-    \frac{E+(q^2/2M) + \kappa n_c}{E^2-\omega_\bq + i\delta} & \frac{-\kappa n_c}{E^2-\omega_\bq^2 + i\delta} \\
+    \frac{E+(q^2/2M) + \kappa n_c}{E^2-\omega_\bq^2 + i\delta} & \frac{-\kappa n_c}{E^2-\omega_\bq^2 + i\delta} \\
     \frac{-\kappa n_c}{E^2-\omega_\bq^2+i\delta} & \frac{-E+(q^2/2M)+ \kappa n_c}{E^2 - \omega_\bq^2+i\delta}
   \end{pmatrix}
 \end{equation}
-It is still not clear how to get it.
+This result is given by the following approximation:
+\begin{eqnarray}
+    && \frac{u_\bq^2}{i\omega_n + \omega_\bq} - \frac{v_\bq^2}{i\omega_n + \omega}\nonumber \\
+    &=& \frac{(u_\bq^2-v_\bq^2) i\omega_n + (v_\bq^2 + u_\bp^2) \omega_\bq}{(i\omega_n)^2 -(\omega_\bq)^2} \nonumber \\
+    &=& \frac{E+i\delta + (v_\bq^2 + u_\bq^2)\omega_\bq}{E^2 + 2i\delta E - \delta^2 - \omega_\bq^2} \nonumber \\
+    &\approx& \frac{E + (u_\bq^2 + v_\bq^2)\omega_\bq }{E^2 -\omega^2 +i\delta \mathrm{sign}(E)}
+\end{eqnarray}
+where we first apply the analytic continuous: $i\omega_n \to E + i \delta$ and assme $\delta E \to 0$.
+Further, for the rest part we consider
+\begin{eqnarray}
+    u_\bq^2 &=& \frac{1}{2} \left( 1 + \frac{Ms^2}{\omega_\bq} \sqrt{1 + \frac{\omega_\bp^2}{M^2 s^4} } \right) \nonumber \\
+    &\approx& \frac{1}{2} \left( 1 + \frac{Ms^2}{\omega_\bq} \left( 1 + \frac{\omega_\bq^2}{2 M^2 s^4} \right) \right) \nonumber \\
+    &=& \frac{1}{2} \left( 1 + \frac{Ms^2}{\omega_\bq} + \frac{\omega_\bq}{2 M s^2}  \right) \\
+    v_\bq^2 &=& \frac{1}{2} \left( \frac{Ms^2}{\omega_\bq} + \frac{\omega_\bq}{2 M s^2}  -1 \right)
+\end{eqnarray}
+we can get the final result of the first element in \eqref{Green_ret_vad}.

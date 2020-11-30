@@ -22,7 +22,7 @@ When defining the Green's function, one must average over all possible configura
   \frac{\Tr[e^{-\beta H} C_{\bp \sigma}(t) C^\dagger_{\bp \sigma}(t')]}{Tr(e^{-\beta H})}  \label{3.1} \\
   C_{\bp \sigma}(t) = e^{itH}C_{\bp\sigma}e^{-itH}  \label{3.2}
 \end{eqnarray}
-where "$\Tr$" denotes trace and is summation over some complete set of states.
+where $\Tr$ denotes trace and is summation over some complete set of states.
 
 The Matsubara method treats time as a complex temperature, the object is treat $t$ and $\beta$ as the real and imaginary parts of a complex variable, which will require only one $S$-matrix expansion.
 
@@ -31,7 +31,7 @@ The expansion of the series for bosons and fermions give
   \eta_F(\xi_\bp) &=& \frac{1}{e^{\beta \xi_\bp}+1} = \frac{1}{2} + \frac{1}{\beta} \sum_{n=-\infty}^\infty \frac{1}{(2n+1)i\pi/\beta -\xi_\bp} \label{3.5} \\
   \eta_B(\omega_\bq) &=& \frac{1}{e^{\beta \omega_\bq}-1} = -\frac{1}{2} + \frac{1}{\beta} \sum_{n=-\infty}^\infty \frac{1}{2ni\pi/\beta -\omega_\bq} \label{3.6}
 \end{eqnarray}
-\textit{These series can be derived from a theorem which states that any meromorphic function may be expanded as a summation over its poles and residues at those poles}. \footnote{\textcolor{red}{Need to be more clear about this.}}
+\textit{These series can be derived from a theorem which states that any meromorphic function may be expanded as a summation over its poles and residues at those poles}.\footnote{\textcolor{red}{Need to be more clear about this.}}
 It is convenient to define the frequencies at the pole
 \begin{equation}
   p_n = (2n+1)\pi/\beta,~ ~ ~ ~ \omega_n = 2n\pi/\beta \label{3.7}
@@ -53,7 +53,7 @@ where
   a_n &=& \frac{1}{\beta} \int_{-\beta}^\beta d\tau f(\tau) \cos(\frac{n\pi\tau}{\beta}) \label{3.12} \\
   b_n &=& \frac{1}{\beta} \int_{-\beta}^\beta d\tau f(\tau) \sin(\frac{n\pi\tau}{\beta}) \label{3.13}
 \end{eqnarray}
-or \textbf{equivently}. we have
+or \textbf{equivalently}. We have
 \begin{equation}
   f(i\omega_n) = \frac{1}{2} \beta(a_n + ib_n ) \label{3.14}
 \end{equation}
@@ -102,7 +102,7 @@ The definition is equivalent between \eqref{3.24} and \eqref{3.25}, and it is th
 The $\mu$ is the chemical potential and $N$ is the particle number operator.
 A grand canonical ensemble is used, where the number of particles is variable.
 This many-particle system can be successfully used for one particle in an empty band.
-In this case, the analytical continuation si taken as $i\omega_n \to E+ \mu + i\delta$, and the chemical potential will vanish from all expressions.
+In this case, the analytical continuation is taken as $i\omega_n \to E+ \mu + i\delta$, and the chemical potential will vanish from all expressions.
 One is not bothered by the fact that $\beta \mu \ll 0$ in one-particle systems at nonzero temperatures.
 
 In a many-electron system, the chemical potential is retained in the formalism.
@@ -196,7 +196,7 @@ All these retarded function have the Fourier transforms defined by the usual con
   G_{ret}(\bp,E) = \int_{-\infty}^\infty dt e^{iE(t-t')} G_{ret}(\bp,t-t') \label{3.90}
 \end{equation}
 
-THe advanced Green's function for each is defined
+The advanced Green's function for each is defined
 \begin{eqnarray}
   G_{adv}(\bp,t-t')&=&i\Theta(t-t')\langle [C_{\bp\sigma}(t)C^\dagger_{\bp\sigma}(t') \nonumber \\
   &+& C^\dagger_{\bp\sigma}(t')C_{\bp\sigma}(t)] \rangle \label{3.93} \\
@@ -448,7 +448,7 @@ The terms in the series \eqref{3.196} yield self-energy diagrams, which may be c
 \end{eqnarray}
 The rules for constructing diagrams, are similar in the non-zero temperature cases.
 
-\section{Frequency Summations}
+\section{Frequency Summations}\label{s3.5}
 When using the Matsubara Green's functions, one must evaluate frequency summations over combinations of unperturbed Green's functions.
 The technique for evaluating these summations is discussed for both cases of unperturbed functions and also Green's functions with self-energies.
 There is a table of results for combinations which often occur.
@@ -468,7 +468,7 @@ Denote this equation as
 \begin{equation}
   S = -\frac{1}{\beta} \sum_m f(i\omega_m) \label{3.221}
 \end{equation}
-where $f(i\omega_m)$ is the product of Green's function in \eqref{3.220}. This summation si evaluated by a contour integration. The integral has the form,
+where $f(i\omega_m)$ is the product of Green's function in \eqref{3.220}. This summation is evaluated by a contour integration. The integral has the form,
 \begin{equation}
   I = \lim_{R\to \infty} \oint \frac{dz}{2\pi i} f(z) \eta_B(z)  \label{3.222}
 \end{equation}
@@ -499,3 +499,487 @@ The same procedure is used to evaluate fermion series. Then the summations are o
   S = - \sum_i r_i \eta_F(z_i)  \label{3.231}
 \end{equation}
 The minus sign in font occurs because the residue of the fermion $\eta_F$ is $-\frac{1}{\beta}$ and is $\frac{1}{\beta}$ for boson $\eta_B$.
+\footnote{
+\begin{eqnarray}
+    && \Res(\frac{1}{e^{-\beta z_0}-1}) \nonumber \\
+    &=& \frac{g(z_0)}{f'(z_0)} \nonumber \\
+    &=& \left( -\beta e^{-\beta z_0} \right)^{-1} \nonumber \\
+    &=& -\frac{1}{\beta} \nonumber
+\end{eqnarray}
+}
+
+The last result in \eqref{3.219} is special
+\begin{equation}
+    \frac{1}{\beta} \sum_n \cg^0 (\bp,ip_n) = \eta_F(\xi_\bp) \nonumber
+\end{equation}
+Due to the definition, the left side is the Fourier transform of Matsubara Green's function.
+The result \eqref{3.129} is just the limit at $\tau \to 0$.
+This limit is ambiguous, since a different result is obtained if $\tau=0$ is approached from the positive or negative direction
+\begin{eqnarray}
+    \cg^0(\bp,\tau= 0^+) &=& - \left[1-\eta_F(\xi_\bp)\right] \label{3.238}\\
+    \cg^0(\bp,\tau= 0^-) &=& \eta_F(\xi_\bp)    \label{3.239}
+\end{eqnarray}
+The result \eqref{3.219} is merely the convention of adopting the limit $\tau = 0^-$.
+
+Consider the example of evaluating the summation \eqref{3.216} except that the Green's function for the electron contains some self-energy terms:
+\begin{equation}
+    \cg(\bp,ip_n) = \frac{1}{ip_n -\xi_\bp -\Sigma(\bp,ip_n} \label{3.241}
+\end{equation}
+Letting $ip_n =z$ then the above function has branch cuts along the real $Z$ axis.
+These branch cuts arise because of the self-energies $\Sigma(\bp,ip_n)$ as discuss in \ref{s3.3}.
+The contour integrals used to evaluate the frequency summations become more complicated because of the branch cut.
+
+The most general possibility when evaluating a summation over Matsubara frequencies is to have all the Green's functions fully dressed.
+Then is is common to proceed by first expressing all the Green's functions in the \textbf{Lehmann representation}.
+For example, evaluate
+\begin{equation}
+    S = - \frac{1}{\beta} \sum_m \cd(\bq,i\omega_n) \cg(\bp,ip_n + i\omega_n) \label{3.242}
+\end{equation}
+Express each Green's function as a frequency integral over its respective spectral function as shown in \eqref{3.118}
+\begin{eqnarray}
+    \cd (\bq,i\omega_m) &=& \int_{-\infty}^\infty \frac{d\omega}{2\pi} \frac{B(\bq,\omega)}{i\omega_m-\omega}  \label{3.243} \\
+    \cg (\bp+\bq,ip_n+i\omega_n) &=& \int_{-\infty}^\infty \frac{d \varepsilon}{2\pi}  \frac{A(\bp+\bq, \varepsilon)}{ip_n + i\omega_m -\varepsilon} \label{3.244}
+\end{eqnarray}
+and the summation $S$ becomes
+\begin{equation}
+    S = \int_{-\infty}^\infty \frac{d\omega}{2\pi} B(\bq,\omega) \int_{-\infty}^\infty \frac{d\varepsilon}{2\pi} A(\bp+ \bq,\varepsilon) S_0(ip_n,\omega,\varepsilon) \nonumber
+\end{equation}
+and
+\begin{equation}
+    S_0(ip_n,\omega,\varepsilon) = - \frac{1}{\beta} \sum_m \frac{1}{i\omega_m-\omega} \frac{1}{ip_n+i\omega_m-\varepsilon} = \frac{\eta_B(\omega) + \eta_F(\varepsilon)}{ip_n+\omega-\varepsilon}  \nonumber
+\end{equation}
+The summation $S_0$ is now the easy type which is evaluated using noninteracting Green's functions.
+The final result provides for the most general case of fully interacting Green's functions.
+In general, any frequency summation can be done by expressing all Green's functions in their \textbf{Lehmann representation}.
+
+\section{Linked Cluster Expansions}\label{s3.6}
+Another method for evaluating correlation functions is called the linked cluster method or the cumulant expansion.
+It is the method used to evaluating the thermodynamic potential $\Omega$.
+However, the method has also been applied to evaluating Green's function of time for a few problems as an alternative to Dyson equation approach.
+
+\subsection{Thermodynamic Potential}
+The thermodynamic potential is found from the equation
+\begin{equation}
+    e^{-\beta \Omega} = \Tr (e^{-\beta K} ) = \Tr[e^{-\beta K_0}S(\beta)]   \label{3.251}
+\end{equation}
+This quantity is useful to evaluate by itself, for example, if $N_e$ is the number of electrons
+\begin{eqnarray}
+    - \frac{\partial \Omega}{\beta \partial \mu} &=& \langle N_e \rangle  \label{3.252} \\
+    \frac{\partial (\beta \Omega)}{\partial \beta} &=& \langle K \rangle = U - \mu \bar{N_e} = \Omega + TS \label{3.253} \\
+    m \frac{\partial \Omega}{\partial m} &=& \langle \sum_i \frac{p_i^2}{2m} \rangle = \sum_\bp n_\bp \frac{p^2}{2m}     \label{3.254}
+\end{eqnarray}
+where $n_\bp$ is the number of electrons with momentum $\bp$ in \eqref{3.135}.
+
+For an interacting system
+\begin{equation}
+    K = K_0 + V \label{3.256}
+\end{equation}
+For a system of electrons and phonons,
+\begin{equation}
+    K_0 = \sum_{\bp,\sigma} \xi_\bp C^\dagger_{\bp\sigma} C_{\bp\sigma} + \sum_\bq \omega_\bq (a^\dagger_\bq a_\bq + \frac{1}{2} )  \label{3.258}
+\end{equation}
+the trace is simple since the noninteracting eigenstates can be used to expand the trace eigenstates
+\begin{equation}
+    e^{-\beta \Omega_0} = \Pi_\bp (1 + e^{-\beta \xi_\bp})^2 \Pi_\bq ( \frac{e^{-\beta \omega_\bq/2}}{1 - e^{-\beta \omega_\bq}} )  \label{3.259}
+\end{equation}
+The logarithm of both sides of this equation
+\begin{equation}
+    \beta \Omega_0 = -2 \sum_\bp \ln (1 + e^{-\beta \xi_\bp}) + \sum_\bq [ \ln(1- e^{-\beta \omega_\bq}) + \frac{1}{2} \beta \omega_\bq]
+\end{equation}
+The factor of $2$ in front of electron is the spin degeneracy.
+The last term on the right is zero-point energy of phonons.
+Change the summations to integrals a factor appears of the volume $v$.
+The thermodynamic potential is proportional to the volume of the system.
+This result is also apparent from \eqref{3.252} to \eqref{3.254}, since the right-hand side in each case is proportional to the volume or to the number of particles.
+
+To calculate \eqref{3.251} including $S(\beta)$.
+The interaction $V$ will add some correction terms to $\Omega_0$ which changes it into $\Omega$.
+The method of evaluating this correlation function is by the $S$-matrix expansion
+\begin{equation}
+    e^{-\beta \Omega} = e^{-\beta \Omega_0} \sum_{n=0}^\infty \frac{(-1)^n}{n!} \int_0^\beta d\tau_1 \dots \int_0^\beta d\tau_n \langle T_\tau \hat{V}(\tau_1) \dots \hat{V}(\tau_n) \rangle_0  \label{3.195}
+\end{equation}
+In evaluating the right-hand side, all diagrams are included, whether connected or disconnected, since there is no other series at hand to cancel the disconnected diagrams.
+The way of doing this expansion is the linked cluster expansion.
+
+The way to do this is stated here.
+First, introduce the parameter $\lambda$, to keep track of the number of times the potential occurs in each term in the $S$ matrix.
+The $S$-matrix expansion in \eqref{3.195} may be written as
+\begin{eqnarray}
+    e^{-\beta \Omega} &=& e^{-\beta \Omega_0} \sum_{n=0}^\infty \lambda^n W_n   \label{3.262} \\
+    W_n &=& \frac{(-1)^n}{n!} \int_0^\beta d\tau_1 \dots \int_0^\beta d\tau_n \langle T_\tau \hat{V}(\tau_1) \dots \hat{V}(\tau_n) \rangle_0    \label{3.263}
+\end{eqnarray}
+The basic linked cluster theorem is that this series can be resummed into
+\begin{eqnarray}
+    e^{-\beta \Omega} &=& \exp \left( -\beta \Omega_0 + \sum_{l=1}^\infty \lambda^l U_l \right) \label{3.264} \\
+    U_l &=& \frac{(-1)^l}{l} \int_0^\beta d\tau_1 \dots \int_0^\beta d\tau_l \langle T_\tau \hat{V}(\tau_1) \dots \hat{V}(\tau_l) \rangle_0 \label{3.265}
+\end{eqnarray}
+where $U_l$ contains just different, connected diagrams: The thermodynamic potential is obtained by setting $\lambda=1$ in \eqref{3.264},
+\begin{equation}
+    \Omega = \Omega_0 - \frac{1}{\beta} \sum_{l=1}^\infty U_l  \label{3.266}
+\end{equation}
+\textbf{The basic theorem is that the thermodynamic potential is the summation of the different connected diagrams.}
+With some discussion discussed in the book\footnote{P144, Mahan}, we have the identity
+\begin{equation}
+    U_l = \frac{(-1)^k}{l!} \int_0^\beta d \tau_1 \dots \int_0^\beta d \tau_l \langle T_\tau \hat{V}(\tau_1) \dots \hat{V}(\tau_l) \rangle_{connected}  \label{3.274}
+\end{equation}
+In terms of the Green's functions, we have
+\begin{equation}
+    U_l = \frac{1}{l!} \int_0^\beta d \tau_1 \dots \int_0^\beta d \tau_l \cg^)(\bp_1, \tau_1 - \tau_j) \cg^0(\bp_2, \tau_2 - \tau_k) \dots  \label{3.275}
+\end{equation}
+
+In prior section, the Green's function $\cg(\bp,\tau)$ was evaluated by a similar expansion technique.
+There the connected diagrams obeyed the counting rules that
+\begin{equation}
+    \frac{1}{l!} \langle T_\tau \hat{C}_{\bp\sigma}(\tau) \hat{V}(\tau_1) \dots \hat{V}(\tau_l) \hat{C}^\dagger_{\bp\sigma}(0) \rangle_{connected} = \langle T_\tau \hat{C}_{\bp\sigma}(\tau) \hat{V}(\tau_1) \dots \hat{V}(\tau_l) \hat{C}^\dagger_{\bp\sigma}(0) \rangle_{different~connected}    \label{3.276}
+\end{equation}
+Here there are $l\! $ arrangements which are identical.
+In the linked cluster method there are only $(l-1)! $.
+
+Next consider the evaluation of the thermodynamic potential.
+It is obtained by evaluating the series of terms in\eqref{3.266}.
+An example is shown here in Fig.\ref{fig:3.9} for the electron-phonon interaction.
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \draw (0,0) ellipse (0.5 and 0.25);
+        \draw [dashed] (-0.5,0)--(0.5,0);
+        \node at (0.75,0) {$+$};
+        \draw (1.5,0.5) ellipse (0.5 and 0.25);
+        \draw (1.5,-0.5) ellipse (0.5 and 0.25);
+        \draw [dashed] (1,-0.5)--(1,0.5);
+        \draw [dashed] (2.,-0.5)--(2.,0.5);
+        \node at (2.25,0) {$+$};
+        \draw (3.,0.5) ellipse (0.5 and 0.25);
+        \draw (4.,0.1) ellipse (0.5 and 0.25);
+        \draw (3.5,-0.5) ellipse (1 and 0.25);
+        \draw [dashed] (2.5,0.5)--(2.5,-0.5);
+        \draw [dashed] (4.5,0.1)--(4.5,-0.5);
+        \draw [dashed] (3.5,0.5)--(3.5,0.1);
+    \end{tikzpicture}
+    \caption{Link cluster diagram.}%
+    \label{fig:3.9}
+\end{figure}
+They can be summed to give an approximate simple answer.
+The rules for constructing diagrams for the terms in the thermodynamic potential are similar to those in Sec~\ref{s3.4}.
+One follows all those rules and then multiplies the result by $\frac{\beta}{l}$.
+The $ \frac{1}{l} $ factor is just the one which occurs in \eqref{3.265}.
+For the first bubble in Fig.~\ref{fig:3.9},
+\begin{equation}
+    U_2 = \frac{\beta}{2} \frac{\lambda^2}{\beta} \sum_{\bq,iq_n} M^2_\bq \cd^0(\bq,iq_n) P^1(\bq,iq_n)   \label{3.280}
+\end{equation}
+where the polarization diagram $P^1(\bq,iq_n)$ is for the single bubble, which was already evaluated
+\begin{equation}
+    P^1(\bq,iq_n) = \frac{2}{\beta V} \sum_{\bp,ip_m} \cg^0(\bp,ip_m) \cg^0(\bp+\bq,ip_m+iq_n)  \label{3.281}
+\end{equation}
+The second term in Fig.~\ref{fig:3.9} has two bubbles connected by two phonon lines. Using the rules for constructing diagrams gives
+\begin{equation}
+    U_4 = \frac{\beta}{4} \frac{\lambda^4}{\beta} \sum_{\bq,iq_m} \left[ M_\bq^2 \cd^0(\bq,iq_n) \mathcal{P}^1(\bq,iq+n) \right]^2  \label{3.282}
+\end{equation}
+Momentum and frequency conservation requires both phonons to have the same variables $(\bq,iq_n)$ and both polarization diagrams are also just functions of combination.
+The term with $n$ bubbles and $n$ phonon lines is
+\begin{equation}
+    U_{2n} = \frac{\beta}{2n} \frac{\lambda^{2n}}{\beta} \sum_{\bq,iq_n} \left[ M^2_\bq \cd^0(\bq,iq_n) \mathcal{P}^1(\bq,iq_n) \right]^n   \label{3.283}
+\end{equation}
+It is simple to sum the series
+\begin{equation}
+    \Omega - \Omega_0 = - \frac{1}{\beta} \sum_{n=1}^\infty U_{2n} = \frac{1}{2\beta} \sum_{\bq,iq_n} \ln \left[ 1-\lambda^2 M^2_\bq \cd^0(\bq,iq_n) \mathcal{P}^1(\bq,iq_n)  \right]        \label{3.284}
+\end{equation}
+This is the correction to the thermodynamic potential.
+The right-hand side is proportional to the volume $V$, as is obvious when the summation over $\bq$ is changed to an integration.
+The argument of the logarithm is not dependent on $V$, and $V$ enters only by multiplying the result.
+
+The answer in \eqref{3.284} is a logarithm.
+The summation over $iq_n$ needs to the evaluated.
+A standard trick for eliminating the logarithm, although it does not eliminate it but just disguises it.
+Treat $\eta = \lambda^2$ as a variable of integration
+\begin{eqnarray}
+    &&\int_0^{\lambda^2} d\eta \frac{\Lambda}{1 - \eta\Lambda} = -\ln \left[1 -\lambda^2 \Lambda \right] \label{3.286} \\
+    && \Lambda = M^2_\bq \cd^0(\bq,iq_n) \mathcal{P}^1(\bq,iq_n) \label{3.287}
+\end{eqnarray}
+Then for $\lambda =1$
+\begin{equation}
+    \Omega- \Omega_0 = - \frac{V}{2\beta} \sum_{iq_n} \int \frac{d^3 q}{(2\pi)^3} \int_0^1 d\eta \frac{M_\bq^2 \cd^0 \mathcal{P}^1}{1 - \eta M^2_\bq \cd^0 \mathcal{P}^1} \label{3.288}
+\end{equation}
+The logarithm has been eliminated, but now the right-hand side must be evaluated for each value of $\eta$ and then the integral is taken over $\eta$.
+\textit{Since $\eta$ enters in the same way as a coupling constant}, this step is called a \textbf{coupling constant integration}.
+The integration can be taken outside of the summation over $iq_n$, which makes this summation easier in some case.
+
+Further, define the phonon self-energy as
+\begin{equation}
+    \pi^1(\eta,\bq,iq_n) = \eta M^2_\bq \mathcal{P}^1(\bq,iq_n) \label{3.289}
+\end{equation}
+where the coupling constant $\eta$ is included in the definition.
+The superscript indicates that this expression is an approximate self-energy, which only includes the single-electron bubble.
+The phonon Green's function is
+\begin{equation}
+    \cd^1(\eta,\bq,iq_n) = \frac{\cd^0}{1-\cd^0 \pi^1}  \label{3.290}
+\end{equation}
+The Green's function is also a function of the coupling constant strength $\eta$.
+Equation \eqref{3.288} is rewritten as
+\begin{equation}
+    \Omega - \Omega_0 = - \frac{V}{2\beta} \sum_{iq_n} \int \frac{d^3q}{(2\pi)^3} \int_0^1 \frac{d \eta}{\eta} \pi^{(1)}(\eta,\bq,iq_n) \cd^{(1)}(\eta,\bq,iq_n)    \label{3.291}
+\end{equation}
+This expression is an approximation to $\Omega$ since it employs an approximate self-energy $\pi^{(1)}$.
+According the \cite{abrikosov1963methods}, the exact correction to the themodynamic potential from electron-phonon interactions is
+\begin{equation}
+    \Omega - \Omega_0 = - \frac{V}{2\beta} \sum_{iq_n} \int \frac{d^3q}{(2\pi)^3} \int_0^1 \frac{d \eta}{\eta} \pi(\eta,\bq,iq_n) \cd(\eta,\bq,iq_n)    \label{3.292}
+\end{equation}
+where $\pi(\eta,\bq,iq_n)$ is the exact phonon self-energy and $\cd(\eta,\bq,iq_n)$ is the exact phonon Green's function evaluated withe excat self-energy.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/fig3-10.jpg}
+    \caption{The exact phonon self-energy $\pi(\eta,\bq,iq_n)$ is the summation of this infinite number of diagrams. There are bubbles with internal phonon lines and also several bubbles connected by more then on phonon line.}%
+    \label{fig:3.10}
+\end{figure}
+
+If electron-electron interactions are included, then the phonon self-energy can also contain internal Coulomb interactions, etc.
+The effect of Coulomb interaction on the thermodynamic potential should also be included.
+THe general theorem \eqref{3.265} and \eqref{3.266} is true for all interactions: Coulomb, phonon, or others.
+
+It is possible to combine the effects of phonons and Coulomb interaction in a simple way.
+Consider electrons interacting by either or both interactions, and then the single-bubble diagram appears twices.
+The two electron vertives can be connected by a single Coulomb line or a single phonon line. The sum of these contributions is
+
+It is possible to combine the effects of phonons and Coulomb interaction in a simple way.
+Consider electrons interacting by either or both interactions, and then the single-bubble diagram appears twices.
+The two electron vertives can be connected by a single Coulomb line or a single phonon line. The sum of these contributions is
+\begin{equation}
+    U_2 = \frac{\eta}{2} \sum_{\bq,iq_n} \mathcal{P}^{(1)}(\bq,iq_n) \left[ M_\bq^2 \cd^{(0)}(\bq,iq_n)\right] \label{3.293}
+\end{equation}
+By introduce a combined interaction propagator, Coulomb plus phonon, which is
+\begin{equation}
+    W^{(0)} (\bq,iq_n) = v_q + M_\bq^2 \cd^{(0)}(\bq,iq_n)  \label{3.295}
+\end{equation}
+with the Dyson equation
+\begin{equation}
+    W(\bq,iq_n) = \frac{W^{(0)}(\bq,iq_n)}{1-W^{(0)}(\bq,iq_n)\mathcal{P}^{(1)}}     \label{3.296}
+\end{equation}
+The generalization of \eqref{3.292} to include both Coulomb and phonon effect is
+\begin{eqnarray}
+    \Omega- \Omega_0 &=& - \frac{V}{2\beta} \sum_{iq_n} \int \frac{d^3 q}{(2\pi)^3} \int_0^1 \frac{d\eta}{\eta} \pi(\eta,\bq,iq_n) W(\eta,\bq,iq_n) \nonumber\\
+    &+& \frac{\eta}{2} \int \frac{d^3q}{(2\pi)^3} v_q \label{3.297}
+\end{eqnarray}
+The first term contains the Coulomb self-energy of an electron interacting with itself, and this unwanted contribution is substracted out in the second term.
+The expression \eqref{3.292} is in the expression of phonon self-energies.
+It is also posibble to use electron self-energy, considering \eqref{3.272}
+\begin{equation}
+    U_2 = \frac{\lambda}{2} \sum_{ip_n,\bp,\sigma} cg^{(0)}(\bp,ip_n) \Sigma^{(1)}(\bp,ip_n)    \label{3.298}
+\end{equation}
+where $\Sigma^{(1)}$ is the electron self-energy from one-phonon processes, which gives
+\begin{equation}
+    \Sigma^{(1)}(\bp,ip_n) = \frac{1}{\beta V} \sum_{\bq,iq_m} M^2_\bq \cg^{(0)}(\bq+\bp,ip_n+iq_m) \cd^{(0)}(\bq,iq_m)
+\end{equation}
+
+These formulas are often used to calculate the ground state energy in the limit of $T\to0$.
+There are two limits which are taken: $V\to\infty$ and $T\to0$.
+In studying the electron gas, to get the right answer one needs to take the limit of $V\to\infty$ first.
+The reverse order omits important terms,
+\begin{equation}
+    \beta \eta_F(\xi_\bp) \left[ 1-\eta_f(\xi_\bp)\right]   \label{3.300}
+\end{equation}
+If $V\neq \infty$, then all levels are discrete in finite volume and as $T\to0$ these terms give zero since either $\eta_F$ or $\left[1-\eta_F\right]$ is zero.
+However, if one first takes $V\to\infty$, so that the levels are continuous, then the limit $T\to 0$ gives
+\begin{equation}
+    \lim_{T\to0} \beta eta_F(\xi_\bp)\left[1 -\eta_F(\xi_\bq)\right] = \lim_{T\to0} \frac{d}{d \xi_\bp} \left[ -\eta_F(\xi_\bp) \right] = \delta(\xi_\bp)   \label{3.301}
+\end{equation}
+There are many terms of this kind in perurbation expansion for the ground state energy of the electron gas.
+They are called \textbf{dangerous diagrams}.
+
+Here we show a simple example of evaluating the thermodynamic potntial.
+Assume that the onley effect of the phonon self-energy is to change the unperturbed frequencies $\omega_\bq^2$ to a new set of renormalized frequencies $\Omega^2_\bq$.
+Since the Green's function is
+\begin{equation}
+    \cd = \frac{2\omega_\bq}{(i\omega_n)^2 - \omega_\bq^2 - 2\omega_\bq \pi(\bp,i\omega_n)} = \frac{2\omega_\bq}{(i\omega_n)^2 - \Omega_\bq^2} \label{3.302}
+\end{equation}
+This form for $\cd$ can be accomplished choosing
+\begin{equation}
+    2\omega_\bq \pi(\eta,\bp,i\omega_n) = \eta(\Omega_\bq^2 - \omega_\bq^2)     \label{3.303}
+\end{equation}
+The choice \eqref{3.303} is not the only possible one to renormalize the frequencies.
+It is the choice one gets by assuming that the change from $\omega_\bq$ to $\Omega_\bq$ is accomplished by the one-bubble polarization diagram given in \eqref{3.289}.
+Then the coupling constant $\eta$ enters as just a mulitplicative factor, as shown in \eqref{3.303}.
+If further self-energy diagrams are needed to get a good phonon $\pi$, then $\eta$ would enter in a more complicated fashion.
+But usually the single-bubble approximation is often adequate.
+
+Consider the \eqref{3.292}, the expression to be evaluated is
+\begin{equation}
+    \Omega-\Omega_0 = - \frac{1}{2\beta} \sum_{\bq,iq_n} \int_0^1 d\eta \frac{\Omega_\bq^2 -\omega_\bq^2}{(iq+n)^2 -\omega_\bq^2 -\eta(\Omega_\bq^2-\omega_\bq^2)}  \label{3.304}
+\end{equation}
+Introduce the frequency
+\begin{equation}
+    \Omega_\eta^2 = \omega^2_\bq + \eta(\Omega_\bq^2 - \omega_\bq^2)    \label{3.305}
+\end{equation}
+The summation over Matsubara frequencies can be done easily since,
+\begin{equation}
+    \frac{1}{\beta} \sum_{iq_n} \frac{1}{(iq_n)^2 - \Omega_\eta^2} = \frac{1}{2\Omega_\eta} \cd_\eta(\tau=0) = - \frac{1}{2\Omega_\eta} \left[ 2\eta_B(\Omega_\eta)+1 \right]   \label{3.306}
+\end{equation}
+Then the evaluaion of \eqref{3.304} is just the coupling constant integral,
+\begin{eqnarray}
+    &&\Omega-\Omega_0 = \frac{1}{2} \sum_\bq (\Omega_\bq^2 - \omega_\bq^2) \int_0^1 \frac{d\eta}{2\Omega_\eta} \left(1 + \frac{2}{e^{\beta\Omega_\eta}-1}\right) \nonumber \\
+    &&= \frac{1}{2} \sum_\bq \left[ \Omega_\eta + \frac{2}{\beta} \ln \left(1-e^{-\beta\Omega_\eta} \right) \right]^{\eta=1}_{\eta=0} \nonumber \\
+    &&= \sum_\bq \left[ \frac{1}{2} \left( \Omega_\bq - \omega_\bq \right) + \frac{1}{\beta} \ln \left( \frac{1-\exp (-\beta \Omega_\bq) }{1- \exp(-\beta \omega_\bq)} \right)\right] \label{3.310}
+\end{eqnarray}
+The right-hand side is the thermodynamic potential from the phonons at the new frequency $\Omega_\bq$ minus the contribution from the phonons at the old frequencies $\omega_\bq$.
+When this result is combined with \eqref{3.260} for $\Omega_0$, the terms with $\omega_\bq$ all cancel. THe final answer is
+\begin{equation}
+    \Omega = -\frac{2V}{\beta} \int \frac{d^3 p}{(2\pi)^3} \ln \left( 1 + e^{-\beta \xi_\bp} \right) + \frac{V}{\beta} \int \frac{d^3 q}{(2\pi)^2} \left[ \frac{1}{2} \beta \Omega_\bq + \ln\left( 1-e^{-\beta \Omega_\bq}  \right) \right]      \label{3.311}
+\end{equation}
+
+\section{Real-Time Green's Function} \label{s.3.7}
+For six different Green's function of time, the retarded and advanced function have been discussed at nonzero temperature.
+The usefulness of the real-time functions is in the treatment of non-equilibrium phenomena.
+
+The Matsubara method is unsuitable for the non-equilibrium since there is no thermodynamic basis for a system out of equilibrium.
+The entire Matsubara method is based on temperature, and no method has been found so far for extending it to nonequilibrium processes.
+
+The real-time functions at nonzero temperature have formal definitions very similar to those at zero temperature.
+Comparing with \eqref{2.144}, the Green's functions for electrons of momentum $\bp$ are
+\begin{eqnarray}
+    \cg^<(\bp,t_1,t_2) &=& i\langle C^\dagger_{\bp\sigma}(t_2) C_{\bp\sigma}(t_1) \rangle \nonumber \\
+    \cg^>(\bp,t_1,t_2) &=& -i\langle C_{\bp\sigma}(t_1) C_{\bp\sigma}^\dagger(t_2) \rangle \nonumber \\
+    \cg_t(\bp,t_1,t_2) &=& \Theta(t_1-t_2) \cg^>(\bp,t_1,t_2) + \Theta(t_2-t_1) \cg^<(\bp,t_1,t_2) \nonumber \\
+    \cg_{\bar{t}}(\bp,t_1,t_2) &=& \Theta(t_2-t_1) \cg^>(\bp,t_1,t_2) + \Theta(t_1-t_2) \cg^<(\bp,t_1,t_2)  \label{3.322}
+\end{eqnarray}
+These definitions appear to be identical to those at zero temperature.
+The definition of $\langle \dots \rangle$ have different meanings, depending on the circumstance:
+\begin{itemize}
+    \item At zero temperature, and in equilibrium, $\langle \dots \rangle$ denote the ground state of the interacting system
+    \item At nonzero temperature, and in equilibrium, the brackets denote the thermodynamic average as in \eqref{3.25} and \eqref{3.82}
+    \item When not in equilibrium, the brackets denote an average over the accessible phase space. However, the available phase space depends upon the recent history of the system, and kinetic constrains such as energy conservation. The meaning of brackets is poorly understood for system out of equilibrium.
+\end{itemize}
+Note in \eqref{3.322} that the Green's functions are not expressed on the difference of the time.
+This is only true for equilibrium system.
+
+In thermal equilibrium, the real-time functions each have a simple relation to the retarded function.
+Using the state $\ket{n}$ and $\ket{m}$, which are exact eigenstates of the Hamiltonian, we have\footnote{P120 and P155 in Mahan's book}
+\begin{eqnarray}
+    \cg^<(\bp,\omega) &=& i\eta_F(\omega) A(\bp,\omega) \label{3.325} \\
+    \cg^>(\bp,\omega) &=& - i \left[ 1-\eta_F(\omega) \right] A(\bp,\omega) \label{3.326} \\
+    \cg_t(\bp,\omega) &=& \left[ 1-\eta_F(\omega)\right] \cg_{ret}(\bp,\omega) + \eta_F(\omega) \cg_{adv}(\bp,\omega) \label{3.327} \\
+    \cg_{\bar{t}} (\bp,\omega) &=& -\left[1-\eta_F(\omega)\right] \cg_{adv}(\bp,\omega) - \eta_F(\omega) \cg_{ret}(\bp,\omega) \label{3.328}
+\end{eqnarray}
+These expression are identical to \eqref{2.160}.
+
+The primary usefulness of the real-time Green's functions is in the theory of non-equilibrium phenomena.
+The Dyson's equation is same as the result in zero temperature in \eqref{2.157}, and the matrices have the definition as in \eqref{2.156}.
+\marginnote{The \eqref{2.156},
+    \begin{eqnarray}
+        \tilde{G} =
+        \begin{bmatrix}
+            G_t & -G^<\\
+            G^> & -G_{\bar{t}}
+        \end{bmatrix}
+        ~ ~ ~ ~
+        \tilde{\Sigma} =
+        \begin{bmatrix}
+            \Sigma_t & -\Sigma^< \\
+  \Sigma^> & -\Sigma_{\bar{t}}
+  \end{bmatrix} \nonumber
+\end{eqnarray}
+and \eqref{2.157}
+\begin{eqnarray}
+    \tilde{G}(x_1,x_2) &=& \tilde{G}_0(x_1-x_2) \nonumber\\
+    &+& \int_{-\infty}^\infty dx_3 \int_{-\infty}^\infty dx_4 \tilde{G}_0(x_1-x_3) \nonumber \\
+    &\times& \tilde{\Sigma}(x_3,x_4) \tilde{G}(x_4,x_2) \nonumber
+\end{eqnarray}
+we use the $\tilde{tilde}$ to note this is a matrix.
+}
+
+Equation \eqref{2.157} is generally regarded as being the correct form for Dyson's equation, even for systems out of equilibrium.
+For systems in equilibrium, one can derive \eqref{2.157} at nonzero temperature by starting from Dyson's equation for the Matsubara Green's functions.
+Treating $\tau$ as a complex variable, on can deform the contour of integration, and end up with \eqref{2.157} \cite{Langreth1976}.
+Generally, \eqref{2.157} is used for Dyson's equation for nonzero temperature, for equilibrium and nonequilibrium, since there is nothing else available.
+
+Nonequilibrium theory usually proceeds by deriving equations of motion for the Green's function, which is similar to Boltzmann equation.
+The first step is to find an equation of motion for the interacting Green's function when it is not in equilibrium.
+Such an equation can be found from \eqref{2.157} by operating by $\left(i \frac{\partial}{\partial t} -H \right)$ on both sides of equation.
+By the form \eqref{2.144} and \eqref{2.148}, we have (by noting $\tilde{G}$ and the matrix form)
+\begin{eqnarray}
+    \left( i \frac{\partial}{\partial t} - \varepsilon_\bk \right) \tilde{G}_0 (\bk,t)  &=& \delta(t) \tilde{I}     \label{3.329} \\
+    \left( i \frac{\partial}{\partial t} - H_0(x) \right) \tilde{G}_0(x) &=& \delta^4(x) \tilde{I}      \label{3.330}
+\end{eqnarray}
+On the right-hand side of \eqref{2.157}, this operator acts only upon $\tilde{G}_0$ for which the above result is used to find
+\begin{equation}
+    \left( i \frac{\partial}{\partial t} - H_0(x) \right) \tilde{G}(x_1,x_2) = \delta^4(x_1-x_2) \tilde{I} + \int dx_3 \tilde{\Sigma}(x_1,x_3) \tilde{G}(x_3,x_2)       \label{3.331}
+\end{equation}
+This formula provides the equation of motion for the interacting Green's function.
+\textbf{It is the basis for the nonequilibrium theory of interacting systems}.
+For \eqref{3.331}, on the left-hand side, only the noninteracting terms are contained in the Hamiltonian $H_0$.
+The contribution from the interactions is provided by the self-energy functions on the right-hand side.
+
+It is useful to have an equation of motion for the variable $x_2$.
+Since the definition \eqref{2.144} of the Green's functions contains the conjugate wave function $\phi^\dagger(x_2)$, the equation of motion on this variable is the complex conjugate of Schrodinger's equation.
+Further, Dyson's equation can be written in an alternate form
+\begin{equation}
+    \tilde{G}(x_1,x_2) = \tilde{G}_0(x_1-x_2) + \int dx_3 \int dx_4 \tilde{G}(x_1,x_3) \tilde{\Sigma}(x_3,x_4) \tilde{G}_0 (x_4-x_2)
+\end{equation}
+and the alternate equation of motion for the Green's function
+\begin{equation}
+    \left( -i \frac{\partial}{\partial t}  - H_0(\mathbf{r}_2,-\bp_2) \right) \tilde{G}(x_1,x_2) = \delta^4(x_1-x_2) \tilde{I} + \int dx_3 \tilde{G}(x_1,x_3) \tilde{\Sigma}(x_3,x_2)   \label{3.332}
+\end{equation}
+The sign change on $\mathbf{p}_2$ comes from the complex conjugate of Schrodinger's equation.
+The operator $\mathbf{p}=-i\nabla$ changes sign under complex conjugation.
+This behavior is different from the Hermitian conjugate, where $H_0$ acts to the left on $\phi^\dagger(x_2)$ and $\mathbf{p}$ does not change sign.
+These two equations of motion will be used to develop a quantum Boltzmann equation for nonequilibrium phenomena.
+
+\subsection{Wigner Distribution Function}
+The traditional Boltzmann equation is expressed in terms of the distribution function $f(\mathbf{r},\mathbf{v},t)$.
+This is the semiclassical view since it is assumed that the position and velocity of the particle can be defined simultaneously.
+In order to use the distribution for quantum systems, it is necessary  to perform some averaging in order to remove effects due to the uncertainty principle.
+
+If quantum effects are important, it is necessary to introduce another variable into the distribution function.
+This is called \textbf{Wigner distribution function} $f(\bk,\omega;\mathbf{r},t)$.
+This distribution function is derived from the Green's function $G^<(x_1,x_2)$ defined in \eqref{2.144}.
+The Wigner distribution is derived by center-of-mass coordinate system
+\begin{eqnarray}
+    (\mathbf{R},T) &=& \frac{1}{2} (x_1+x_2)  \label{3.333} \\
+    (\br,t) &=& x_1 -x_2 \label{3.334}
+\end{eqnarray}
+with this notation
+\begin{equation}
+    G^<(\br,t; \mathbf{R},T) = i \langle \psi^\dagger(\mathbf{R}- \frac{1}{2} \br, T- \frac{1}{2} t) \psi(\mathbf{R}+ \frac{1}{2} \br,T + \frac{1}{2} t) \rangle      \label{3.335}
+\end{equation}
+with Fourier transformation
+\begin{equation}
+    f(\bk,\omega;\mathbf{R},T) = -i G^<(\bk,\omega;\mathbf{R},T)       \label{3.337}
+\end{equation}
+For the macroscopic quantities of particle density, particle current and energy density
+\begin{eqnarray}
+    n(\mathbf{R},T) &=& \int \frac{d^3 k}{(2\pi)^3} \int_{-\infty}^\infty \frac{d\omega}{2\pi}  f(\bk,\omega;\mathbf{R},T) \\
+    j(\mathbf{R},T) &=& \int \frac{d^3 k}{(2\pi)^3} \frac{\bk}{m} \int_{-\infty}^\infty \frac{d\omega}{2\pi}  f(\bk,\omega;\mathbf{R},T) \label{3.338} \\
+ n_E(\mathbf{R},T) &=& \int \frac{d^3 k}{(2\pi)^3} \int_{-\infty}^\infty \frac{d\omega}{2\pi} \omega f(\bk,\omega;\mathbf{R},T) \nonumber \\
+    &=&i\left[ \frac{\partial}{\partial t} \langle \psi^\dagger(\mathbf{R},T- \frac{1}{2} t) \psi(\mathbf{R},T+ \frac{1}{2} t) \rangle \right]_{t=0} \nonumber \\
+    &=& \langle \psi^\dagger(\mathbf{R},T) H \psi(\mathbf{R},T) \rangle     \label{3.339}
+\end{eqnarray}
+Then the technique for solving nonequilibrium problems is simple.
+The equation of motion in \ref{3.331} and \ref{3.332} for $G^<(\bk,\omega;\mathbf{R},T)$ is just the \textbf{quantum Boltzmann equation}.
+With solving the equations, the Wigner distribution function is yielded and the macroscopic variables can be calculate by the integrals above.\footnote{The current is 0 if the system in equilibrium state, since a system carrying current in steady state but not in equilibrium state.}
+
+The semiclassical Boltzmann distribution function $f(\mathbf{R},\mathbf{v},T)$ is found by taking the frequency integral
+\begin{equation}
+    f(\mathbf{R},\mathbf{v},T) = \int_{-\infty}^\infty \frac{d \omega}{2\pi} f(m\mathbf{v},\omega;\mathbf{R},T)     \label{3.340}
+\end{equation}
+This method of deriving the semiclassical Boltzmann equation is an alternative to the usual technique of \textbf{coarse grain averaging}.
+
+The matrix equation in \eqref{3.331} and \eqref{3.332} can be untangled to present the individual equation of motion for separate Green's function.\footnote{P159}
+
+The Wigner density function is not positive definite and can not interpreted as a probability density.
+This feature can be shown by a simple example, a particle in one dimensional box of length $L$.
+The eigenvalues and eigenfunction are
+\begin{eqnarray}
+    &&\phi_n(x) = \sqrt{ \frac{2}{L} } \sin(k_n x), ~ ~ \varepsilon_n = \varepsilon n^2 \label{3.343} \\
+    && k_n = \frac{n\pi}{L} , ~ ~ \varepsilon = \frac{\pi^2}{2mL^2}  \label{3.344}
+\end{eqnarray}
+Using the representation in \eqref{2.147} and setting $t = t_1 -t_2$, gives
+\begin{equation}
+    G^<(x_1,x_2,t) = \frac{2i}{L} \sum_n \eta_F(\varepsilon_n) \sin(k_n x_1) \sin(k_nx_2) e^{-it \varepsilon n^2}   \label{3.345}
+\end{equation}
+With the Fourier transform of time gives the function of frequency.
+Since the system is equilibrium, write $G^< = i\eta_F(\omega)A$.
+In the center-of-mass notation
+\begin{eqnarray}
+    f(x,\omega;X) &=& \eta_F(\omega) A(x,\omega;X)  \label{3.346} \\
+    A(x,\omega;X) &=& \frac{2\pi}{L} \sum_n \left[ \cos(k_n x) - \cos(2k_n X) \right] \delta(\omega-\varepsilon n^2)    \label{3.347}
+\end{eqnarray}
+where $x= x_1-x_2$ and $X= (x_1+ x_2)/2$.
+The function $A$ is a sum of delta function with different sign.

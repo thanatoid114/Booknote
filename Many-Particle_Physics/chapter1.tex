@@ -1,0 +1,229 @@
+\chapter{Introductory Material}
+
+\section{Harmonic oscillators and phonons}{se:1.1}
+First quantization in physics refers to the property of particles that certain operators do not commute
+\begin{eqnarray}
+    \left[ x, p_x \right] &=& i\hbar  \label{1.1} \\
+    E &\to& i\hbar \frac{\partial}{\partial t}  \label{1.2}
+\end{eqnarray}
+For the second quantization, the basic idea is that forces are caused by the exchange of particle, and the number of particles is quantized, for example photons for electromagnetic force.
+
+In solids the quantized vibrational modes of the atom are quantized because of the first quantization \eqref{1.1}.
+This vibrational modes are called \textbf{phonons}.
+An electron can interact with a phonon, and this phonon can travel to another electron, interact, and thereby cause an indirect interaction between electrons.
+The induced interaction between electrons is an example of second quantization.
+They cause quantized interactions between electrons.
+
+Phonons in solids can usually be described as harmonic oscillators.
+\begin{equation}
+    H = \frac{p^2}{2m} + \frac{K}{2} x^2 \label{1.3}
+\end{equation}
+Introducing the dimensionless coordinate $\xi$
+\begin{eqnarray}
+    \omega^2 &=& \frac{K}{m} \label{1.4}    \\
+    \xi &=& x \sqrt{ \frac{m\omega}{\hbar} }     \label{1.5} \\
+    -i \frac{\partial}{\partial \xi}  &=& \frac{p}{\sqrt{\hbar m \omega}} \label{1.6} \\
+    H &=& \frac{\hbar \omega}{2} \left( - \frac{\partial^2}{\partial \xi^2} + \xi^2 \right) \label{1.7}
+\end{eqnarray}
+The harmonic oscillator Hamiltonian has a solution in therms of Hermit polynomials.
+\begin{equation}
+    H\psi_n = \hbar \omega(n+ \frac{1}{2} ) \psi_n   \label{1.8}
+\end{equation}
+Using the Dirac notation, the matrix elements for operators $x$ and $p$
+\begin{eqnarray}
+    \bra{n'}x\ket{n} &=& \sqrt{ \frac{\hbar}{2m\omega} } \left[\sqrt{n'}\delta_{n'}^{n+1} + \sqrt{n}\delta_{n'}^{n-1} \right] \nonumber \\
+    \bra{n'}p\ket{n} &=& i\sqrt{ \frac{m\hbar\omega}{2} } \left[\sqrt{n'}\delta_{n'}^{n+1} - \sqrt{n}\delta_{n'}^{n-1} \right] \label{1.9}
+\end{eqnarray}
+For creation operators
+\begin{eqnarray}
+    a &=& \frac{1}{\sqrt{2}} \left( \xi + \frac{\partial}{\partial \xi} \right) = \sqrt{ \frac{m\omega}{2\hbar} } \left( x + \frac{ip}{m\omega} \right)   \nonumber \\
+    a^\dagger &=& \frac{1}{\sqrt{2}} \left( \xi - \frac{\partial}{\partial \xi} \right) = \sqrt{ \frac{m \omega}{2 \hbar} } \left( x - \frac{ip}{m\omega} \right)   \label{1.10}
+\end{eqnarray}
+with commutation relations
+\begin{equation}
+    \left[ a, a^\dagger \right] = 1     \label{1.18}
+\end{equation}
+The eigenstate of \eqref{1.8} are
+\begin{equation}
+    \ket{n} = \frac{(a^\dagger)^n}{\sqrt{n!}} \ket{0} \label{1.22}
+\end{equation}
+and with
+\begin{equation}
+    a^\dagger\ket{n} = \sqrt{n+1} \ket{n+1} ~ ~ ~ a \ket{n} = \sqrt{n} \ket{n-1}    \label{1.28}
+\end{equation}
+
+The time dependence of these operator is, in Heisenberg representation of quantum mechanics
+\begin{equation}
+    O(t) = e^{iHt}Oe^{-iHt}~ ~ ~ \frac{\partial O(t)}{\partial t} = i \left[ H, O(t) \right] ~ \label{1.33}
+\end{equation}
+This suggest that
+\begin{equation}
+    a(t) = a \exp(-i\omega t) ~ ~ ~ a^\dagger(t) = a^\dagger \exp(i\omega t) \label{1.36}
+\end{equation}
+The time development of the position operator can be represented as
+\begin{equation}
+    x(t) = \sqrt{ \frac{\hbar}{2m\omega} } \left(a e^{-i\omega t} + a^\dagger e^{i\omega t} \right)     \label{1.37}
+\end{equation}
+
+Another problem is the charged harmonic oscillator in a constant electric field $F$
+\begin{eqnarray}
+    H &=& \frac{p^2}{2m} + \frac{K}{2} x^2 + eFx = \hbar \omega (a^\dagger a + \frac{1}{2} ) + \lambda(a+ a^\dagger)  \label{1.38} \\
+    \lambda &=& eF \sqrt{ \frac{\hbar}{2m \omega} } \label{1.39}
+\end{eqnarray}
+This Hamiltonian may be solved exactly.
+Consider the equation of motion for the time development
+\begin{equation}
+    \frac{\partial a}{\partial t} = i \left[ H, a\right] = - i \left( \omega a + \lambda \right)    \label{1.40}
+\end{equation}
+The right hand side is no longer just proportional to $a$, however, by define the new operators
+\begin{eqnarray}
+    A &=& a + \frac{\lambda}{\omega}  \label{1.41} \\
+    A^\dagger &=& a^\dagger + \frac{\lambda}{ \omega}   \label{1.42} \\
+    \frac{\partial A}{\partial t} &=& - i\omega A \label{1.43} \\
+    A(t) &=& e^{-i \omega t} A    \label{1.44} \\
+    A^\dagger (t) &=& e^{i\omega t} A^\dagger   \label{1.45}
+\end{eqnarray}
+This new operators have same properties of the Harmonic oscillator ones
+\begin{equation}
+    H = \omega \left( A^\dagger A + \frac{1}{2} \right) - \frac{\lambda^2}{\omega}  \label{1.50}
+\end{equation}
+with the eigenstate
+\begin{eqnarray}
+    H\ket{n} &=& \left[ \omega \left( n + \frac{1}{2} \right) - \frac{\lambda^2}{\omega} \right] \ket{n}    \label{1.51} \\
+    \ket{n} &=& \frac{(A^\dagger)^n}{\sqrt{n!}} \ket{0} \label{1.52}
+\end{eqnarray}
+The position operator for this case is
+\begin{equation}
+    x(t) = \sqrt{ \frac{\hbar}{2m\omega} } \left( Ae^{-i\omega t} + A^\dagger e^{i\omega t} - \frac{2\lambda}{\omega} \right)   \label{1.53}
+\end{equation}
+The spring stretches to a new equilibrium point which is displaced a distance
+\begin{equation}
+    x_0 = \sqrt{ \frac{\hbar}{2m\omega} } \frac{2\lambda}{\omega} = - \frac{eF}{K} \label{1.54}
+\end{equation}
+from the original one.
+This oscillator is in new equilibrium with the same frequency $\omega$ as before and still quantized in the unit of $\omega$.
+The energy $ \frac{-\lambda^2}{\omega} = \frac{-e^2 F^2}{2K} $ is that gain by spring from the displacement along the electric field.
+One can also get the same result by rewrite the Hamiltonian  as
+\begin{equation}
+    H = \frac{p^2}{2m} + \frac{K}{2} \left( x + \frac{eF}{K} \right)^2 - \frac{e^2F^2}{2K}  \label{1.55}
+\end{equation}
+
+In a solid system, there are many atoms, which mutually interact.
+The vibrational modes are collective motions involving many atoms.
+A simple introduction to this is by studying the normal modes of a one-dimensional harmonic chain
+\begin{equation}
+    H = \sum_i \frac{p_i^2}{2m } + \frac{K}{2} \sum_i \left( x_i - x_{i+1} \right)^2    \label{1.57}
+\end{equation}
+The classical solution is obtained by solving the equation of motion
+\begin{equation}
+    - m \ddot{x}_j = m \omega^2 x_j = K(2x_j -x_{j+1} - x_{j-1} )   \label{1.58}
+\end{equation}
+A solution is assumed of the form $x_j = x_0 \cos(k a j )$ and the force term becomes
+\begin{equation}
+    2 x_j - x_{j+1} - x_{j-1} = 2x_0 \cos(k a j) \left[ 1 - \cos(k a) \right]
+\end{equation}
+The normal modes have the solution
+\begin{equation}
+    \omega_k^2 = \frac{2K}{m} \left[ 1- \cos(k a) \right] = \frac{4K}{m} \sin^2( \frac{k a}{2} )    \label{1.59}
+\end{equation}
+The quantum mechanical solution begins by defining some normal coordinates, assuming periodic boundary condition
+\begin{eqnarray}
+    x_l &=& \frac{1}{\sqrt{N}} \sum_k e^{ikal} x_k; ~ ~ ~ x_k = \frac{1}{\sqrt{N}} \sum_l e^{-ikal} x_l \\
+    p_l &=& \frac{1}{\sqrt{N}} \sum_k e^{-ikal} p_k; ~ ~ ~ p_k = \frac{1}{\sqrt{N}} \sum_l e^{ikal} p_l \label{1.60}
+\end{eqnarray}
+This choice maintains the desired commutation relations in either \textbf{real and wave vector} space
+\begin{eqnarray}
+    \left[x_l, p_m\right] &=& i \delta_{lm}~ ~ ~ \mathrm{real space} \label{1.61}   \\
+    \left[x_k, p_p\right] &=& i \delta_{kp} \label{1.63}
+\end{eqnarray}
+It is easy to show that the Hamiltonian may written in wave vector space as\footnote{
+    Since, $\sum_l x_l x_{l+m} = \sum_k x_k x_{-k} e^{iamk}$ and $\sum_k p_l^2 = \sum_k p_k p_{-k}$ and the definition \eqref{1.59}.
+}
+\begin{equation}
+    H = \frac{1}{2m}  \sum_k \left[ p_k p_{-k} + m^2 \omega_k^2 x_k x_{-k} \right]  \label{1.64}
+\end{equation}
+The Hamiltonian has the form of a simple harmonic oscillator for each wave vector. Define the creation and destruction operators as
+\begin{eqnarray}
+    a_k &=& \sqrt{ \frac{m\omega_k}{2\hbar}}  \left( x_k + \frac{i}{m\omega_k} p_{-k} \right)  \label{1.65}  \\
+    a^\dagger_k &=& \sqrt{ \frac{m\omega_k}{2\hbar} }  \left( x_k - \frac{i}{m\omega_k} p_{-k} \right)  \label{1.66}
+\end{eqnarray}
+Where they obey the commutation relations and have the same Hamiltion in the form of Harmonic oscillator.
+These collective modes of vibration are called \textbf{phonons}.
+They are the quantized version of the classical vibrational modes in the solid.
+There are the same commutator relations and Hamiltonian as in the simple harmoic oscillator.
+Each wave vector state behaves independently, with a possible set of quantum numbers $n_k=0,1,2,\dots$.
+The state of the system at any time is
+\begin{equation}
+    \psi = \ket{n_1,n_2,\dots,n_n} = \Pi_k \ket{n_k} = \Pi_k \frac{(a^\dagger_k)^{n_k}}{\sqrt{n_k !}} \ket{0}   \label{1.71}
+\end{equation}
+with expectation value of Hamiltonian
+\begin{equation}
+    H= \sum_k \omega_k (n_k + \frac{1}{2})  \label{1.72}
+\end{equation}
+In thermal equilibrium the states have an averge value of $n_k$
+\begin{equation}
+    \langle n_k \rangle \equiv N_k = \frac{1}{e^{\beta \omega_k}-1} \label{1.73}
+\end{equation}
+
+The position operator in wave vector and real space is
+\begin{eqnarray}
+    x_k(t) &=& \sqrt{ \frac{\hbar}{2m\omega_k} } \left(a_k e^{-i\omega_k t} + a^\dagger_{-k} e^{i\omega_k t} \right) \nonumber \\
+    x_l(t) &=&  \sqrt{ \frac{\hbar}{2mN\omega_k} }e^{ikal} \left(a_k e^{-i\omega_k t} + a^\dagger_{-k} e^{i\omega_k t} \right)    \label{1.74}
+\end{eqnarray}
+Often the term $mN$ is replaced by the quantity $mN = \rho V$, the mass density and volume.
+Where the following notations are well know
+\begin{eqnarray}
+    \lim_{V\to \infty} \frac{1}{V} \sum_\bk f(\bk) &=& \int \frac{d^3 k}{8\pi^3} f(\bk)   \label{1.75} \\
+    \lim_{V\to \infty} \delta_{\bk,\bk'} &=& \frac{8\pi^3}{V} \delta(\bk-\bk')    \label{1.78}
+\end{eqnarray}
+
+The quantum mechanical solution \eqref{1.64} has the same frequencies as found in the classical solution \eqref{1.58}.
+Quantum mechanics only enters in a quantization of the amplitude of the oscillation.
+The phonons occur in discrete numbers with zero, one, two, ..., phonons in state $\bk$.
+
+In three-dimensional solids, the theroy is nearly identical except there are more indices.
+Suppose there is a potential function between atoms or ions of the form
+\begin{equation}
+    \sum_{ij} V(R_i - R_j)  \label{1.79}
+\end{equation}
+where $R_i$ is the position of an atom.
+Let $R_i^0$ as the equilibrium position and $Q_i$ as the displacement from equilibrium.
+The potential function is expanded in a Taylor series about the equilibrum position
+\begin{eqnarray}
+    V(R_i-R_j) &=& V(R_i^0 - R_j^0) + (Q_i - Q_j) \nabla V(R_i^0 - R_j^0) \nonumber \\
+    &+& \frac{1}{2} (Q_i - Q_j)_\mu (Q_i - Q_j)_\nu \frac{\partial^2}{\partial R_\mu \partial R_\nu}  V(R^0_i - R^0_j) \nonumber \\
+    &+& O(Q^3)  \label{1.81}
+\end{eqnarray}
+The linear term in displacement vanishes, because of the definition of equilibrium point give the summation of forces is zero.
+The important term is the one which is quadratic in the displacement.
+It gives the potential eqnergy of the phonons
+\begin{eqnarray}
+    V_{ph} = \frac{1}{2} \sum_{ij} (Q_i-Q_j)_\mu (Q_i-Q_j)_\nu \Phi_{\mu\nu}(R_i^0 - R_j^0)     \label{1.83}
+\end{eqnarray}
+The interaction is evaluated in wave vector space by trying an expansion of the form
+\begin{equation}
+    Q_i(t) = i \sum_{\bk,\lambda} \sqrt{ \frac{\hbar}{2MN \omega_{\bk\lambda}} } \xi_{\bk,\lambda} \left( a_{\bk,\lambda} e^{-\omega_{\bk\lambda t}} + a^\dagger_{-\bk,\lambda} e^{i\omega_{\bk\lambda t}} \right) e^{i \bk \cdot R_i^0} \label{1.85}
+\end{equation}
+where $M$ is the ion mass.
+The faction of $i$ on the right-hand side of the equation is required to make $Q_i^\dagger = Q_i$ since it represents a real displacement in space.
+To make \eqref{1.85} id Hermitian it requires that
+\begin{equation}
+    \xi^*_{\bk,\lambda} = - \xi_{-\bk,\lambda}   \label{1.86}
+\end{equation}
+The polarization vector $\xi_{\bk,\lambda}$ are assumed to be real but change sign with $\bk$ direction, $\xi_{-\bk} = -\xi_\bk$ and the above identity is satisfied.
+Since the displacement is in three diemnsions, there are $3L$ normal modes for each value of wave vector.
+Where $L$ is the number of atoms per unit cell of the crystal.
+THhe index $\lambda$ runs over these $3L$ values of normal mode.
+Each mode has its own eigenfrequency.
+It will also have a polarization vector $\xi_{\bk,\lambda}$ which specifies the bibrational direction of the ion for each wave vector and mode $\lambda$.
+If there are more than one atom per unit cell, one should add further subscripts to $M$ and $\xi_{\bk,\lambda} $ to specify the values for each atom per unit cell.
+
+The right-hand side of \eqref{1.81} may be written as
+\begin{equation}
+    = \sum_{ij} V(R^0_i - R^0_j) + \frac{M}{2} \sum_{\bk,\lambda} Q_{\bk,\lambda} Q_{-\bk,\lambda} \omega_{\bk\lambda}^2    \label{1.87}
+\end{equation}
+The first term is a constant which will be neglected in discussion of vibrational modes.
+THe eigenvalues $\omega_{\bk\lambda}$ are thoes solved in the harmoic approximation.
+In this approximation, one retains the quadratic term only in the displacements in the Hamiltonian.
+To be more careful, a third order anharmonic term $V_3$ can be added for the case of one atom per unit cell\footnote{P10}.
+The cubic terms $V_3$ permit on phonon to decay into two and vice versa.
