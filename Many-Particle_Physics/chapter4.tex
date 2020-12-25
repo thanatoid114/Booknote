@@ -1,0 +1,173 @@
+\chapter{Exactly Solvable Models}
+
+\section{Potential Scattering} \label{s4.1}
+A very simple problem is an impurity potential $V(r)$ in an otherwise free-particle system.
+All other interactions are ignored except that of the free particles with the impurity, which is assumed to be at the origin.
+The potential is assumed to have no internal structure, and spherically symmetric.
+
+The wave function for each particle may be obtained by solving a one-electron Schr{\"o}dinger equation
+\begin{equation}
+    H \psi_\lambda = \left[ - \frac{\hbar^2}{2m} \nabla^2 + V(r) \right] \psi_\lambda = \varepsilon_\lambda \psi_\lambda     \label{4.1}
+\end{equation}
+
+In many-body theory, the impurity problem is usually encountered as a scattering center.
+The free-particle states are plane wave
+\begin{equation}
+    \psi(\br) = \frac{1}{\sqrt{v}} \sum_\bk C_{\bk\sigma} e^{i\bk \br}      \label{4.2}
+\end{equation}
+The Hamiltonian is expressed (without spin index) \footnote{Be careful about the notation of the Fourier transform \eqref{2.145}.}
+\begin{eqnarray}
+    H &=& \sum_\bk C_\bk^\dagger C_\bk + \frac{1}{v} \sum_{\bk\bk'} V_{\bk\bk'} C^\dagger_\bk C_{\bk'}  \label{4.3} \\
+    V_{\bk\bk'} &=& \int d^3 r V(r) e^{-i\br(\bk-\bk')} = V(\bk-\bk')   \label{4.4}
+\end{eqnarray}
+The object is to diagonalize the Hamiltonian \eqref{4.3}, which the solutions are of course given by \eqref{4.1}.
+However, the problem is not entirely solved.
+Since the equation is second order, it has two solution.
+These may be chosen as the ingoing and outgoing waves, or by combination give standing waves.
+The choices must be related to the scattering problem implied in \eqref{4.3}.
+
+The integral equation for the wave function is
+\begin{eqnarray}
+    \psi_\bk(\br) &=& \phi_\bk(\br) + \sum_{\bk'} \frac{\phi_{\bk'}(\br)}{\varepsilon_k - \varepsilon_{k'}} \int d^3r' \phi^*_{\bk'}(\br') V(r') \psi_\bk(\br') \label{4.5} \\
+    \psi_\bk (\br) &=& \frac{1}{\sqrt{v}} e^{i \bk \br} \label{4.6} \\
+\varepsilon_k &=& \frac{\hbar^2 k^2  }{2m}  \label{4.7}
+\end{eqnarray}
+This form of the integral equation is valid for the free-particle states with energy $\varepsilon_k$.
+For bound states, the energy is changed to the binding energy $\varepsilon_k \to -\varepsilon_B$ where $\varepsilon_B >0$ and the term $\psi_\bk$ on the right is absent.
+
+To prove \eqref{4.5} is equivalent to \eqref{4.1}. Operate on both sides of the equation by $H_0 - \varepsilon_k$,
+\begin{equation}
+    (H_0 -\varepsilon_k) \psi_\bk = (H_0 -\varepsilon_k) \phi_\bk + \sum_{\bk'} \frac{(H_0-\varepsilon_k) \phi_{\bk'}(\br)}{\varepsilon_k - \varepsilon_{k'}} \int d^3 r'\phi^*_{\bk'}(\br') V(r') \psi_\bk(\br)
+\end{equation}
+this gives
+\begin{equation}
+    (H_0 - \varepsilon_k) \psi_\bk = - \sum_{\bk'} \phi_{\bk'}(\br) \int d^3 r' \phi^*(\br') V(r') \psi_\bk(\br')   \label{4.9}
+\end{equation}
+The completeness relation for the summation over the set of states is
+\begin{eqnarray}
+    \sum_{\bk'} \phi_{\bk'} (\br) \phi_{\bk'}^* (\br') &=& \delta (\br- \br')   \label{4.10} \\
+    (H_0 -\varepsilon_k) \psi_\bk &=& -V(r) \psi_\bk(\br) \label{4.11}
+\end{eqnarray}
+Then we have the desired answer
+\begin{equation}
+    (H_0 + V -\varepsilon_k) \psi_\bk (\br) = 0     \label{4.12}
+\end{equation}
+
+About the boundary conditions, the differential equation \eqref{4.1} is second order, so there are two independent solutions.
+One choice is to have the wave function a standing wave.
+This leads to the reaction matrix equation.
+The other choices are the have the wave function an incoming wave or an outgoing wave, which leads to T-matrix theory.
+The integral equation \eqref{4.5} is a convenient starting point for discussion of boundary conditions, since the various choices of standing, outgoing, or ingoing waves are determined only by the complex part of the energy denominator.
+The factor $\varepsilon_k - \varepsilon_{k'}$, for standing waves, so that the principal part is chosen for the denominator.
+The factor is $\varepsilon_k - \varepsilon_{k'} + i\delta$ for outgoing waves, and $\varepsilon_k -\varepsilon_{k'} - i \delta$ for ingoing waves.
+
+\subsection{Reaction Matrix}
+Here the energy denominator is chosen to be real and given by principal part.
+The free-particle Green's function is then defined as
+\begin{eqnarray}
+    G_0(\bk,\br-\br') &=& P \sum_{\bk'} \frac{\phi_{\bk'}(\br) \phi^*_{\bk'}(\br')}{\varepsilon_k - \varepsilon_{k'}} = \frac{P}{v} \sum_{\bk'} \frac{e^{i\bk'(\br-\br')}}{\varepsilon_k - \varepsilon_{k'}}    \label{4.13} \\
+    &=& P \int \frac{d^3 k'}{(2\pi)^3} \frac{e^{i\bk'(\br-\br')}}{\varepsilon_k - \varepsilon_{k'}}     \label{4.14}
+\end{eqnarray}
+The integral is standard and gives
+\begin{equation}
+    G_0(\bk,\br-\br') = \pi \rho(k) \frac{\cos \left[k \abs{\br-\br'} \right]}{k\abs{\br-\br'}}     \label{4.15}
+\end{equation}
+Where the density of stats of the particles
+\begin{equation}
+    \rho(k) = \int \frac{d^3 k'}{(2\pi)^3} \delta(\varepsilon_k - \varepsilon_{k'})   = \frac{mk}{2\hbar^2 \pi^2}   \label{4.16}
+\end{equation}
+The Green's function may be expanded as a function of $\br$ and $\br'$
+\begin{equation}
+    G_0(\bk,\br-\br') = \pi \rho(k) \sum_l (2l+1) P_l(\hat{\br}\hat{\br'}) j_l(k r_<) \eta_l(k_>)    \label{4.17}
+\end{equation}
+where the notation $r_<$ is the smaller of $\br$ and $\br'$.
+The $j_l(kr)$ and $\eta_l(kr)$ are the spherical Bessel functions of the first and second kind, and $P_l(\cos \theta)$ are the Legendre functions.
+\footnote{
+\href{https://en.wikipedia.org/wiki/Bessel_function}{wiki:Bessel function} and
+\href{https://en.wikipedia.org/wiki/Legendre_function}{wiki:Legendre function}
+}
+With \eqref{4.5}, we have
+\begin{equation}
+    \psi_\bk(\br) = \phi_\bk(\br) + \int d^3 r' G_0(\bk,\br-\br') V(r') \psi_\bk(\br')  \label{4.18}
+\end{equation}
+An important identity is the following, introducing the \textbf{angular momentum components $l$}, the plane wave may be expanded as
+\begin{equation}
+    e^{i\bk\cdot \br} = \sum_{l} \left( 2l+1 \right) i^l P_l(\hat{k}\cdot \hat{r}) j_l(kr)  \label{4.19}
+\end{equation}
+for the actual wave function
+\begin{equation}
+    \psi_\bk(\br) = \sum_l \left( 2l+1 \right) i^l P_l(\hat{k} \cdot \hat{r}) R_l(kr)   \label{4.20}
+\end{equation}
+The radial function $R_l(kr)$ satisfied the \textbf{radial Schr{\"o}dinger equation} of the form
+\begin{equation}
+    - \frac{\hbar^2}{2m} \left[ \frac{1}{r^2} \frac{\partial}{\partial r} r^2 \frac{\partial R}{\partial r} \frac{l(l+1)}{r^2} R \right] + \left[ V(r) - \varepsilon_k \right] R = 0    \label{4.21}
+\end{equation}
+which does not determine the boundary conditions.
+Using the fact that,
+\begin{equation}
+    \int d \Omega_r P_l(\hat{k}\cdot\hat{r}) P_m(\hat{r}\cdot\hat{p}) = \frac{4\pi}{2l+1} \delta_{lm} P_l(\hat{k}\cdot\hat{p})  \label{4.22}
+\end{equation}
+to reduce the equation down to one which involves only the same angular momentum component,
+\begin{eqnarray}
+    R_l(kr) &=& j_l(kr) + 4\pi^2 \rho(k)  \int_0^\infty r'^2 dr' j_l(kr_<) \eta_l(kr_>) V(r') R_l(kr') \nonumber \\
+    &=& j_l(kr) + 4\pi^2 \rho(k) \left[ \eta_l(kr) \int_0^r r'^2 dr' j_l(kr') V(r') R_l(kr') \right. \nonumber \\
+    &~ ~ &  + \left. j_l(kr) \int_r^\infty r'^2 dr' \eta_l(kr') V(r') R_l(kr') \right] \label{4.23}
+\end{eqnarray}
+It is important that the potential is spherically symmetric.
+Otherwise the scattering term would mix angular momentum components, which make it hard to solve.
+
+The solution is examined in the limit as $kr\to \infty$.
+From \eqref{4.21} it can be shown that the radial wave function must asymptotically approach the value
+\begin{equation}
+    \lim_{kr\to \infty} R_l(kr) \to \frac{C_l(k)}{kr} \sin \left[kr + \delta_l(k) - \frac{l\pi}{2}  \right] \label{4.24}
+\end{equation}
+The prefactor $C_l$ is determined below. The asymptotic limit of the integral equation \eqref{4.23} is
+\begin{equation}
+    \lim R_l(kr) \to j_l(kr) + D_l(k) \eta_l(kr) \to \frac{\sin(kr-l\pi/2)}{kr} - D_l \frac{\cos(kr- l\pi/2)}{kr}   \label{4.25}
+\end{equation}
+where
+\begin{equation}
+    D_l(k) = 4\pi^2 \rho(k) \int_0^\infty r^2 dr j_l(kr) V(r) R_l(kr)   \label{4.26}
+\end{equation}
+The potential $V(r)$ is assumed to be of short range: \textbf{It falls off faster than $r^{-2}$ at large distance}.
+The scattering is then described by a phase shift $\delta_l(k)$ which depends on angular momentum and wave vector.
+The two asymptotic expansions \eqref{4.24} and \eqref{4.25} must be identical, which means
+\begin{equation}
+    D_l = - \tan (\delta_l) = 4\pi^2 \rho(k) \int_0^\infty r^2 dr j_l(kr) V(r) R_l(kr)  \label{4.27}
+\end{equation}
+The complicated integral just defines the tangent of the phase shift. Then \eqref{4.25} becomes
+\begin{equation}
+    \lim_{kr\to\infty} R_l(kr) \to \frac{1}{kr\cos(\delta)} \left[\cos(\delta) \sin(kr-l\pi/2) + \sin(\delta) \cos(kr-l\pi/2) \right] = \frac{\sin(kr + \delta_l l\pi/2)}{kr \cos(\delta_l)} \label{4.28}
+\end{equation}
+The normalization coefficient in \eqref{4.24} is
+\begin{equation}
+    C_l = \frac{1}{\cos(\delta_l)}  \label{4.29}
+\end{equation}
+When solving the radial wave function \eqref{4.21}, the solution is obtained which is will behaved at the origin.
+This solution is followed outward in $r$ until the region is reached where $V(r) \approx 0$ and the centrifugal barrier $\hbar^2 l (l+1)/(2mr^2)$ is small.
+Then the solution has the form \eqref{4.24} with $C_l = 1/\cos(\delta_l)$.
+The wave function is now properly normalized at large $r$, and by following it back toward the origin it is normalized everywhere.
+These steps provide the proper solution to the scattering equation \eqref{4.5} which was the starting point in the calculation.
+
+The reaction matrix is defined as the quantity
+\begin{equation}
+    R_{\bk' \bk} = \int d^3 \phi^*_{\bk'}(\br) V(r) \psi_\bk(\br)  \label{4.30}
+\end{equation}
+Expanding in angular momentum state by using the expansions for the wave function and the plane wave, the angular integrals give
+\begin{equation}
+    R_{\bk'\bk} = 4\pi \sum_l(2l+1) P_l(\hat{k}\cdot \hat{k'} ) R_l(k',k)   \label{4.31}
+\end{equation}
+where the radial integral is
+\begin{equation}
+    R_l(k',k) = \int_0^\infty r^2 dr j_l(k'r) V(r) R_l(kr)  \label{4.32}
+\end{equation}
+It is defined for the general case where $k' \neq k$.
+And if they are equal, the answer is just \eqref{4.27}
+\begin{equation}
+    R_l(k,k) = -\frac{\hbar^2 \tan(\delta_l)}{2mk}  \label{4.33}
+\end{equation}
+
+The reaction matrix obeys an integral equation which is deduced by putting \eqref{4.30} into the integral equation \eqref{4.5} for $\psi_\bk(\br)$
+\begin{equation}
+    R_{\bk'\bk} = V_{\bk'\bk} + P \sum_{\bk_1} \frac{V_{\bk'\bk_1} R_{\bk_1 \bk}}{\varepsilon_k -\varepsilon_{k_1}} \label{4.34}
+\end{equation}

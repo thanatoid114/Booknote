@@ -1,0 +1,107 @@
+chapter{Optical Properties of Solids}
+
+\section{Wannier Excitons}\label{s9.2}
+%
+\subsection{The Model}
+Exciton states play an extremely important role in the understand of interband transitions in semiconductors.
+The word exciton is used to signify the modification of the \textit{absorption rate of phonons due the the Coulomb interaction between the electron and the valenec band hole}.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \node at (-1.5,4.5) {a};
+        \draw [->] (0,0) -- (0,4);
+        \draw [->] (-1,0.2) -- (1,0.2);
+        \node [below] at (1,0.2) {$k$};
+        \draw (-1.5,0) .. controls (-0.25,2) and (0.25,2) .. (1.5,0);
+        \draw (-1.5,4) .. controls (-0.25,2) and (0.25,2) .. (1.5,4);
+        \draw (0,1.525) -- (1,1.525);
+        \node [right] at (1,1.55) {$E=0$};
+        \draw [->] (-1,0.9) -- (-1,3.1);
+        \node at (3,4.5) {b};
+        \draw [snake it] (3,0)--(3,2);
+        \draw [middlearrow=latex] (3,2) -- (2,3);
+        \draw [middlearrow=latex] (3,2) -- (4,3);
+        \node [above] at (2,3) {$e^-$};
+        \node [above] at (4,3) {$h^+$};
+    \end{tikzpicture}
+    \caption{Optical transition in a semiconductor between occupied valence band and empty conduction band for a direct transition. (a) Conventional band picture; (b) Wannier picture where the photon makes an electron-hole.}%
+    \label{fig:9.6}
+\end{figure}
+%
+The easiest case is shown in Fig.\ref{fig:9.6}(a), the interband transition is direct.
+The valance band states are all filled and the conduction band states are all empty.
+The vertical arrow show a possible interband transition which can occur when a photon is absorbed in the solid.
+The valence state is shown as nondegenerate (except for spin) at $\bk=0$, although that is seldom the case; usually the band has an orbital degeneracy and is anisotropic.
+
+\textit{The point of view in Fig.\ref{fig:9.6}(a) is a single-particle picture of the transition process}.
+The transition rate for the absorption of photons is given by golden rule
+\begin{eqnarray}
+    A(\omega) &=& \frac{2\pi}{\hbar V} \sum_{\bk \bk'} \abs{ \bra{c,\bk'} \hat{\varepsilon} \cdot \bp \ket{v,\bk} }^2 \delta \left[\varepsilon_v(\bk) + \hbar \omega - \varepsilon_c(\bk') \right]      \label{9.73} \\
+    \varepsilon_v(\bk) &=& - \frac{k^2}{2m_v},  ~ ~ ~ ~ \varepsilon_c(\bk) = E_g + \frac{k^2}{2m_c}  \label{9.74}
+\end{eqnarray}
+The energy zero is chosen to be the top of the valence band.
+The matrix element is between the one-electron initial and final states.
+The wave function are taken to be Bloch function $u_{\bk}(\br) \otimes\exp(i\bk \br)$.
+For discussion reason assume the cell-periodic parts as independent of wave vector $\bk$, and assumed that the valance band has $p$ symmetry and conduction band has $s$ symmetry.
+Then $u_v(\br)$ is a periodic orbital with angular momentum $l=1$, while $u_c(\br)$ is $l=0$.
+With these approximations the optical matrix element is a constant except for wave vector conservation
+\begin{eqnarray}
+    \ket{v,\bk} &=& u_v(\br) \frac{e^{i\bk\br}}{\sqrt{V}} \label{9.75} \\
+    \ket{c,\bk'} &=& u_v(\br) \frac{e^{i\bk'\br}}{\sqrt{V}} \label{9.76} \\
+    \bra{c,\bk'} \hat{\varepsilon} \bp \ket{v,\bk} &\equiv& \hat{\varepsilon} \bp_{cv} \delta_{\bk\bk'} \label{9.77} \\
+    \hat{\varepsilon}\bp &=& \frac{1}{V} \int_{cell} d^3 r u_c^* \hat{\varepsilon} \bp u_v  \label{9.78}
+\end{eqnarray}
+neglect the wave vector $\bq$ for photons since it is in the optical frequencies.
+\begin{equation}
+    A(\omega) = \abs{\hat{\varepsilon} \bp_{cv} }^2 \frac{(2\mu)^{3/2}}{2\pi} \sqrt{\hbar \omega - E_g} \Theta(\hbar \omega -E_g)   \label{9.79}
+\end{equation}
+with $\mu^{-1} = m_c^{-1} + m_v^{-1}$.
+Equation \eqref{9.79} predicts that the absorption rate begins at the energy gap of semiconductor and rise as the square root of factor of optical frequency.
+But this is not observed, in fact, the one-particle theory is totally inadequate.
+
+Wannier observed that the interband transition in semiconductors was really a \textbf{two-particle process}, as in Fig.\ref{fig:9.6}(b).
+In this new picture, the electron and hole are particles with charges of opposite sign, so that there is a Coulomb attraction $- \frac{^2}{\varepsilon_0 r}$ between them, where $\varepsilon_0$ is the static dielectric function.
+The dielectric function is assumed to be a constant which is independent of the frequency.\footnote{This is a poor approximation, since most semiconductors are polar and dielectric function has significant dispersion at frequencies near the optical phonon frequencies, see \ref{s6.3}}
+The attractive Coulomb interaction between the electron and hole can cause hydrogenic bound states between them.
+
+The optical absorption rate for this process was calculated by Elliott. The final state of the system is described by a two-particle Sch{\"o}dinger equation
+\begin{eqnarray}
+    &&\Psi(\br_e,\br_h) = u_c(\br_e) u_v(\br_h) \Phi(\br_e,\br_h)     \label{9.82}    \\
+    &&0 =\left[ - \frac{\hbar^2\nabla_e^2}{2m_c} - \frac{\hbar^2\nabla_h^2}{2m_v}  - \frac{e^2}{\varepsilon_0 \abs{\br_e-\br_h}} -E  \right] \Phi(\br_e,\br_h)   \label{9.83}
+\end{eqnarray}
+$\Phi(\br_e,\br_h)$ can be factored into relative $\br = \br_e-\br_h$ and center of mass coordinate $M=m_c+m_v$ in standard fashion
+\begin{eqnarray}
+    \mathbf{R} &=& \frac{m_c \br_e+m_v \br_h}{M}        \label{9.84} \\
+    \Phi(\br_e,\br_h) &=& \frac{e^{i\mathbf{PR}}}{\sqrt{V}} \phi(\br)    \label{9.85} \\
+    0 &=& \left( - \frac{\hbar^2}{2\mu} \nabla^2 - \frac{e^2}{\varepsilon_0 \br} -\varepsilon_r \right) \phi(\br)       \label{9.86} \\
+    E &=& E_g + \varepsilon_r + \frac{P^2}{2M}  \label{9.87}
+\end{eqnarray}
+The center of mass motion is plane-wave-like, with a wave vector $\mathbf{P}$ which in optical experiments is equal to the photon wave vector.
+This is usually small and set $\mathbf{P}=0$.
+For relative energy $\varepsilon_r<0$, the two particles form bound hydrogenic states with energy $\varepsilon_r = \varepsilon_n = - \frac{E_R}{n^2} $.  For relative energy greater than zero, the form scattering states $\phi_\bk(\br)$.
+Elliott showed that the optical transition rate depends on the relative wave function $br=0$.
+Instead of \eqref{9.79}, the transition rate is
+\begin{equation}
+    A(\omega) = \frac{2\pi}{\hbar} \abs{\hat{\varepsilon} \bp_{cv}}^2 \sum_j \abs{\phi_j(0)}^2 \delta(\hbar \omega - E_g -\varepsilon_j)  \label{9.88}
+\end{equation}
+The summation $j$ run over the bound and continuum states.
+
+The relative motions of electron and hole are in s-wave hydrogenic state, either bound or unbound, because of the angular momentum selection rule.
+The one-unit change in $l$, in the photon absorption, is take by the change of band symmetry, and the relative motion is not permitted any additional angular momentum.
+For $s$ states, the bound states have an amplitude given by the principal quantum number $n$ and the Bohr radius $a_0$,
+\begin{equation}
+    \phi_n(0) = \frac{1}{\sqrt{\pi a_0^3 n^3}} \label{9.89}
+\end{equation}
+For continuum states, with energy $\varepsilon_k = \frac{k^2}{2\mu} $, the relative wave function at the origin is
+\begin{equation}
+    \psi_{k,l=0}(0) = \frac{2\pi \eta}{V \left[2- e^{-2\pi \eta} \right]}
+\end{equation}
+where $\eta^{-1} = k a_0$.
+Then \eqref{9.89} predicts that the absorption is a constant in frequency at the energy gap $E_g$, and does not rise with a square root dependence.
+The absorption function now have a few sharp, distinct exciton lines at low frequency correspond to $1s$, $2s$, etc.
+These absorption bands are very strong, and all the light is attenuated before trasversing the sample.
+At higher frequencies, the $ns$ stats are closer in frequency and are broadened and merges with the continuum absorption which starts at $\hbar \omega = E_g$.
+
+\subsection{Solution by Green's Functions}
+

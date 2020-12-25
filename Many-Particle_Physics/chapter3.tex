@@ -983,3 +983,255 @@ In the center-of-mass notation
 \end{eqnarray}
 where $x= x_1-x_2$ and $X= (x_1+ x_2)/2$.
 The function $A$ is a sum of delta function with different sign.
+
+\section{Kubo Formula For Electrical Conductivity} \label{s3.8}
+Many Experiments in condensed matter physics measure the linear response to an external perturbation.
+Linear response means that the signal is directly proportional to the intensity of the external perturbation.
+Kubo formulas are the name applied to the correlation function which describes the linear response.
+
+For conductivity response, as an example, the applied or external field $E_\alpha^{ext}$ induces currents which in turn make other electric fields.
+The summation of all these fields is the total electric field, which is called $E_\alpha(\br,t)$.
+The conductivity $\sigma$ is the one which responds tot he actual electric field in solid
+\begin{eqnarray}
+    J_\alpha (\br,t) &=& \sum_\beta \sigma_{\alpha\beta} (\bq,\omega) E_\beta(\br,t)    \label{3.350} \\
+    E_\alpha (\br,t) &=& \Xi_\alpha \exp \left[ i(\bq \br - \omega t)  \right]   \label{3.351}
+\end{eqnarray}
+Take \eqref{3.350} as the fundamental definition of the microscopic conductivity.
+And implies the spacetime response as
+\begin{equation}
+    J_\alpha (\br,t) = \int d^3 \br' \int_{-\infty}^t dt' \sigma_{\alpha\beta}(\br-\br',t-t') E_\beta (\br',t')     \label{3.352}
+\end{equation}
+In solids, it is permissible to use \eqref{3.350} only when it is understood that the current is to be averaged over many unit cells of the solid.
+Usually it is applied when $\bq$ is small and long-wavelength excitations are being studied.
+
+Considering the dc conductivity, where $\bq\to 0$ and $\omega \to 0$ and assuming that the system is linear and perturbations at different frequencies act independently.
+Then the total current is the summation of the responses at different frequencies.
+
+The Hamiltonian for the system is taken to have $H+H'$.
+The term $H'$ contains the interaction between the total electric field and the particles of the system.
+Equation \eqref{2.161} is used as the basic form of the interaction between electromagnetic fields and charges, in the expression of vector potential
+\begin{eqnarray}
+    H' &=& - \frac{1}{c} \int d^3 r j_\alpha(\br) A_\alpha (\br,t)    \label{3.354} \\
+    \frac{1}{c} A_\alpha (\br,t) &=& - \frac{i}{\omega} E_\alpha (\br,t)    \label{3.355}
+\end{eqnarray}
+with the Coulomb gauge $\nabla \cdot \mathbf{A} = 0$, also the electric and vector potential are taken to be transverse, so the scalar potential $\phi$ is set equal to zero.
+The terms in \eqref{2.161} with $A^2$ are dropped, since their effects are nonlinear in the electric field.
+\footnote{ The equation \eqref{2.161}
+\begin{equation}
+      H=\sum_i \frac{1}{2m}[\bp_i - \frac{e}{c} \mathbf{A}(\br_i)]^2 + \frac{1}{2} \sum_{i\neq j}\frac{e_i e_j}{r_{ij}} + \sum_{\bk \lambda} \omega_{\bk \lambda} a^\dagger_{\bk \lambda} a_{\bk \lambda} \nonumber
+\end{equation}
+}
+The term $H$ contains all the other terms and interactions in the solid or liquid.
+There are interactions such as electron-electron, electron-phonon, spin-spin, with impurities, etc.
+The goal is to calculate the electrical conductivity when all these interactions are present.
+
+The current operator in \eqref{3.354} was discussed earlier in Chapter one.
+\begin{equation}
+    j_\alpha = \frac{1}{2m} \sum_i e_i \left[ \bp_{i\alpha} \delta(\br-\br_i) + \delta(\br- \br_i) \bp_{i\alpha}  \right] \label{3.356}
+\end{equation}
+With \eqref{3.351}, \eqref{3.354} and \eqref{3.355} we have
+\begin{eqnarray}
+    H' &=& \frac{i}{\omega} j_\alpha (\bq) \Xi_\alpha e^{-i\omega t}    \label{3.357} \\
+    j_\alpha (\bq) &=& \frac{1}{2m} \sum_i e_i \left[ \bq_{i\alpha} e^{i\bq \br_i} + e^{i \bq \br_i} \bp_{i\alpha}  \right]     \label{3.358}
+\end{eqnarray}
+In terms of creation and destruction operators, the current operator is conventionally written as
+\begin{equation}
+    j_\alpha (\bq) = \sum_{\lambda \delta} p_\alpha^{\lambda \delta} C^\dagger_\lambda C_\delta     \label{3.359}
+\end{equation}
+where $\lambda, \delta$ are the states associated with some unperturbed Hamiltonian $H_0$ which is chosen as the basis for the perturbation expansion.
+A distinction is make between the current operator $j_\alpha$ in \eqref{3.358} and the induced current $J_\alpha$ in \eqref{3.350}.
+The operator $j_\alpha$ is used in the Hamiltonian, while $J_\alpha$ is the actual current measured by experiment.
+The measured value of the current is the average value for the velocity of the particles in the system, which is taken as the summation over all the particle velocities divided by the volume
+\begin{equation}
+    J_\alpha(\br,t) = \frac{e}{V} \langle \sum_i v_{i\alpha} \delta(\br-\br_i) \rangle = \frac{e}{V} \sum_i \langle v_{i\alpha} \rangle     \label{3.360}
+\end{equation}
+When quantizing the particle velocity in \eqref{1.410}, the velocity is momentum minus the vector potential
+\begin{eqnarray}
+    \mathbf{v}_i &=& \left[ \mathbf{p}_i - \frac{e}{c} \mathbf{A}(\br_i) \right]    \label{3.361} \\
+    J_\alpha &=& \frac{e}{mV} \sum_i \langle p_{i\alpha} \rangle - \frac{e^2}{mcV} \sum_i A_\alpha (\br_i)  \label{3.62}
+\end{eqnarray}
+The momentum operator $\mathbf{p}_i$ is proportional to the current operator, $\mathbf{j} = e \frac{\mathbf{p}_i}{m} $.
+The last term uses the relationship \eqref{3.355} between the vector potential and the electric field.
+For the long-wavelength disturbance
+\begin{equation}
+    J_\alpha (\br,t) = \langle j_\alpha (\br,t) \rangle + i \frac{n_0 e^2}{m\omega} E_\alpha(\br,t) \label{3.363}
+\end{equation}
+The second term in the current is proportional to the electric field and the first term given by the expectation value of the local current operator.
+Later it is shown that the constant of proportionality is given by the Kubo formula.
+Usually these two terms are called
+\begin{eqnarray}
+    \mathbf{J} &=& \mathbf{J}^{(1)} + \mathbf{J}^{(2)}    \label{3.364} \\
+    \mathbf{J}^{(1)} &=& \frac{in_0 e^2}{m\omega} \mathbf{E}( \br,t)    \label{3.365} \\
+    \mathbf{J}^{(2)} &=& \langle \mathbf{j}(\br,t) \rangle  \label{3.366}
+\end{eqnarray}
+
+\subsection{Transverse Fields, Zero Temperature}
+The following derivation of the Kubo formula is valid at zero temperature.
+Consider the expectation value of the current operator as a function of time
+\begin{equation}
+    J_\alpha^{(2)}(\br,t) = \bra{\psi'} e^{i(H+H')t} j_\alpha(\br) e^{-i(H+H')t}  \ket{\psi}    \label{3.367}
+\end{equation}
+The \textbf{Heisenberg representation} is used here, as explained in \ref{s2.2}.
+Next go to the interaction representation, where $H'$ is treated as the perturbation.
+\begin{eqnarray}
+    e^{-i(H+H')t} &=& e^{-itH}U(t)  \label{3.368}   \\
+    U(t) &=& e^{itH} e^{-i(H+H')t}  \label{3.369}   \\
+    J^{(2)}_\alpha (\br,t) &=& \bra{\psi'} U^\dagger(t) e^{itH} j_\alpha(\br) e^{-itH} U(t) \ket{\psi'}  \label{3.370}
+\end{eqnarray}
+The operator $U(t)$ was defined in \eqref{2.14} and with a formal solution in \eqref{2.27} where the usual definitions are
+\begin{eqnarray}
+    H'(t) &=& e^{itH} H' e^{-itH}   \label{3.372}   \\
+    j(t) &=& e^{itH} j e^{-itH},~ etc     \label{3.373}
+\end{eqnarray}
+The wave function $\ket{\psi'}$ in \eqref{3.367} is the Schr{\"o}dinger wave function at $t=0$ for an interacting system with both $H+H'$ as the Hamiltonian.
+As discussed in Sec.\ref{s3.1}, the wave function $\ket{\psi}$ is accurate when $H'$ is absent.
+Using the relation \eqref{2.36}
+\begin{equation}
+    \ket{\psi'} = T \exp \left[ -i \int_{-\infty}^0 dt' H'(t') \right] \ket{\psi}    \label{3.374}
+\end{equation}
+Then the time development of the system is given by combining these result
+\begin{equation}
+    U(t) \ket{\psi'} = T \exp \left[ -i \int_{-\infty}^t dt' H'(t') \right] \ket{\psi} = S(t,-\infty) \ket{\psi}    \label{3.376}
+\end{equation}
+The expectation value of the current is
+\begin{equation}
+    J_\alpha^{(2)} = \bra{\psi} S^\dagger(t,-\infty) j_\alpha(\br,t) S(t,-\infty) \ket{\psi}    \label{3.377}
+\end{equation}
+For Kubo formula, only terms linear in $H'$ is required, then
+\begin{equation}
+    S(t,-\infty) \ket{\psi} = \left[ 1 - i \int_{-\infty}^t d t' H'(t') \right] \ket{\psi} + O(H')^2    \label{3.379}
+\end{equation}
+From \eqref{3.377}, we have the expectation value of the current operator.
+The first term is assumed to vanish
+\begin{equation}
+    \bra{\psi} j_\alpha(\br,t) \ket{\psi} = 0       \label{3.380}
+\end{equation}
+since there is usually no current in the solid in the absence of an electric field.
+The first nonzero term is the one linear in $H'$, which is the important contribution, and can be expressed as commutator
+\begin{equation}
+    J_\alpha^{(2)} (\br,t) = -i \int_{-\infty}^t dt' \bra{\psi} \left[ j_\alpha(\br,t), H'(t') \right] \ket{\psi}       \label{3.381}
+\end{equation}
+With $H'$ given in \eqref{3.358}, the integrand have
+\begin{eqnarray}
+    \left[ j_\alpha(\br,t), H'(t') \right] &=& \frac{i}{\omega} \Xi_\beta e^{-i \omega t'} \left[j_\alpha(\br,t), j_\beta(\bq,t') \right] \label{3.382}\\
+    &=& \frac{i}{\omega} E_\beta(\br,t) e^{-i \bq \br} e^{i\omega(t-t')} \left[ j_\alpha(\br,t) , j_\beta(\bq,t')\right]   \nonumber
+\end{eqnarray}
+Comparing the result with \eqref{3.350} shows that
+\begin{equation}
+    \sigma_{\alpha\beta} = \frac{1}{\omega} e^{-i\bq\br} \int_{-\infty}^t dt' e^{i\omega(t-t')} \bra{\psi} \left[ j_\alpha(\br,t),j_\beta(\bq,t')\right] \ket{\psi} + i \frac{n_0 e^2}{m\omega} \delta_{\alpha\beta}    \label{3.383}
+\end{equation}
+The final step is to average over the space variable $\br$ in order to eliminate atomic fluctuations.
+Take this average by integrating over all volume $d^3r$ and then divide by $V$.
+Take the $r$ dependence of the expression\footnote{Not Fourier transformation, check \eqref{3.356} and \eqref{3.358}.}
+\begin{equation}
+    \int d^3 r e^{-i\bq \br} j_\alpha(\br,t) = j_\alpha(-\bq,t) = j_\alpha^\dagger(\bq,t)   \label{3.384}
+\end{equation}
+Then by change the notation of $t$, the Kubo formula
+\begin{equation}
+    \sigma_{\alpha\beta}(\bq,\omega) = \frac{1}{\omega V} \int_0^\infty dt e^{i\omega t} \bra{\psi} \left[j^\dagger_\alpha(\bq,t),j_\beta(\bq,0) \right] \ket{\psi} + i \frac{n_0 e^2}{m\omega} \delta_{\alpha \beta}   \label{3.385}
+\end{equation}
+
+The wave function $ket{\psi}$ in \eqref{3.385} is the ground state of the many-body Hamiltonian $H$, which contains all the possible interaction in the solid except the interaction with the vector potential $H'$.
+In \eqref{3.385}, the conductivity has no mention of photon field, since conductivity is an intrinsic property of the ground state of the system.
+Equation \eqref{3.350} can be viewed as a Taylor series in the applied electric field
+\begin{equation}
+    J_\alpha(\Xi_\beta) = J_\alpha(0) + \left( \frac{\partial J_\alpha}{\partial \Xi_\beta} \right) \Xi_\beta^{(ext)} + O^2 \label{3.386}
+\end{equation}
+Where the conductivity is $\sigma_{\alpha\beta} = (\partial J_\alpha /\partial \Xi_\beta)$.
+It is a characteristic of all linear response correlation functions that they are ground state properties.
+
+The Kubo formulas contain a retarded, two-particle correlation function.
+The retarded correlation function the current operator based on \eqref{3.88}
+\begin{equation}
+    \Pi_{\alpha\beta}(\bq,t-t') = - \frac{i}{v} \theta(t-t') \bra{\psi} \left[j^\dagger_\alpha(\bq,t),j_\beta(\bq,t') \right] \ket{\psi}    \label{3.387}
+\end{equation}
+With Fourier transformation,
+\begin{equation}
+    \Pi_{\alpha\beta}(\bq,\omega) = - \frac{i}{v} \int_{-\infty}^\infty dt e^{i\omega(t-t')} \theta(t-t') \bra{\psi} \left[j^\dagger_\alpha(\bq,t),j_\beta(\bq,t') \right] \ket{\psi}
+\end{equation}
+we have
+\begin{equation}
+    \sigma_{\alpha\beta}(\bq,\omega) = \frac{i}{\omega} \left[\Pi_{\alpha\beta}(\bq,\omega) + \frac{n_0e^2}{m} \delta_{\alpha\beta} \right] \label{3.388}
+\end{equation}
+The conductivity is the \textbf{retarded correlation function} of the current multiplied by $i$ and divided by $\omega$.
+The correlation function $\Pi_{\alpha\beta}(\bq,\omega)$ is usually called the \textbf{current-current correlation function}.
+These quantities usually by the Matsubara method and with analytic extension.
+
+The dc conductivity is obtained by taking the limit $\bq \to 0$ and then the limit $\omega \to 0$.
+Be careful that wrong answer may be obtained if the order of these limits is reversed.
+\begin{equation}
+    \lim_{\bq \to 0}
+    \begin{cases}
+        \sigma_{\alpha\beta}(\bq,\omega) &= \sigma_{\alpha\beta}(\omega) \\
+        \Pi_{\alpha\beta}(\bq,i\omega_n) &= \Pi_{\alpha\beta}(i\omega_n) \\
+        \Pi_{\alpha\beta}(\bq,\omega) &= \Pi_{\alpha\beta}(\omega)\\
+        j_\alpha(\bq,\tau) &=j_\alpha(\tau)
+    \end{cases}
+    \label{3.392}
+\end{equation}
+
+The limit of $\omega \to 0$ is more delicate.
+Here the conductivity is real,
+\begin{equation}
+    \Re \sigma_{\alpha\beta} = - \lim_{\omega\to 0} \frac{1}{\omega} \Im \left[\Pi_{\alpha\beta}(\omega) \right]    \label{3.393}
+\end{equation}
+The right-hand side contains the imaginary part of the retarded correlation function which is related to the spectral function of that operator.
+One thing is that \eqref{3.385} is the right Kubo formula at nonzero temperatures.
+
+The current-current correlation function is a \textbf{two-particle correlation function}.
+This correlation function describes how two particles are created and destroyed.
+The conductivity arises from correlations between these two events.
+Measure quantities always involve retarded correlation functions of at least two particles.
+The one-particle Green's function can never be measured in the rigorous sense, since real particles cannot be created or destroyed.
+
+The two-particle correlation function, wherein a particle changes its state, is always found in the correlation functions of linear response.
+In elementary particle physics, a particle can be absolutely destroyed or created.
+But this event always happens in conjunction with some other event which involves other particles.
+For example,and electron and positron can mutually annihilate and make several photons.
+Then one would have terms in the current operator involving the creation or destruction of two particles
+\begin{equation}
+    j_\alpha(\bq) = \sum \left[ p_\alpha^{(\lambda\delta)} C_\lambda d_\delta + h.c. \right]    \label{3.399}
+\end{equation}
+If the particles interact, then the correlation function may not be divided into two independent Green's function
+\begin{equation}
+    \langle T_\tau C_\lambda(\tau) d_\delta(\tau) d^\dagger_\delta(0) C^\dagger_\lambda(0)\rangle \neq \langle T_\tau C_\lambda(\tau) C^\dagger_\lambda(0) \rangle \langle T_\tau d_\delta(\tau) d^\dagger_\delta(0) \rangle    \label{3.400}
+\end{equation}
+When taking an electron from a filled band and moving it to an empty or partially filled band, then one has a current operator of the form \eqref{3.399}, which is used to describe the electron-hole excitation process.
+
+\subsection{Nonzero Temperature}
+As time-varying perturbation $H'(t)$ is put into the system at nonzero temperature.
+The central question concerns the degree to which the thermodynamic averaging is influenced by the time-varying interaction.
+In Kubo's derivation, the density matrix $\rho_0 = \exp\left[\beta (\Omega-H+\mu N)\right]$ applies to the equilibrium system in the absence of $H'(t)$.
+It is assumed that the system is described by the density matrix at the initial point in the time, $t\to -\infty$.
+The perturbation $H'$ is \textbf{adiabatically} switched on as the system is brought forward in time to the present.
+Now the time-dependent density matrix, have the following result
+\begin{eqnarray}
+    \frac{d}{dt} \rho(t) &=& -i \left[H + H'(t), \rho(t) \right]    \label{3.406}   \\
+    J^{(2)}_\alpha &=& \Tr\left[ \rho(t) j_\alpha \right]   \label{3.407}
+\end{eqnarray}
+Kubo's staring point is tantamount to not including $H'(t)$ in the thermodynamic weighting factor.
+The density matrix is defined as $\rho(t) = \rho_0 + f(t) $, where $\rho_0$ is the density matrix in the absence of $H'$.
+The equilibrium density matrix $\rho_0$ is time independent,
+\begin{eqnarray}
+    i \frac{d}{dt} f &=& \left[ H,\rho_0 \right] + \left[ H,f \right] + \left[ H',\rho_0 \right] + \left[ H', f \right] \label{3.408}   \\
+    \left[ H, \rho_0 \right] &=& 0  \label{3.409}
+\end{eqnarray}
+The objective is to solve for the term in $J^{(2)}$, which is proportional to $H'$, which is treated as infinitesimal.
+Since $f$ is proportional to $H'$, it follows that $f$ is small.
+Terms proportional to $O(H')^2$, such as $\left[ H', f \right]$ are neglected, then
+\begin{equation}
+    e^{-itH} \left[ i \frac{d}{dt} (e^{itH} f e^{-itH}) \right] e^{itH} = i \frac{d}{dt} f - \left[ H, f\right] = \left[ H' , \rho_0 \right]    \label{3.412}
+\end{equation}
+The linear differential equation may be integrated to give
+\begin{equation}
+    f(t) = -i e^{-itH} \left[ \int_{-\infty}^t dt' \left[ H'(t'), \rho_0 \right] \right] e^{itH}    \label{3.414}
+\end{equation}
+Then the evaluation of \eqref{3.407} is \footnote{ The derivation in P169 is not so clear to me still}
+\begin{equation}
+    J^{(2)}_\alpha = \Tr \left[ \rho_0 j_\alpha \right] + \Tr \left[ f(t) j_\alpha \right] \label{3.415}
+\end{equation}
+The first term is zero, since it is equilibrium.
+By changing the terms in the trace, we get the Kubo formula \eqref{3.385}
+\begin{equation}
+    J^{(2)}_\alpha (\br,t) = -i \int_{-\infty}^t dt' \langle \left[j_\alpha(\br,t),H'(t') \right] \rangle   \label{3.420}
+\end{equation}

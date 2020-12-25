@@ -1,0 +1,45 @@
+\chapter{Appendix}
+
+\section{Fourier transform pairs}
+For a 3D functions, the Fourier transformation define
+\begin{equation}
+   f(\br) = \frac{1}{(2\pi)^{3/2}} \iiint E(\bk) e^{i \bk \cdot \br} d\bk \label{A-1}
+\end{equation}
+and the inverse functions define
+\begin{equation}
+    E(\bk) = \frac{1}{(2\pi)^{3/2}}  \iiint f(\br) e^{-i\bk \cdot \br} d\br \label{A-2}
+\end{equation}
+in the function are \textbf{spherically symmetric}, we have
+\begin{equation}
+    f(r) = \sqrt{ \frac{2}{\pi} } \frac{1}{r} \int_0^\infty E(k) \sin(kr) k d k \label{A-3}
+\end{equation}
+and
+\begin{equation}
+    E(k) = \sqrt{ \frac{2}{\pi} } \frac{1}{k} \int_0^\infty f(r) \sin(kr) r dr  \label{A-4}
+\end{equation}
+For different integral function we have the following identity
+\begin{eqnarray}
+    e^{-\alpha r}  &\Leftrightarrow& \sqrt{ \frac{2}{\pi} } \frac{2\alpha}{(\alpha^2 + k^2)^2} \label{A-5} \\
+\frac{e^{-\alpha r}}{r} &\Leftrightarrow& \sqrt{ \frac{2}{\pi} } \frac{1}{\alpha^2 + k^2} \label{A-6} \\
+    1 &\Leftrightarrow& (2\pi)^{3/2} \delta(\bk) \label{A-7}
+\end{eqnarray}
+
+For 2D function, the Fourier transformation
+\begin{equation}
+    f(\br) = \frac{1}{2\pi} \iint E(\bk) e^{i\bk \cdot \br} d\bk  \label{A-8}
+\end{equation}
+and the inverse Fourier transformation
+\begin{equation}
+    E(\bk) = \frac{1}{2\pi} \iint f(\br) e^{-i \bk \cdot \br} d\br \label{A-9}
+\end{equation}
+An important pair is
+\begin{equation}
+    \frac{1}{r} \Leftrightarrow \frac{1}{k} \label{A-10}
+\end{equation}
+If we consider the form, $ \frac{1}{\bk^2}$
+\begin{eqnarray}
+    && \frac{1}{2\pi}   \iint \frac{1}{\bk^2} e^{i \bk \cdot \br} d\bk \nonumber \\
+    &=& \int_0^{2\pi} \int_0^\infty \frac{e^{ikr \cos\theta}}{k} dk d\theta \nonumber \\
+    &=& \int_0^\infty \frac{J_0(kr)}{k} dk
+\end{eqnarray}
+Which does not converge.
