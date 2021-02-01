@@ -978,3 +978,59 @@ Plasmons are excitations which exist in real metals and in any electron gas with
 The disscussion abuot the dielectric function is not included in this manuscript.
 
 \subsection{Hubbard}
+Hubbard (1957) introduced a correction factor to the RPA of the form
+\begin{eqnarray}
+    \varepsilon_H(\bq,\omega) &=& 1 - \frac{v_q \mathbf{P}^{(1)}(\bq,\omega)}{1 + v_q G_H(q) \mathbf{P}^{(1)}(\bq,\omega)}  \label{5.187} \\
+    G_H(q) &=& \frac{1}{2} \frac{q^2}{q^2 + k_F^2} \label{5.188}
+\end{eqnarray}
+The factor $G_H(q)$ is a local field correction.
+There is an analogy with the Lorenz--Lorenz dielectric function, which has the form in cubic insulators
+\begin{equation}
+    \varepsilon = 1 + \frac{4 \pi \alpha}{1 - \frac{4 \pi \alpha}{3} }  \label{5.189}
+\end{equation}
+The two formulas have the same structure if we associate $-v_q\mathbf{P}^{(1)} \to 4\pi \alpha$ and $G_H \to \frac{1}{3} $.
+The factor of $ \frac{4\pi \alpha}{3} $ cones from summing the local dipoles in the lattice.
+It is called a " local field correction".
+Similarly, $G_H(q)$ in the Hubbard dielectric function cones from summing over the surrounding structure of the dielectric, which in this case is the exchange--correlation hole.
+
+The factor $G_H(q)$ is introduced to account for the existence of the exchange and correlation hole around the electron.
+The dielectric function describes how the conduction electrons of the metal rearrange their positions to screen the Coulomb potential.
+Because of the exchange and correlation hole around each electron, when one electron is participating in the dielectric screening, others are less likely to be found nearby.
+The exchange--correlation hole should have some affect upon the nature of the dielectric screening.
+
+The Hubbard local field comes from the vertex corrections in the polarization function $\mathbf{P}(\bq,\omega)$.
+The most important vortex corrections are the ladder diagrams Figure~\ref{fig:5.13}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/fig5_13.png}
+    \caption{Ladder diagrams of the polarization bubble.}%
+    \label{fig:5.13}
+\end{figure}
+They can be evaluated by introducing a vortex function $\Gamma(k,k+q)$ in a four vector notation $k \equiv (\bk,ik_n)$.
+This approximation to the polarization diagrams is denoted $P_L$ where $L$ denotes ladder
+\begin{eqnarray}
+    P_L(\bq,\omega) &=& \frac{2}{\beta V}  \sum_k \cg^{0}(k) \cg^{(0)}(k+q) \Gamma(k,k+q) \\ \label{5.190}
+    \Gamma(k,k+q) &=& 1 - \frac{1}{\beta V} \sum_p W(k-p) \cg^{(0)}(p) \cg^{(0)}(p+q) \Gamma(p,p+q) \nonumber
+\end{eqnarray}
+The above expression is rather difficult to evaluate exactly.
+The degree of complexity depends upon the choice for the effective interaction $W(k-p)$ which are the ladders.
+
+Consider the screened interaction $W(q) = v_q/\varepsilon(q)$.
+Assuming that $\Gamma(k,k+q) \approx \Gamma(q)$ and $k$ dependence is ignored.
+Then we have
+\begin{eqnarray}
+    P_L(q) &=& \Gamma(q) P^{(1)}(q) \label{5.191}\\
+    \Gamma(q) &=& 1 - \Gamma(q) \Lambda(q) = \frac{1}{1 + \Lambda(q)} \label{5.192}\\
+    \Lambda(q) &=& \frac{1}{\beta V} \sum_p W(k-p) \cg^{(0)}(p) \cg^{(0)}(p+q)  \label{5.193}
+\end{eqnarray}
+Since the approximation require $\Gamma$ is independent on $k$, so it also requires that $\Lambda$ and $W$ is independent on $k$.
+With Hubbard approximation, one have the following replacement
+\begin{eqnarray}
+    W(k-p) &\to& \frac{4 \pi e^2}{q^2 + q^2_{TF}}   \label{5.194}\\
+    \Lambda(q) &=& \frac{2 \pi e^2}{q^2 + q^2_{TF} } P^{(1)}(q) = v_q G_H(q) P^{(1)}(q)  \label{5.195}   \\
+    G_H(q) &=& \frac{1}{2} \frac{q^2}{q^2 + q^2_{TF}}   \label{5.196}
+\end{eqnarray}
+The factor of $\frac{1}{2}$ comes because $P^{P(1)}$ contains a summation over spins which multiplies the result by two.
+The ladder terms do not have a summation over spin states.
+Each electron line in the polarization bubble diagram has the same spin configuration.
+So the result is multiplied by $1/2$ to account of the factor of $2$ in the $P^{(1)}$.

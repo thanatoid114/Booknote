@@ -74,7 +74,7 @@ The interaction potential does not flip the electron spin and the spin states ar
         \node [left] at (3.5,1.5) {$\bk_1-\bk'$};
         \node [left,above] at (3,3) {$-\bk',\downarrow$};
     \end{tikzpicture}
-    \caption{Scattering event between two electron lines.}%
+    \caption{Scattering event between two electron lines from left to right.}%
     \label{fig:10.2}
 \end{figure}
 In Figure \ref{fig:10.2} show a double scattering event between two electron lines which are moving in the same direction in time.
@@ -170,29 +170,29 @@ This pole is sufficient to cause the instability.
 \end{figure}
 The electrons near the Fermi energy will interact with their pair on the opposite side of the Fermi sea.
 The mutual scattering produces a pole in the scattering amplitude, which will make the pair of electrons try to bind together.
-The entire electron paires are doing this simultaneously, so that the entire metal undergoes a phase transition.
+The entire electron pairs are doing this simultaneously, so that the entire metal undergoes a phase transition.
 The existence of this pole depended on the sharpness of the electron distribution.
-If all the electrons near the Fermi energy become paired, one must reconsider wheter this sharp distribution still exits.
-A theory of superconducitivity must self-consistently determin the properties of bound electron pairs.
+If all the electrons near the Fermi energy become paired, one must reconsider whether this sharp distribution still exits.
+A theory of superconductivity must self-consistently determine the properties of bound electron pairs.
 
 Another way to describe the instability is as a function of temperature.
-It enters into the electron distribution $\eta_F$ by changing the step function into a smooth function with an energy width of severla $k_B T$.
+It enters into the electron distribution $\eta_F$ by changing the step function into a smooth function with an energy width of several $k_B T$.
 By expressing the \eqref{10.5} as
 \begin{equation}
     \int_{-\omega_D}^{\omega_D} d\xi_1 \frac{\eta_F(\xi_1)}{\xi-\xi_1} \approx  - \frac{1}{2} \ln \left[ \frac{\xi^2 + (k_B T)^2}{\omega_D^2}  \right] \label{10.12}
 \end{equation}
-Summation of all the ladder diagrams and the effectivce potential have the form
+Summation of all the ladder diagrams and the effective potential have the form
 \begin{equation}
     V_{eff} = - \frac{V_0}{1+ N_F V_0 \ln \left[ \sqrt{\xi^2 + (k_BT)^2}/\omega_D  \right]}     \label{10.13}
 \end{equation}
-At zero energy, $\xi=0$, $V_{eff}$ becomes sigular when the temperature is lower to the critical temperature $T_c$
+At zero energy, $\xi=0$, $V_{eff}$ becomes singular when the temperature is lower to the critical temperature $T_c$
 \begin{equation}
     k_B T_c = \omega_D \exp \left[ - \frac{1}{N_F V_0} \right]  \label{10.14}
 \end{equation}
 
 The theory of Cooper instability should be compared, for example, with the ordinary binding of two isolated particles.
 If two particles are isolated, they do not have to obey the statistics of a collection of identical particles.
-Then the stattering theory does not contain any of the occupation factors. all states may be used as intermediate state since there are no other particles.
+Then the scattering theory does not contain any of the occupation factors. all states may be used as intermediate state since there are no other particles.
 In theory of Wannier excitons \ref{s9.2}, the multiple scattering theory may be described by a vertex function
 \begin{equation}
     \Gamma(\bk,\bk') = V(\bk-\bk') + \int \frac{d^3 k_1}{(2\pi)^3} \frac{V(\bk-\bk_1) \Gamma(\bk_1,\bk')}{2\xi_\bk - 2\xi_{\bk_1}}  \label{10.16}
@@ -208,13 +208,83 @@ The problem is factored into the relative and center of mass motions
     &&\left[ - \frac{\nabla^2}{m} + V(\br) - \varepsilon \right] \phi(\br) = 0 \label{10.20}
 \end{eqnarray}
 The center of mass motion is plane wave, and the relative motion becomes a one-body problem.
-Without the occupation factors, the relative scattering of two particles by an instantaneous potential is a trival problem.
+Without the occupation factors, the relative scattering of two particles by an instantaneous potential is a trivial problem.
 When bound states occur, they are at negative binding energy in the relative coordinates, $\varepsilon<0$.
 This behaviour is great contrast to the Cooper instability, where the pole occurs at small negative energy relative the to $E_F$, so the pole is at a positive energy $E_F-\xi_0$.
-The two electrons cannot really bind at that neregy, since their net energy is positive.
+The two electrons cannot really bind at that energy, since their net energy is positive.
 \textit{The instability occurs because it appears to them as if they should bind, although if they tried, they would find they could not.}
 The role of the occupation factors in the argument of the scattering integral is what moved the apparent pole out to the Fermi energy.\footnote{The reason electrons must be paired with opposite momentum, P633}
 
 \subsection{BCS Theory}
 The basic feature of the BCS theory is that pairing occurs between electrons in states with opposite momentum ans opposite spins.
 The two spins are combined into a spin singlet, with $S=0$.
+We will assume this spin arrangement during the discussion.
+
+The pairing of electrons in the BEC theory mus cause correlations in the relative motion.
+The pairing is describe by introducing a new correlation function, similar to Green's function, for particles of opposite spin.
+They are
+\begin{eqnarray}
+    \cg(\bp, \tau-\tau') &=& - \langle T_\tau C_{\bp\sigma} (\tau) C^\dagger_{\bp\sigma}(\tau') \rangle \nonumber \\
+    \cf(\bp, \tau-\tau') &=& \langle T_\tau C_{-\bp\downarrow}(\tau) C_{\bp\uparrow}(\tau') \rangle \label{10.31} \\
+    \cf^\dagger (\bp,\tau-\tau') &=& \langle T_\tau C^\dagger_{\bp\uparrow}(\tau) C^\dagger_{-\bp\downarrow}(\tau') \rangle \nonumber
+\end{eqnarray}
+The Green's function $\cg$ has the same definition as usual, although it has a different algebraic form in the superconducting state.
+The $\cf$ functions are identically zero in the normal state.
+A basic feature of the BCS ground state wave function is that it is composed of a superposition of electronic states containing a different number of electrons.
+One need to find a self--consistent equation for the correlation function and its conjugate.
+
+To provide the simplest possible model of BCS theory, assume a Hamiltonian of the form
+\begin{equation}
+    H = \sum_{\bp \sigma} \xi_\bp C^\dagger_{\bp\sigma} C_{\bp\sigma}  +  \frac{1}{2V} \sum_{\bq \bp \bp' s s'} V(q) C^\dagger_{\bp+\bq,s} C^\dagger_{\bp'-\bq,s'} C_{\bp' s'} C_{\bp s}   \label{10.35}
+\end{equation}
+The interaction potential $V(q)$ between electrons is taken to have the form in \eqref{10.2}, which is an attractive constant $V(q) = - V_0$ over a range of energies within a Debye energy of the Fermi surface.
+With this Hamiltonian, a set of self--consistent equations will be derived for the Green's functions $\cg$, $\cf$ and $\cf^\dagger$.
+Using the equation of the motion
+\begin{equation}
+    \frac{d}{d\tau} C_{\bp\sigma} (\tau) = \left[H, C_{\bp\sigma} \right] = -\xi_\bp C_{\bp\sigma} - \frac{1}{V} \sum_{\bq \bp' s'} V(q) C^\dagger_{\bp'-\bq,s'} C_{\bp's'} C_{\bp-\bq,\sigma}  \label{10.36}
+\end{equation}
+From the definition of the $\tau$--order product, the first derivative of the equation for the Green's function is
+\begin{equation}
+    \frac{\partial}{\partial \tau} \cg(\bq,\tau-\tau') = - \delta(\tau-\tau') - \langle T_\tau \left[ \frac{\partial}{\partial \tau} C_{\bp\sigma}(\tau) \right] C^\dagger_{\bp\sigma}(\tau') \rangle   \label{10.38}
+\end{equation}
+Using the result \eqref{10.36} for the derivative gives
+\begin{eqnarray}
+    &~&\left( - \frac{\partial}{\partial \tau}  - \xi_p \right) \cg(\bq,\tau-\tau') + \frac{1}{V} \sum_{\bq\bp's} V(q) \nonumber \\
+    &~& \times \langle T_\tau C^\dagger_{\bp'-\bq,s'} C_{\bp's'}(\tau) C_{\bp-\bq,\sigma}(\tau) C^\dagger_{\bp\sigma}(\tau') \rangle = \delta(\tau-\tau')    \label{10.40}
+\end{eqnarray}
+There are many ways of doing the pairing.
+One simplification is to assume that long--wavelength phonons give a zero potential, so that $V(\bq=0) = 0$.
+For a normal metal, there would only remain the pairing $\delta_{\bp\bp'} \delta_{s'\sigma} \eta_{\bp-\bq} \cg(\bp,\tau-\tau')$ which gives the exchange energy.
+This pairing occurs in the superconductor as well but is not the only term.
+The pairing which include the $\cf$ function must pay attention to the spin variables.
+The combination $\sigma= - s' = \uparrow$ gives
+\begin{equation}
+    \langle T_\tau C^\dagger_{\bp'-\bq,s'} C_{\bp's'}(\tau) C_{\bp-\bq,\sigma}(\tau) C^\dagger_{\bp\sigma}(\tau') \rangle = - \delta_{\sigma,-s'} \delta_{\bp',-\bp+\bq} \cf(\bp-\bq,0) \cf^\dagger(\bp,\tau'-\tau) \label{10.42}
+\end{equation}
+where the sign change result from an odd number of operator rearrangements.
+Similarly, the choice $\sigma = - s' = \downarrow$ gives
+\begin{equation}
+    \langle T_\tau C^\dagger_{\bp'-\bq,s'} C_{\bp's'}(\tau) C_{\bp-\bq,\sigma}(\tau) C^\dagger_{\bp\sigma}(\tau') \rangle = - \delta_{\sigma,-s'} \delta_{\bp',-\bp+\bq} \cf(-\bp+\bq,0) \cf^\dagger(-\bp,\tau-\tau') \label{10.44}
+\end{equation}
+\textit{These two results are identical, since later it is shown that $\cf$ and $\cf^\dagger$ do not depend on the sign of the arguments either momentum or $\tau$}.
+The last term in \eqref{10.40} gives the expression
+\begin{eqnarray}\label{10.45}
+    &~& \frac{1}{V} \sum_{\bq\bp's} V(q)  \langle T_\tau C^\dagger_{\bp'-\bq,s'} C_{\bp's'}(\tau) C_{\bp-\bq,\sigma}(\tau) C^\dagger_{\bp\sigma}(\tau') \rangle    \\ 
+    &=& \frac{1}{V} \sum_{\bq} V(q) \left[\cg(\bp,\tau-\tau')\eta_{\bp-\bq} - \cf(\bp-\bq,0)\cf^\dagger(\bp,\tau-\tau') \right] \nonumber
+\end{eqnarray}
+The first term is the exchange self--energy of the electron due to the phonon induced interaction between electrons.
+A careful investigation shows that this self--energy does not change much between the normal and superconducting states.
+The self--energy of the electrons, from phonons, causes a change in the electron effective mass given by the parameter $\lambda$.
+This effect is not large in weak superconductors, so it may be \textbf{ignored}.
+In metals where $\lambda$ is large, the superconducting state can be expected to significantly alter the properties of electrons near the Fermi surface where strong coupling theory is needed.
+
+In the second term of \eqref{10.45} there arises the combination of factors which are defined as
+\begin{equation}
+    \Delta (\bp) = - \frac{1}{V} \sum_\bq V(q) \cf(\bp-\bq,\tau=0)  \label{10.46}
+\end{equation}
+The quantity $\Delta(\bp)$ is the gap function in the BCS theory.
+This quantity is defined to be positive, since the right--hand side of the definition is positive, with an attractive potential $V(q)<0$.
+So the \eqref{10.40} gives
+\begin{equation}
+    \left( - \frac{\partial}{\partial \tau} - \xi_p \right) \cg(\bp,\tau-\tau') + \Delta(\bp) \cf^\dagger (\bp,\tau-\tau') = \delta(\tau-\tau') \label{10.47}
+\end{equation}
