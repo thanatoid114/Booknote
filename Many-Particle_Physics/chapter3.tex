@@ -469,11 +469,13 @@ Denote this equation as
 \begin{equation}
   S = -\frac{1}{\beta} \sum_m f(i\omega_m) \label{3.221}
 \end{equation}
-where $f(i\omega_m)$ is the product of Green's function in \eqref{3.220}. This summation is evaluated by a contour integration. The integral has the form,
+where $f(i\omega_m)$ is the product of Green's function in \eqref{3.220}. This summation is evaluated by a contour integration. The integral has the form\footnote{This gives $I = \lim_{R\to \infty} \oint \frac{dz}{2\pi i} f(z) \eta_B(z) =0$  if $f(z)$ decay faster than $z^{-1}$.
+},
 \begin{equation}
   I = \lim_{R\to \infty} \oint \frac{dz}{2\pi i} f(z) \eta_B(z)  \label{3.222}
 \end{equation}
-The function $\eta_B(z)$ is chosen to generate poles at the points $i\omega_m$ for all even integer $m$.
+The function $\eta_B(z)$ is chosen to generate poles at the points $i\omega_m$ for all even integer $m$ .
+
 The function $f(z)$ is
 \begin{equation}
   f(z) = \frac{2\omega_\bq}{z^2-\omega_\bq^2} \frac{1}{ip_n + z - \xi_\bp}  \label{3.224}

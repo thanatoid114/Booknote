@@ -288,3 +288,73 @@ So the \eqref{10.40} gives
 \begin{equation}
     \left( - \frac{\partial}{\partial \tau} - \xi_p \right) \cg(\bp,\tau-\tau') + \Delta(\bp) \cf^\dagger (\bp,\tau-\tau') = \delta(\tau-\tau') \label{10.47}
 \end{equation}
+Similarly, consider the equation of motion for the $\cf^\dagger$ function
+\begin{equation}
+    \frac{\partial}{\partial} \cf^\dagger(\bp,\tau-\tau') = \langle T_\tau \left[ \frac{\partial}{\partial \tau} C^\dagger_{\bp\uparrow}(\tau) \right] C_{-\bp\downarrow}^\dagger(\tau')    \rangle \label{10.49}
+\end{equation}
+Calculate the time development of the $\cf^\dagger$ operator, notice that $C_{\bp\sigma}^\dagger(\tau)$ is not the Hermitian conjugate of $C_{\bp\sigma}(\tau)$, the for $ \frac{\partial \cf^\dagger}{\partial \tau} $ gives
+\begin{eqnarray}
+    &~& \left( - \frac{\partial}{\partial \tau} + \xi_p \right) \cf^\dagger(\bp,\tau-\tau') + \frac{1}{V} \sum_{\bq\bp's} V(q) \nonumber \\
+    &\times& \langle T_\tau C^\dagger_{\bp-\bq,\uparrow}(\tau) C^\dagger_{\bp'+\bq,s'}(\tau) C_{\bp's'}(\tau) C^\dagger_{-\bp\downarrow}(\tau') \rangle =0   \label{10.51}
+\end{eqnarray}
+Neglect the exchange potential, we have
+\begin{equation}
+    \left( - \frac{\partial}{\partial \tau} + \xi_p \right) \cf^\dagger(\bp,\tau-\tau') + \Delta^\dagger(\bp) \cg(\bp,\tau-\tau') = 0   \label{10.53}
+\end{equation}
+The gap function is assumed real, $\Delta^\dagger = \Delta$, which is verified later.
+
+After Fourier transform, the two equations \eqref{10.47} and \eqref{10.53} are
+\begin{eqnarray}
+    (ip_n -\xi_p) \cg(\bp, ip_n) + \Delta(\bp) \cf^\dagger(\bp,ip_n) &=& 1 \label{10.55}    \\
+    (ip_n + \xi_p) \cf^\dagger(\bp,ip_n) + \Delta(\bp) \cg(\bp,ip_n)    &=& 0   \label{10.56}
+\end{eqnarray}
+These algebraic equations are solved
+\begin{eqnarray}
+    \cg (\bp,ip_n) &=& - \frac{ip_n+ \xi_p}{p_n^2 + \xi_p^2 + \Delta^2(\bp)}   \label{10.57} \\
+    \cf (\bp,ip_n) &=& \cf^\dagger(\bp,ip_n) = \frac{\Delta(\bp)}{p_n^2 + \xi_p^2 + \Delta^2(\bp)} \label{10.58}
+\end{eqnarray}
+The equivalence of $\cf$ and $\cf^\dagger$ can be shown by deriving similar equation for $\cf$.
+
+There are some properties, for Fourier transformation, by changing the sign of the dummy variable of summation $n$ gives
+\begin{equation}
+    \cf(\bp,-\tau) = \frac{1}{\beta} \sum_n e^{-i \tau p_n} \cf(\bp,-ip_n) = \cf(\bp,tau)   \label{10.59}
+\end{equation}
+This relation causes the energy gap equation to be real
+\begin{equation}
+    \Delta(\bp) = - \frac{1}{V} \sum_\bq V(q) \cf(\bp-\bq,0) = - \frac{1}{V} \sum_\bq V(q) \cf^\dagger(\bp-\bq,0) = \Delta^\dagger (\bp)    \label{10.60}
+\end{equation}
+If the energy gap $\Delta$ is set equal to zero, there is fond the usual form for the normal state Green's function and zero for the others.
+It must still be shown that there is a self--consistent solution to the equations for $\Delta \neq 0$.
+
+The Green's function $\cg$, $\cf$ and $\cf^\dagger$ have poles at the points $\pm E_p = \pm \sqrt{\xi^2_p + \Delta^2(\bp)}$.
+The $E_p$ is called the \textbf{excitation energy} of the superconductor.
+In BCS theory the gap function $\Delta(\bp)$ for s--wave superconductors is not dependent on momentum $\bp$ and treated as a constant for each temperature.
+The excitation energy $E_p$ depends on $\xi^2_p >0$.
+The minimum excitation energy is $\Delta$, and $E_p \geq \Delta$.
+An important feature of the BCS theory is that the particles are paired, and it is not possible to excite just one quasiparticle with excitation energy $E_p$.
+Instead, one must break a pair of particles and excite them both to the band of excitations.
+
+It is conventional to introduce the following coherence factors
+\begin{eqnarray}
+    u_p^2 &=& \frac{1}{2} \left( 1 + \frac{\xi_p}{E_p} \right)  \nonumber \\
+    v_p^2 &=& \frac{1}{2} \left( 1 - \frac{\xi_p}{E_p} \right) \nonumber \\
+    2 u_p v_p &=& \sqrt{ 1 - \frac{\xi_p^2}{E_p^2} } = \frac{\Delta}{E_p} \label{10.63} \\
+    u_p^2 + v_p^2 &=& 1 \nonumber
+\end{eqnarray}
+They are useful the show the residues of the poles of the Green's functions.
+\begin{eqnarray}
+    \cg(\bp,ip) &=& \frac{u_p^2}{ip-E_p}  + \frac{v_p^2}{ip + E_p}  \label{10.64} \\ 
+    \cf(\bp,ip) &=& \cf^\dagger(\bp,ip) = - u_p v_p \left( \frac{1}{ip-E_p} - \frac{1}{ip+E_p} \right)  \label{10.65}
+\end{eqnarray}
+The spectral function for the Green's function is
+\begin{equation}
+    A(p,\varepsilon) = -2 \Im \left[ G_{ret}(\bp,\varepsilon) \right] = 2\pi \left[ u^2_p \delta(\varepsilon - E_p ) + v^2_p \delta(\varepsilon + E_p ) \right] \label{10.66}
+\end{equation}
+To evaluate the $\Delta$, consider the definition of the gap function in \eqref{10.46},
+\begin{equation}
+    \cf(\bp,\tau=0) = \frac{1}{\beta} \sum_{p_n} \frac{\Delta}{p_n^2 + E_p^2 } = \frac{\Delta }{2E_p} \tanh \left( \frac{\beta E_p}{2} \right)  \label{10.67}
+\end{equation}
+The summation is evaluated in the contour integral
+\begin{equation}
+    \oint \frac{dz}{2\pi i}  \eta_F(z) \frac{\Delta}{z^2 - E_p^2} =0\label{10.68}
+\end{equation}
