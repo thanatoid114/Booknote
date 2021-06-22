@@ -1,0 +1,46 @@
+\documentclass{tufte-book}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+filecolor=red,
+urlcolor=olive,
+}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+\usetikzlibrary{decorations.markings}
+\tikzset{middlearrow/.style={ decoration={markings, mark= at position 0.575 with {\arrow{#1}}, }, postaction={decorate} } }
+\usepackage{amsmath,amssymb}
+\usepackage{physics}
+\usepackage{marginfix}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{1}
+
+\title{Notes on:\\ A Short Course on Topological Insulator\\ --by J. K. Asboth}
+\author{Meng Sun}
+
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\cd}{\mathcal{D}}
+\newcommand{\cg}{\mathcal{G}}
+\newcommand{\cf}{\mathcal{F}}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\include{chapter1}
+
+\bibliography{mybib}{}
+\bibliographystyle{abbrv}
+\end{document}

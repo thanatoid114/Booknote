@@ -171,3 +171,33 @@ The reaction matrix obeys an integral equation which is deduced by putting \eqre
 \begin{equation}
     R_{\bk'\bk} = V_{\bk'\bk} + P \sum_{\bk_1} \frac{V_{\bk'\bk_1} R_{\bk_1 \bk}}{\varepsilon_k -\varepsilon_{k_1}} \label{4.34}
 \end{equation}
+
+\section{Independent Boson Models}\label{4.3}
+The independent boson model is very important in many-body physics.
+It is an exactly solvable model which describes some relaxation phenomena.
+
+The first Hamiltonian which will be solved is
+\begin{equation}
+    H = c^\dagger c \left[ \varepsilon_c + \sum_q \left( a_q + a_q^\dagger \right) \right] + \sum_q \omega_q a^\dagger_q a_q    \label{4.198}
+\end{equation}
+The Hamiltonian describes a fixed particle of energy $\varepsilon_c$ interacting with a set of phonons with frequencies $\omega_q$.
+The interaction occurs only when the state is  occupied and $c^\dagger c = 1$.
+
+\subsection{Solution by Canonical Transformation}\label{4.3.1}
+The Hamiltonian is first solved by a canonical transformation.
+The new Hamiltonian si desired by a transformation of the type
+\begin{equation}
+    \bar{H} = e^S H e^{-S} = c^\dagger c\left(\varepsilon_c - \Delta \right) + \sum_q \omega_q a^\dagger_q a_q  \label{4.202}
+\end{equation}
+The transfromation must be done so that $S^\dagger = -S$.
+It is assumed that any function of perators my be expressed as a power series and the transformation on a functin of operators is just the function of the transformed operators.
+Thus we have
+\begin{equation} \label{4.203}
+    e^S f(A) s^{-S} = e^S \sum_{n=0}^\infty a_n A^n e^{-S} = f(\bar{A})
+\end{equation}
+The transformation is considered on each operator separately, and the transfromed Hamiltonian is the old one with the new operators.
+The transformation is considered on each operator separartely. and the transfromed Hamtionian is the old one with the new operators.
+These are evaluated using
+\begin{equation}
+    S = c^\dagger c \sum_q \frac{M_q}{\omega_q} \left(a^\dagger_q a_q \right)
+\end{equation}
