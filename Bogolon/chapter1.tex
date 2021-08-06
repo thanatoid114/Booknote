@@ -57,6 +57,19 @@ the result is
 \begin{equation}
   \cg'(\bp,i\omega_n) = \frac{v^2_\bq}{i\omega_n-\omega_\bq} - \frac{u_\bq^2}{i\omega_n + \omega_\bq} \label{eq:F_Green2}
 \end{equation}
+In principle we can write the following matrix form for the Green's function by notating
+\begin{equation}
+    \Psi = ( A_p,  A_{-p}^\dagger )^T
+\end{equation}
+and
+\begin{equation}
+    \hat{G} = -\langle T\Psi \Psi^\dagger \rangle
+    = -
+    \begin{bmatrix}
+        \langle A_q A_{q}^\dagger \rangle & \langle A_q A_{-q} \rangle \\
+        \langle A_{-q}^\dagger A_q^\dagger \langle & \langle A^\dagger_{-q} A_q\rangle
+    \end{bmatrix}
+\end{equation}
 We can make a table for the result of the Green's function in Matsubara frequency
 
 \begin{center}
