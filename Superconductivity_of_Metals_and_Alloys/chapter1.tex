@@ -1,0 +1,165 @@
+\chapter{Fundamental Properties}
+
+\section{A New Condensed State}\label{sec:1.1}
+Below critical temperature $T_{0} = 3.7K$, there is a anomaly in specific heat.
+\begin{eqnarray}
+  C &\sim& \frac{k_{B}^{2}T}{E_{F}} \\
+  C &\sim& k_{B} e^{-1.76 T_{0}/T}
+\end{eqnarray}
+The first superconductor (mercury) was discovered by Kammerling Onnes in 1911.
+
+The free energy $F_{s}$ in the superconductor phase can be derived from specific heat data.
+The difference $(F_S - F_n)_{T=0}$ is called the condensation energy.
+It is \textit{not} of order $k_BT_0$ per electron; it is, in fact, of order $(k_B T_0)^2/E_F$.
+Thus only a fraction $k_B T_0 /E_F \sim 10^{-3}$ of metallic electrons have their energy significantly modified by the condensation process.
+
+\section{Diammagnetism}\label{sec:1.2}
+\subsection{The London Equation}
+Consider the energy in the situation with supercurrents and magnetic fields in sample.
+Assume all fields, currents, ..., are weak and variation in space is slow.
+
+Considering a pure metal with parabolic conduction band, the free energy is
+\begin{equation}
+ F = \int F_s d \br + E_{kin} + E_{mag}
+ \label{eq:1.1}
+\end{equation}
+where $F_s$ is the energy of the electrons in the condensed state at rest and $E_{kin}$ is the kinetic energy associated with the permanent currents.
+Define the drift velocity and superconducting electrons density, we have the current density
+\begin{equation}
+ j_S = n_S e v
+ \label{eq:1.2}
+\end{equation}
+
+For kinetic part
+\begin{equation}
+ E_{kin} = \int d \br \frac{1}{2} m v^2 n_S
+ \label{eq:1.3}
+\end{equation}
+
+The energy associated with the magnetic fied $h(\br)$,
+\begin{equation}
+ E_{mag} = \int \frac{h^2}{8\pi} d \br
+ \label{eq:1.4}
+\end{equation}
+By Maxwell's equation
+\begin{equation}
+ \mathrm{curl~} h = \frac{4\pi}{c} j_s
+ \label{eq:1.5}
+\end{equation}
+With \eqref{eq:1.3}, \eqref{eq:1.4} and \eqref{eq:1.5} give
+\begin{equation}
+ E = \int F_s d \br + \frac{1}{8\pi} \int \left( h^2 + \lambda^2_L \abs{\nabla \times h}^2 \right) d \br`
+ \label{eq:1.6}
+\end{equation}
+where the length is defined by
+\begin{equation}
+ \lambda_L = \sqrt{\frac{mc^2}{4\pi n_S e^2}}
+ \label{eq:1.7}
+\end{equation}
+
+To minmize the freee energy \eqref{eq:1.6} with respect to the field disribution $h(\br)$.
+\begin{equation}
+ \delta E = \frac{1}{4\pi} \int \left[ h + \lambda_L^2 \nabla \times \nabla \times h \right] \delta h d \br
+ \label{eq:1.8}
+\end{equation}
+this gives the London equation
+\begin{equation}
+ h + \lambda_L^2 \mathrm{curl~} \mathrm{curl~} h = 0
+ \label{eq:1.9}
+\end{equation}
+
+\subsection{Meissner Effect}
+Applying the London equation and discussing the penetration of a magnetic field $\vec{h}$ into a superconductor.
+Assuming the surface of teh specimen is $x-y$ plane, the region $z<0$ being empty.
+The field $\vec{h}$ and the current $\vec{j_S}$ depend only on $z-$ direction since it is symmetric in $x-$ and $y-$ direction.
+The Maxwell equations have
+\begin{eqnarray}
+ \nabla \times \vec{h} &=& \frac{4\pi \vec{j_S}}{c} \\ \label{eq:1.10}
+ \nabla \cdot \vec{h} &=& 0 \label{eq:1.11}
+\end{eqnarray}
+
+Two cases are possible:
+\begin{itemize}
+ \item $\vec{h} = h_z$ is parallel to $z$. Then \eqref{eq:1.11} reduce to $\partial_z h=0$, thus $\vec{h}$ is spatially constant. The constant gives $\mathrm{curl~} \vec{h} = 0$ and $\vec{j_S}=0$.
+ Also from \eqref{eq:1.11}, we found $\vec{h} = 0$.
+ \item $\vec{h}$ is tangential, without losing generality, assuming along the $x-$ direction, $\vec{h} = h_x$.
+ The current in $y-$direction read
+ \begin{equation}
+  \frac{d h_x}{d z} = \frac{4\pi \vec{j_S}}{c} \cdot \hat{y}
+  \label{eq:1.12}
+ \end{equation}
+ Following \eqref{eq:1.9}, the only non-zero component is
+ \begin{equation}
+  \frac{d^2 h_x}{dz^2} = \frac{h_x}{\lambda_L^2}
+  \label{eq:1.14}
+ \end{equation}
+ This result  $h(z) = h(0) \exp\left( -z/\lambda_l \right)$.
+\end{itemize}
+Thus, \textit{the field $h$ penetrats only to a depth $\lambda_L$ inside the sample}.
+This result can be generalized to a macroscopic specimen of arbitrary shape.
+
+\textit{The superconductor finds an equilibrium state where the sum of kinetic and magnetic energies is minimus, and this state, for macroscopic samples, corresponds to the expulsion of the magnetic flux}.
+
+\section{Absence of Low Energy Excitations}\label{sec:1.3}
+Considering free electron gas without interactions, the ground state is obtained by placing electron into each individual momentum state $\vec{p}$ with energy $\frac{p^2}{2m}$, until teh Fermi energy $E_F$ is reached.
+For excited state of the gas, take a initially occupied state into a state initially empty.
+The excitation energy of this electron-hole pair is
+\begin{equation}
+ E_{pp'} = \frac{p'^2 - p^2}{2m} \geq 0
+ \label{eq:1.16}
+\end{equation}
+In a normal metal, this free electron picture is not qualitatively modified.
+The low energy excitations are displayed by following experiments:
+\begin{itemize}
+ \item The specific heat is relatively large and proportional to $T$ ( of order $k_B^2 T/E_F$ ) per electron).
+ \item Strong dissipative effects appear when the electrons are submitted to low frequency external perturbation.
+\end{itemize}
+
+In most superconductors, the energy $E_{pp'}$ necessary to create a pair of excitations is at least $2\Delta$,
+\begin{equation}
+ E_{pp'} \geq 2\Delta
+ \label{eq:1.17}
+\end{equation}
+where the energy per excitation is $\Delta$.
+\begin{itemize}
+ \item THe low temperature specific heat is exponential and proportional to $\exp(-\Delta/k_B T)$.
+ \item Absorption of electromagnetic energy.
+ For $\hbar \omega \geq 2\Delta$ a photon of frequency $\omega$ can create an electron-hole pair.
+ \item Ultrasonic attenuation. Here the phonon is of low frequency and cannot decay by creation of a pair of excitation. But it can be absorbed by collision with a preexistiong excitation. This process is proportional to the number of preexisting excitations, thus to $\exp(-\Delta/k_B T) $.
+ \item Tunnel effect. A superconductor S and a normal metal N are separated by thin insulating barrier.
+ The quantum mechanical tunnel effect allows individual electrons to pass throungh the barrier.
+ The electron must have been excited from the condensed phase, and this requires an energy $\Delta$.
+ There is no current at low temperatures unless we apply a voltage $V$ across teh junction such that the energy gain $eV$ is larger than $\Delta$.
+\end{itemize}
+
+\marginnote{The existence of energy gap is not the necessary condition for the existence of permanent current (superfluidity). There are some so called surface superconductivity have superfluidity with gapless excitation in single electron excitation spectrum.}
+
+\section{Two Kind of Superconductors}\label{sec:1.4}
+To derive the London equation \eqref{eq:1.9}, we assume a slow variation in space of $v(r)$ or of the supercurrent $j_S(r)$.
+The length scale is related to $\xi_0$ the correlation length.
+To estimate $\xi_0$ we notice that the important domain in momentum space is defined by
+\begin{equation}
+ E_F - \Delta < \frac{p^2}{2m} < E_F + \Delta
+ \label{eq:1.18}
+\end{equation}
+Then the thickness of the shell in $p$ space is defined by $\delta p \approxeq \frac{2\Delta}{v_F}$. \footnote{$E_F$ is the Fermi level, and $v_F= p_F/m$ is the Fermi velocity.}
+Then a wave packet formed of plane waves whose momentum has an uncertainty $\delta p$ have a mimimum spatial extent $\delta x \sim \hbar/\delta p$.
+This leads to
+\begin{equation}
+ \xi_0 = \frac{\hbar v_F}{\pi \Delta}
+ \label{eq:1.19}
+\end{equation}
+which is called the \textit{coherence length of the superconudctor}.
+
+However,equation \eqref{eq:1.14} and others show that $h$, $j_S$ and $v$ vary on a scale $\lambda_L$.
+This means the derivation of London equation holds only if $\lambda_L \gg \xi_0$.
+
+The first kind (Type I) superconductor is the cases where we have $\lambda \ll \xi_0$.
+Eventhough the London equation need to modified, they do exhibit the Meissner effect.
+
+For transition metals and intermetallic compounds of the type $\mathrm{Nb}_3\mathrm{Sn}$ and so on, the effective mass is very large, we have $\lambda_L \gg \xi$.
+Therefore this class of materials \eqref{eq:1.9} is well applicable in weak fields.
+These called second kind (Type II) superconductors.
+
+
+
