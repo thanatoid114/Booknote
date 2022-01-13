@@ -1,0 +1,274 @@
+\chapter{Appendix: Bogolon-mediated electron scattering in graphene}\label{AP:CH6}
+% 
+\section{Derivation of resistivity via Bloch--Gr\"uneisen approach }
+In this Appendix, we derive the low-temperature $T$-dependence of the conductivity of graphene in the hybrid Bose--Fermi system using the Bloch--Gr\"uneisen approach.
+%
+We start from the Boltzmann equation,
+%
+\begin{equation}\label{AP6_A1}
+e_0\textbf{E}\cdot\frac{\partial f}{\hbar\partial \textbf{p}}=I\{f\},
+\end{equation}
+%
+where $\mathbf{p}$ is the wave vector and we set $p\equiv\abs{\mathbf{p}}$, $\mathbf{E}$ is the perturbing electric field, and $f$ is the distribution function.
+%
+The scattering integral is given by
+%
+\begin{eqnarray}
+\label{AP6_A2}
+I\{f\}&=&-\frac{1}{\hbar}\int\frac{d\textbf{q}d\textbf{p}'}{(2\pi)^2}|M_q|^2\Bigl[N_qf_p(1-f_{p'})\delta(\varepsilon_p-\varepsilon_{p'}+\hbar\omega_q)\delta(\textbf{p}-\textbf{p}'+\textbf{q})\nonumber\\
+&{}&{}+(N_q+1)f_p(1-f_{p'})\delta(\varepsilon_p-\varepsilon_{p'}-\hbar\omega_q)\delta(\textbf{p}-\textbf{p}'-\textbf{q})\nonumber\\
+&{}&{}+N_qf_{p'}(1-f_{p})\delta(\varepsilon_{p'}-\varepsilon_{p}+\hbar\omega_q)\delta(\textbf{p}'-\textbf{p}+\textbf{q})\nonumber\\
+&{}&{}+(N_q+1)f_{p'}(1-f_p)\delta(\varepsilon_{p'}-\varepsilon_{p}-\hbar\omega_q)\delta(\textbf{p}'-\textbf{p}-\textbf{q})\Bigr].
+\end{eqnarray}
+%
+Note that in writing this integral we set the length of the sample $L$ equal to one. In performing a dimensionality analysis, one should include the length squared such that $I\{f\}$ has a dimension of inverse time, as it should.
+
+For small enough electric fields, the electron distribution is not substantially different from the equilibrium Fermi distribution, and thus it can be presented in the form
+%
+\begin{eqnarray}
+f=f^0(\varepsilon_p)-\left(-\frac{\partial f^0}{\partial\varepsilon_p}\right)f^{(1)}_\textbf{p},
+\end{eqnarray}
+where $f^0$ is the equilibrium Fermi--Dirac distribution and $f^{(1)}_\textbf{p}$ has a dimensionality of energy.
+%
+Following the steps of the derivation reported in~\cite{Zaitsev:2014aa}, we rewrite:
+%
+\begin{eqnarray}
+\label{AP6_A3}
+e_0\textbf{E}\cdot\frac{\partial f}{\hbar\partial \textbf{p}}&=&v_F\frac{e_0\textbf{E}\cdot\textbf{p}}{|\mathbf{p}|}\frac{\partial f^0}{\partial \varepsilon_p}=I\{f^{(1)}_\textbf{p}\};\\\nonumber
+I\{f^{(1)}_\textbf{p}\}&=&-\frac{1}{\hbar}\int\frac{d\textbf{q}d\textbf{p}'}{(2\pi)^2}|M_q|^2\frac{1}{\hbar}\frac{\partial N_q}{\partial \omega_q}
+\left(f^0(\varepsilon_p)-f^0(\varepsilon_{p'})\right)\\\nonumber
+&{}&{}\times\left(f^{(1)}_{\textbf{p}}-f^{(1)}_{\textbf{p}'}\right)
+\Bigl[\delta(\varepsilon_{p}-\varepsilon_{p'}-\hbar\omega_q)\delta(\textbf{p}-\textbf{p}'-\textbf{q})\nonumber\\
+&{}&{}-\delta(\varepsilon_{p}-\varepsilon_{p'}+\hbar\omega_q)\delta(\textbf{p}-\textbf{p}'+\textbf{q})\Bigr],
+\end{eqnarray}
+where $$\frac{\partial N_q}{\partial \omega_q}=-\frac{\hbar}{k_BT}N_q(1+N_q).$$
+By further integrating over the electron wave vector $\textbf{p}'$, we find
+%
+\begin{eqnarray}
+\label{AP6_A4}
+v_F\frac{e_0\textbf{E}\cdot\textbf{p}}{p}\frac{\partial f^0}{\partial \varepsilon_p}
+=&-&\frac{1}{\hbar}\int\frac{d\textbf{q}}{(2\pi)^2}|M_q|^2\frac{1}{\hbar}\frac{\partial N_q}{\partial \omega_q}
+\left(f^0(\varepsilon_p)-f^0(\varepsilon_{p}-\hbar\omega_q)\right)\\ \nonumber
+&\times&\left(f^{(1)}_{\textbf{p}}-f^{(1)}_{\textbf{p}-\textbf{q}}\right)
+\delta(\varepsilon_{\textbf{p}}-\varepsilon_{\textbf{p}-\textbf{q}}-\hbar\omega_\textbf{q})\\
+\nonumber
+&+&\frac{1}{\hbar}\int\frac{d\textbf{q}}{(2\pi)^2}|M_q|^2\frac{1}{\hbar}\frac{\partial N_q}{\partial \omega_q}
+\left(f^0(\varepsilon_p)-f^0(\varepsilon_{p}+\hbar\omega_q)\right)\\ \nonumber
+&\times&\left(f^{(1)}_{\textbf{p}}-f^{(1)}_{\textbf{p}+\textbf{q}}\right)
+\delta(\varepsilon_{\textbf{p}}-\varepsilon_{\textbf{p}+\textbf{q}}+\hbar\omega_\textbf{q}).
+\end{eqnarray}
+%
+Let the electric field be directed along the $x$-axis; then, we can use the correction function in the form
+\begin{eqnarray}
+f^{(1)}_\textbf{p}= v_F\frac{e_0E_xp_x}{k_F}\tau(\varepsilon_p),
+\end{eqnarray}
+%
+where $p_F$ is the Fermi wave vector and $\tau(\varepsilon_p)$ is the relaxation time.  
+We now have
+%
+\begin{eqnarray}\label{AP6_A5}
+\frac{p_x}{p}\frac{\partial f^0}{\partial \varepsilon_p}
+=&-&\frac{1}{\hbar}\int\frac{d\textbf{q}}{(2\pi)^2}|M_q|^2\frac{1}{\hbar}\frac{\partial N_q}{\partial \omega_q}
+\left[f^0(\varepsilon_p)-f^0(\varepsilon_{p}-\hbar\omega_q)\right] \nonumber \\ 
+&\times&\left[\frac{p_x}{k_F}\tau(\varepsilon_p)-\frac{p_x-q_x}{k_F}\tau(\varepsilon_p-\hbar\omega_q)\right]
+\delta(\varepsilon_{\textbf{p}}-\varepsilon_{\textbf{p}-\textbf{q}}-\hbar\omega_\textbf{q})\nonumber\\
+&+&\frac{1}{\hbar}\int\frac{d\textbf{q}}{(2\pi)^2}|M_q|^2\frac{1}{\hbar}\frac{\partial N_q}{\partial \omega_q}
+\left[f^0(\varepsilon_p)-f^0(\varepsilon_{p}+\hbar\omega_q)\right] \nonumber \\ 
+&\times&\left[\frac{p_x}{k_F}\tau(\varepsilon_p)-\frac{p_x+q_x}{k_F}\tau(\varepsilon_p+\hbar\omega_q)\right]
+\delta(\varepsilon_{\textbf{p}}-\varepsilon_{\textbf{p}+\textbf{q}}+\hbar\omega_\textbf{q}).
+\end{eqnarray}
+%
+Assuming that the relaxation time is constant~\cite{Ziman:2001aa} at $\tau=\tau_0$, we find
+%
+\begin{eqnarray}
+\label{AP6_ABoltzmann1}
+\frac{k_F}{p}p_x\frac{\partial f^0}{\partial \varepsilon_p}
+=&-&\frac{\tau_0}{\hbar}\int \frac{d\textbf{q}}{(2\pi)^2}q_x|M_q|^2\frac{1}{\hbar}\frac{\partial N_q}{\partial \omega_q}\\ \nonumber
+&\times&\left[f^0(\varepsilon_p)-f^0(\varepsilon_{p}-\hbar\omega_q)\right]
+\delta(\varepsilon_{\textbf{p}}-\varepsilon_{\textbf{p}-\textbf{q}}-\hbar\omega_\textbf{q})\\
+\nonumber
+&+&\frac{\tau_0}{\hbar}\int \frac{d\textbf{q}}{(2\pi)^2}q_x|M_q|^2\frac{1}{\hbar}\frac{\partial N_q}{\partial \omega_q}\\ \nonumber
+&\times&\left[f^0(\varepsilon_p)-f^0(\varepsilon_{p}+\hbar\omega_q)\right]
+\delta(\varepsilon_{\textbf{p}}-\varepsilon_{\textbf{p}+\textbf{q}}+\hbar\omega_\textbf{q}).
+\end{eqnarray}
+%
+
+Let us denote the angle between vectors $\textbf{p}$ and $\textbf{q}$ as $\varphi$, and the angle between vectors $\textbf{p}$ and $\textbf{E}$ as $\beta$. This gives $q_x=q\cos(\varphi+\beta)$ and $p_x=p\cos\beta$. Integrating over $\phi$, we obtain
+%
+\begin{eqnarray}
+\label{AP6_AEq19}
+\int_0^{2\pi} &d\phi&\cos (\phi+\beta)\delta(a-\sqrt{b^2\pm c^2\cos\phi})\\\nonumber
+&=&\pm\frac{4|a|(b^2-a^2)\Theta[c^4-(b^2-a^2)^2])}{c^2\sqrt{c^4-(b^2-a^2)^2}}\cos\beta,
+\end{eqnarray}
+%
+where $\Theta[x]$ is the Heaviside step function, $a=\hbar(v_Fp-sq)$, $b^2=\hbar^2v_F^2(p^2+q^2)$, and $c^2=2\hbar^2 v_F^2pq$. 
+To derive Eq.~\eqref{AP6_AEq19}, we denote a new variable $x=\cos\phi$. This implies $d\phi=\mp dx[1-x^2]^{-1/2}$, where the $-$($+$) case is for $0\leq\phi <\pi$ ($\pi\leq\phi<2\pi$).
+%
+After integrating over the angle $\phi$, we can integrate Eq.~\eqref{AP6_ABoltzmann1} over $\xi_p=\varepsilon_p-\mu$ using
+%
+\begin{eqnarray}
+\int\limits_{-\infty}^{\infty}d\xi_p\left(f^0(\varepsilon_p)-f^0(\varepsilon_{p}\pm\hbar\omega_q)\right)&=&\mp\hbar\omega_q,\nonumber \\
+\int\limits_{-\infty}^{\infty}d\xi_p\frac{\partial f^0}{\partial \varepsilon_p}&=&-1,
+\end{eqnarray}
+%
+and putting all electron wave vectors to be $p=k_F$.
+
+Resistivity is inversely proportional to scattering time by
+%
+\begin{eqnarray}
+\label{AP6_Arho1}
+\rho\propto\frac{1}{\tau_0}&=&\frac{\hbar\xi_I^2}{8\pi^2k_FM}\frac{1}{kT}\int_0^\infty dq q^4e^{-2ql}q\nonumber\\
+&\times&(\Gamma_--\Gamma_+)_{k_F}N_q(1+N_q),
+\end{eqnarray}
+%
+where we introduce $\xi_I= e_0^2d\sqrt{n_c}/2\epsilon$ and
+%
+\begin{eqnarray}
+\label{AP6_Agamma}
+\Gamma_{\pm}=\frac{4|a_{\pm}|(a^2_{\pm}-b^2)\Theta[c^4-(a^2_{\pm}-b^2)^2]}{c^2\sqrt{c^4-(a^2_\pm-b^2)^2}}.
+\end{eqnarray}
+%
+The subscript $k_F$ in the expression $(\Gamma_--\Gamma_+)_{k_F}$ in Eq.~\eqref{AP6_Arho1} means that all the electron wave vectors $p$ are to be substituted by the Fermi value $k_F$.
+%
+
+We now introduce a new dimensionless variable,
+%
+\begin{eqnarray}
+\label{AP6_Dim}
+u=\frac{\hbar sq}{k_BT},
+\end{eqnarray}
+%
+in Eq.~\eqref{AP6_Arho1} and obtain
+%
+\begin{eqnarray}
+\label{AP6_Arho2}
+\frac{1}{\tau_0}&=&\frac{\xi_I^2}{8\pi^2k_FMs}\left(\frac{k_BT}{\hbar s}\right)^4\int_0^\infty du \frac{u^4e^{(1-2\tilde{l})u}}{(e^u-1)^2}\nonumber\\
+&\times&(\Gamma_--\Gamma_+)_{k_F},
+\end{eqnarray}
+%
+where
+%
+\begin{eqnarray}
+\Tilde{l}=\frac{lk_BT}{\hbar s}\sim\frac{k_BT}{10\mbox{ meV}}.
+\end{eqnarray}
+%
+We set $s=10^5$ m/s and $l= 5.0\times 10^{-8}$ m/s. 
+%
+Note that room temperature is $k_BT_R\sim 26$ meV, so that for far lower temperatures we have $\Tilde{l}\ll 1$. Hence, we can replace
+%
+\begin{eqnarray}
+\label{AP6_approx1}
+e^{(1-2\tilde{l})u}\rightarrow e^u.
+\end{eqnarray}
+%
+
+Let us now look at the Heaviside theta function argument in Eq.~\eqref{AP6_Agamma}. It can be simplified to
+%
+\begin{eqnarray}
+-(v_F^2-s^2)q^2\pm 4k_Fsv_Fq+4k_F^2v_F^2.
+\end{eqnarray}
+%
+This expression is positive for
+%
+\begin{eqnarray}
+0\leq q<\frac{2k_Fv_F}{v_F\mp s}\approx 2k_F,
+\end{eqnarray}
+%
+or
+%
+\begin{eqnarray}
+\label{AP6_Alambda}
+0\leq u<\frac{T_{BG}}{T}\equiv\Lambda,
+\end{eqnarray}
+%
+where $T_{BG}=2\hbar sk_F/k_B$ is the Bloch--Gr\"{u}neisen temperature for bogolons.
+
+Let us consider the case in which temperature $T\ll T_{BG}$, which specifically means $\Lambda >10$. This inequality gives us the precise form of what we mean by \textit{low temperature}: $k_BT/E_F<10^{-2}$. For typical $E_F\sim 10^{-1}$ eV, this gives $T_{BG}=183$ K and  $T<18$ K (for a particular distance between the layers of $l>50$ nm). 
+%
+It should be mentioned that the condition $\tilde{l}\ll 1$ is not a requirement. However, the general case does not allow for the analytical extraction of temperature out of the integral, since we come up with the term $\sim\exp[lk_BTu/(\hbar s)]$ under the integration.
+
+For large $u$ (or $q$), the factors $\Gamma_\pm$ in Eq.~\eqref{AP6_Arho2} approach constant values. In the meantime, the term $u^4\exp({-u})$ rapidly goes to zero for $u>10$.
+%
+Therefore, we can remove the theta function in Eq.~\eqref{AP6_Agamma} and only incur a small (imaginary) error. Doing this and also using $v_F^2-s^2\sim v_F^2$, Eq.~\eqref{AP6_Agamma} now becomes
+%
+\begin{eqnarray}
+\label{AP6_Agamma2}
+\Gamma_\pm=\frac{2|v_Fk_F\pm sq|(2v_Fsk_F-v_F^2q)}{\hbar v_F^3k_F q\sqrt{\pm 4k_Fsv_Fq+4k_F^2v_F^2-v_F^2q^2}},
+\end{eqnarray}
+%
+where the expression in the numerator can be rewritten as
+\begin{eqnarray}
+2v_Fsk_F-v_F^2q&=&2v_Fsk_F-v_F^2\frac{k_BT}{\hbar s}u\nonumber\\
+&=&\frac{v_Fk_BT}{\hbar s}(s\Lambda-v_Fu).
+\end{eqnarray}
+%
+Here, $\Lambda$ does depend on $T$, as was defined in Eq.~\eqref{AP6_Alambda}. For $T\ll T_{BG}$ though, due to the factor $\exp({-u})$, we can simply replace $\Lambda\sim 10$ (or greater) without significantly affecting the result. 
+%
+We introduce the ratio of velocities $\alpha=s/v_F$ and for simplicity, we choose $\Lambda$ such that $\alpha\Lambda=1$ as long as $\Lambda>10$, to then get
+%
+\begin{eqnarray}
+2v_Fsk_F-v_F^2q
+&=&\frac{v_Fk_BT}{\alpha\hbar }(1-u).
+\end{eqnarray}
+%
+We find
+%
+\begin{eqnarray}
+\frac{1}{\tau_0}&=&\frac{10v_F\xi_I^2}{8\pi^2k_FMs}\left(\frac{k_BT}{\hbar s}\right)^5\nonumber\\
+&\times&\int_0^\infty du \frac{u^4e^u(1-u)}{(e^u-1)^2}(\gamma_--\gamma_+)_{k_F},
+\end{eqnarray}
+%
+where
+%
+\begin{eqnarray}
+\label{AP6_AEqMath}
+\gamma_\pm=\frac{2|v_Fk_F\pm sq|}{\hbar v_F^3k_F q\sqrt{\pm 4k_Fsv_Fq+4k_F^2v_F^2-v_F^2q^2}}.
+\end{eqnarray}
+%
+The term in the absolute value can be rewritten as
+%
+\begin{eqnarray}
+|v_Fk_F\pm sq|=\frac{k_BT}{\hbar}\left|\frac{\Lambda}{2\alpha}\pm u\right|.
+\end{eqnarray}
+%
+
+Finally, the term under the square root in Eq.~\eqref{AP6_AEqMath} can be written as 
+%
+\begin{eqnarray}
+\nonumber
+\pm 4k_Fsv_Fq&+&4k_F^2v_F^2-v_F^2q^2\nonumber\\
+&\sim&-v_F^2(q-2k_F)(q+2k_F)\nonumber\\
+&=&-\frac{v_F^2k_B^2T^2}{\hbar^2s^2}(u-\Lambda)(u+\Lambda).
+\end{eqnarray}
+%
+
+Summing up, we find
+%
+\begin{eqnarray}
+\frac{1}{\tau_0}&=&\frac{I_0\xi_I^2k_F^2}{4\pi^2\hbar \alpha^4v_F^2M}\left(\frac{k_BT}{E_F}\right)^4\nonumber\\
+&=&\frac{5I_0e_0^2}{8\pi^2\hbar^3 v_F}\frac{M}{n_cE_F^2}(k_BT)^4,
+\end{eqnarray}
+%
+where $I_0$ is a dimensionless integral, which can be found numerically by
+%
+\begin{eqnarray}
+I_0&=&\int_0^\infty du\frac{u^3(1-u)e^u}{(e^u-1)^2\sqrt{100-u^2}}\nonumber\\
+&\times&\left(\left|\frac{\Lambda}{2\alpha}-u\right|-\left|\frac{\Lambda}{2\alpha}+u\right|\right)
+\approx 26.2.
+\end{eqnarray}
+%
+This gives
+\begin{eqnarray}
+\frac{1}{\tau_0}=(1.4\times 10^{16}\mbox{s}^{-1})\left(\frac{k_BT}{E_F}\right)^4.
+\end{eqnarray}
+%
+In terms of the resistivity,
+%
+\begin{eqnarray}
+\label{AP6_Arho3}
+\rho=\frac{\pi\hbar^2}{e_0^2E_F}\frac{1}{\tau_0}=(1.0\times 10^6\;\Omega)\left(\frac{k_BT}{E_F}\right)^4.
+\end{eqnarray}
+%
+Thus, we conclude that at low temperatures $T\ll T_{BG}$, the resistivity is $\propto T^4$.
+
+

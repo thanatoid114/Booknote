@@ -1,0 +1,87 @@
+\documentclass{ustthesis}  % default square logo 
+
+%load any additional packages
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage[b5paper]{geometry}
+\usepackage{pdfpages}
+
+\usepackage{mathspec}
+\usepackage{xeCJK}
+
+\setmainfont[Scale=1.0]{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+\setmathsfont{SXITS Math}
+\setCJKmainfont{AR PL UKai CN}
+
+
+
+
+\hypersetup{colorlinks=true,citecolor={blue},linkcolor={blue},urlcolor={blue}}
+\newcommand{\mi}{\mathrm{i}}
+\newcommand{\figwidth}{\textwidth}
+\newcommand{\hl}[1]{\textcolor{red}{#1}}
+%input macros (i.e. write your own macros file called mymacros.tex 
+%and uncomment the next line)
+%\include{mymacros}
+
+\title{Exciton-Polaritons in Artificial Lattices and Electron Transport in Bose-Fermi Hybrid Systems}   %note \\[1ex] is a line break in the title
+
+\author{Meng Sun}             %your name
+\college{Center for Theoretical Physics of Complex Systems, IBS School}  %your college
+
+%\renewcommand{\submittedtext}{change the default text here if needed}
+\degree{Doctor of Philosophy}     %the degree
+\degreedate{Mar. 26. 2020}         %the degree date
+
+%end the preamble and start the document
+\begin{document}
+
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\includepdf[pages=-]{ust_1.pdf}
+\includepdf[pages=-]{ust_2.pdf}
+\includepdf[pages=-]{ust_3.pdf}
+\maketitle                  % create a title page from the preamble info
+\include{preface}        % include a dedication.tex file
+\include{acknowlegements_revised}   % include an a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           cknowledgements.tex file
+\include{abstract_3-25_revised}          % include the abstract
+\includepdf[pages=-]{ust_4.pdf}
+%
+\begin{romanpages}          % start roman page numbering
+\tableofcontents            % generate and include a table of contents
+\listoffigures              % generate and include a list of figures
+\end{romanpages}            % end roman page numbering
+
+%now include the files of latex for each of the chapters etc
+\include{chapter1_2-26_revised} % Introduction
+\include{chapter2_3-6_revised}% Multivalley
+\include{chapter3_3-4_revised} % 1D complex
+\include{chapter4_2-28_revised}  % Lieb
+\include{chapter5_2-26_revised}  % Graphene Topological
+\include{chapter6_3-18_revised}  % Hybird system - Graphene
+\include{conclusions_3-18_revised}
+
+%now enable appendix numbering format and include any appendices
+\appendix
+\include{appendix2_revised} % Appendix for Multivalley
+\include{appendix6_revised} % Appendix for Hybird - Graphene
+\include{appendix7_revised2} % Appendix for Hybrid - 2DGE
+
+%next line adds the Bibliography to the contents page
+\addcontentsline{toc}{chapter}{Bibliography}
+%%uncomment next line to change bibliography name to references
+\renewcommand{\bibname}{References}
+\bibliographystyle{phaip}  %use the plain bibliography style
+\bibliography{refs}        %use a bibtex bibliography file refs.bib
+
+\include{preface2}
+\end{document}

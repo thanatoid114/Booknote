@@ -1,0 +1,243 @@
+\chapter{GROUP REPRESENTATIONS}
+
+\section{Representations}
+\textbf{Definition 2.1} (Representations of a Group): If there is a homomorphism from a group $G$ to a group operatures $U\left(G\right)$ on a linear vector space $V$, we say that $U\left(G\right)$ forms a \textit{representation} of the group $G$.
+The \textit{dimension of the representations} is the dimension of the vector space $V$.
+A representation is said to be \textit{faithful} if the homomorphism is alo an isomorphism.
+A \textit{degenerate representation} is one which is not faithful.
+
+To be more specific: the representation is a mapping
+\begin{equation*}
+  g \in G \xRightarrow[above]{U} \left(g\right)
+\end{equation*}
+where $U\left(g\right)$ is an operator on $V$, such that
+\begin{equation}
+  \label{eq:2.1-1}
+  U\left(g_{1}\right) U\left(g_{2}\right) = U \left(g_{1} g_{2}\right)
+\end{equation}
+i.e., the representation operators satisfy the same rules of multiplication as the original group elements.
+
+Consider the case of a finite-dimensional representation.
+Choose a set of basis vectors on $V$.
+The operators $U\left(g\right)$ are then realized as $n\times n$ matrices $D\left(g\right)$ as follows\footnote{where $j$ is the row index and $i$ is the column index}:
+\begin{equation}
+  \label{eq:2.1-2}
+ U\left(g\right) \ket{e_{i}} = \ket{e_{j}} D\left(g\right)^{j}_{i}, ~ ~ ~ g \in G.
+\end{equation}
+And from Eq.~\eqref{eq:2.1-1}, we have
+\begin{equation}
+  \label{eq:2.1-3}
+ D\left(g_{1}\right) D\left(g_{2}\right) = D\left(g_{1}g_{2}\right)
+\end{equation}
+And since $D\left(G\right)$ satisfy the same algebra as $U\left(G\right)$, the group of matrices $D\left(G\right)$ forms a \textit{matrix representation} of $G$.
+
+\textrm{Example 1}: The trivial $1-$dimenional representation for every group $G$.
+Let $V=C$, and $U\left(g\right) = 1$ for all $g \in G$.
+Then $g\in G \longrightarrow 1$ forms a representation.
+
+\textrm{Example 2}: Let $G$ be a group of matrices, $V=C$, and $U\left(g\right) =\det g$.
+This define non-trivial one-dimenional representation since $\det g_{1} \det g_{2} = \det g_{1}g_{2}$.
+
+\textrm{Example 4}: Let $G$ be the dihedral group $D_{2}$ consisting of $e$ (identity), $h$ (reflection about the $Y-$axis), $v$ (reflection about the $X-$axis), and $r$ (rotation by $\pi$ around the origin) as described at Tab.~\ref{tab:1-3} and Fig.~\ref{fig:1-1}.
+Let $V_{2}$ be the two-dimensional Euclidean space with basis vector $\left(\hat{e}_{1}, \hat{e}_{2}\right)$.
+By referring to Fig.~\ref{fig:2-1} and making use of the definition Eq.~\eqref{eq:2.1-2}, we easily infer
+\begin{equation}
+  \label{eq:2.1-4}
+  D\left(e\right) =
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{bmatrix}
+  D\left(h\right) =
+  \begin{bmatrix}
+    -1 & 0 \\
+    0 & 1
+  \end{bmatrix}
+  D\left(v\right) =
+  \begin{bmatrix}
+    1 & 0 \\
+    0 & -1
+  \end{bmatrix}
+  D\left(r\right) =
+  \begin{bmatrix}
+    -1 & 0 \\
+    0 & -1
+  \end{bmatrix}
+\end{equation}
+It is straightforward to very that the mapping $g\longrightarrow D\left(g\right)$ is a homomorphism, hence these matrices form a $2-$dimensional representation of the $D_{2}$ group.
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \draw [<->] (-2,0) -- (2,0);
+    \draw [<->] (0,-2) -- (0,2);
+    \draw [dashed] (0,0) circle [radius=2];
+    \node [right] at (2,0) {$\hat{e}_{1}, ~ v\hat{e}_{1}$};
+    \node [above] at (0,2) {$\hat{e}_{2}, ~ h\hat{e}_{2}$};
+    \node [left] at (-2,0) {$r\hat{e}_{1}, ~ h\hat{e}_{1}$};
+    \node [below] at (0,-2) {$v\hat{e}_{2}, ~ r\hat{e}_{2}$};
+  \end{tikzpicture}
+  \caption{$D_2$ transformations}
+  \label{fig:2-1}
+\end{figure}
+
+\textrm{Example 5}: Let $G$ be the group of continuous rotations in a plane around origin $O$, $G=\{R\left(\phi\right), 0\leq \phi \leq 2\pi\}$.
+Let $V_{2}$ be the two-dimensional Euclidean space, since
+\begin{align}
+  \label{eq:2.1-5}
+  \hat{e}_{1}' &= \hat{e}_{1} \cos \phi + \hat{e}_{2} \sin \phi \\
+  \hat{e}_{2}' &= -\hat{e}_{1} \sin \phi + \hat{e}_{2} \cos \phi \nonumber
+\end{align}
+we have
+\begin{equation}
+  \label{eq:2.1-6}
+  D\left(\phi\right) =
+  \begin{bmatrix}
+    D_{1}^{1}=\cos \phi & D_{1}^{2}=-\sin \phi \\
+    D_{2}^{1}=\sin \phi & D_{2}^{2}=\cos \phi
+  \end{bmatrix}
+\end{equation}
+Since according Eq.~\eqref{eq:2.1-2}, $U \ket{e_{1}} = \ket{e_{1}} D\left(\phi\right)_{1}^{1}+ \ket{e_{2}} D\left(\phi\right)_{1}^{2}$.
+However, if $\mathbf{x}$ is an arbitrary vector in $V_{2}$, $\mathbf{x} = \hat{e}_{j} x^{j}$, then
+\begin{align}
+  \label{eq:2.1-7}
+  \mathbf{y} &= U\left(\phi\right) \mathbf{x} = \hat{e}_{j} y^{j} \\ \nonumber
+  y^{j} &= D\left(\phi\right)^{j}_{i} x^{i} \\ \nonumber
+  \begin{bmatrix}
+    y^{1} \\
+    y^{2}
+  \end{bmatrix}
+  &=
+  \begin{bmatrix}
+  \cos \phi & -\sin \phi \\
+  \sin \phi & \cos \phi
+  \end{bmatrix}
+  \begin{bmatrix}
+  x^{1}\\
+  x^{2}
+  \end{bmatrix}
+\end{align}
+
+As we can see, different groups may be realized on the same vector space.
+Here, the $2-$dimensional Euclidean space $V_{2}$ is seen to provide representations for the two finite groups $D_{2}$, $D_{3}$ as well as the continuous group $R\left(2\right)$
+
+\textrm{Example 7}: Let $V_{f}$ be te space of complex-valued linear homogeneous founctions $f$ of two real varibales $\left(x,y\right)$:
+\begin{equation}
+  \label{eq:2.1-8}
+  f\left(x,y\right) = a x + by
+\end{equation}
+where $\left(a,b\right)$ are arbitary complex coefficients.
+Interpret $\left(x,y\right)$ as the components of a vector $\mathbf{x}$ in a $2$-dimenional Euclidean space $V_{2}$.
+Then the group operations from previos examples will induce the following transformation in the function space $V_{f}$
+\begin{equation}
+\label{eq:2.1-9}
+f \xRightarrow{g \in G} f'\left(x^{1},x^{2}\right) \equiv f \left(x'^{1},x'^{2}\right)
+\end{equation}
+where $\mathbf{x}' = U\left(g^{-1}\right) \mathbf{x}$.
+It is straightforward to show that the mapping defined by Eq.~\eqref{eq:2.1-9} is a homomorphism; for if $g" g' = g$ then
+\begin{align}
+\label{eq:2.1-10}
+f \xRightarrow{g'} f' ~ ~ ~ f' \left(\mathbf{x}\right) &= f \left[ U\left(g'\right)^{-1} \mathbf{x} \right] \\ \nonumber
+f' \xRightarrow{g"} f" ~ ~ ~ f"\left( \mathbf{x} \right) &= f' \left[ U\left(g"\right)^{-1} \right] = f \left[U\left(g'\right)^{-1} U\left(g"\right)^{-1} \mathbf{x} \right] \\ \nonumber
+  &= f\left[U\left(g"g'\right)^{-1} \mathbf{x}\right] = f\left[ U\left(g\right)^{-1} \mathbf{x}\right]
+\end{align}
+Therefore, the set of transformation defined by Eq.~\eqref{eq:2.1-9} forms a representation of the group $G$.
+
+\textbf{Theorem 2.1:} (i) If the group $G$ has a non-trivial invariant subgroup $H$, then any representation of the factor group $K=G/H$ is also a representaion of $G$.
+This representaion must be degenerate; (ii) Conversely, if $U \left( G \right)$ is a degenerate representation of $G$, then $G$ has at least one invariant subgroup $H$ such that $U \left( G \right)$ defines a faithful representation of the factor group $G/H$.
+
+A immediate corollay of this theorem is that all representations of simple groups are faithful.
+
+\section{Irreducible, Inequivalent Representations}
+The first type of redundacy is due to similarity transformation.
+
+\textbf{Definition 2.2} (Equivalence of Representations): Two representations of a group $G$ related by a similarity transfromation are said to be equivalent.
+
+By seeking characterizations of the representation which are invariant under similarity transfomations, we can tell the two representations are equivalant or not.
+The trace $\tr A$ and determinant $\det A$ are two characterizations which are independent of the choice of the base.
+
+\textbf{Definition 2.3} (Characters of a Representation): The \textit{character} $\chi \left( g \right)$ of $g \in G$ in a represenation $U \left( G \right)$ is defined to be $\chi \left( g \right) = \Tr U \left( g \right)$.
+All group elements in a given class of $G$ have the same characters, becase $\Tr D \left( p \right) D \left( g \right) D \left( p^{-1} \right)= \Tr D \left( g \right)$.
+Therefor, the group character is a function of the class-label only.
+
+A second type of redundacy concerns direct sum representations.
+
+\textbf{Definition 2.4} (Invariant Subspace): Let $U \left( G \right)$ be a representation of $G$ on the vector space $V$, and $V_{1}$ be a subspace of $V$ with the property that $U \left( g \right) \ket{x} \in V_{1}$ for all $\mathbf{x} \in V_{1}$ and $g \in G$.
+$V_{1}$ is siad to be an \textit{invariant subspace} of $V$ with repsect ot $U \left( G \right)$.
+An invariant subspace is \textit{mimimal} or \textit{proper} if it does not contain any non-trival invariant subspace with respect ot $U \left( G \right)$.
+
+Examples of trivial invariant subspaces of $V$ with respect to $U \left( G \right)$ are: (i) the space $V$ itself, and (ii) the subspace consisting only of the null vector.
+
+\textbf{Definition 2.5} (Irreducibel Representations): A representation $U \left( G \right)$ on $V$ is \textit{irreducible} if there is no non-trivial invariant subspace in $V$ with respect to $U \left( G \right)$.
+Otherwise, the representation is \textit{reducible}.
+In latter case, if the orthogonal complement\footnote{If $V_{1}$ is a subspace of $V$, the orthogonal complement of $V_{1}$ consists of all vectors in $V$ which are orthogonal to very vector in $V_{1}$. For finite-dimensional vector spaces, at least, the orthogonal complement of $V_{1}$ also forms a subspace, called $V_{2}$, then we have $V = V_1 \oplus V_2$.}of the invariant subspace is also invariant with respect to $U \left( G \right)$, then the represenation is said to be \textit{fully reducible or decomposable.}
+
+\textrm{Example 1}: Consider the action of the dihedral group $D_2$ on the $2-$dimensional Euclidean space $V_2$ as described in Fig.~\ref{fig:2-1} and Eq.~\eqref{eq:2.1-4}.
+The $1-$dimensional subspace spanned by $\hat{e}_1$ is invariant under all four group operations, $D_2 \left( g \right) \hat{e}_1 = \pm \hat{e}_1$.
+The same is true for the subspace spaned by $\hat{e}_2$.
+Thus the $2-$dimensional representation of the group given by Eq.~\eqref{eq:2.1-4} is therefore a reducible representation.
+
+\textrm{Example 2}: The $1-$dimensional subspace spanned by $\hat{e}_{1}$ or $\hat{e}_2$ is not invariant under the group $\mathbf{R} \left( 2 \right)$.
+However, if we form the following linear combinations of vectors,
+\begin{equation}
+  \label{eq:2.2-1}
+ \hat{e}_{\pm} = \frac{1}{\sqrt{2}} \left( \mp \hat{e}_1 - i \hat{e}_2 \right)
+\end{equation}
+it is straightforward to show that:
+\begin{align}
+  \label{eq:2.2-2}
+  U \left( \phi \right) \hat{e}_+ &= \hat{e}_+ e^{-i\phi} \\ \nonumber
+  U \left( \phi \right) \hat{e}_- &= \hat{e}_- e^{i\phi}
+\end{align}
+Therefore, the $1-$dimensional spaces spanned by $\hat{e}_{\pm}$ are individually invariant under the rotation group $R \left( 2 \right)$.
+The $2-$dimensional representation given by Eq.~\eqref{eq:2.1-6} can be simplified if we make a change of basis to the eigenvectors $\hat{e}_{\pm}$.
+In this new basis,
+\begin{equation}
+  \label{eq:2.2-3}
+  D' \left( \phi \right) =
+  \begin{bmatrix}
+    e^{-i\phi} & 0 \\
+    0 & e^{i\phi}
+  \end{bmatrix}
+\end{equation}
+The new matrices can be obtained form the old one in Eq.~\eqref{eq:2.1-6} by a similarity transformation which is defined by Eq.~\eqref{eq:2.2-1}.
+
+Let us look at the general matrix form of a reducible representation.
+If $V_1$ is an $n_1-$dimensional invariant subspace with respect to $U \left( G \right)$, we can always choose a set of basis vectors in $V$ such that the first $n_1$ vectors are in $V_1$.
+Since, for all $g\in G$
+\begin{equation}
+ U \left( g \right) \ket{e_i} = \ket{e_j} D \left( g \right)^j_i \in V_1 ~ ~ ~ \text{for}~ i= 1, \dots, n_{1} \nonumber
+\end{equation}
+we conclude that $D \left( g \right)_i^j = 0$ for $i=1, \dots, n_1$ and $j= n_1+1, \dots, n$.
+Therefor, the matrix representation is of the form
+\begin{equation}
+  \label{eq:2.2-4}
+  D \left( g \right) =
+  \begin{bmatrix}
+    D_1 \left( g \right) & D' \left( g \right) \\
+    0 & D_2 \left( g \right)
+  \end{bmatrix}
+\end{equation}
+If $D \left( g \right)$ and $D \left( g' \right)$ are both of this form, then the product $D \left( gg' \right)$ is also of this form, and that $D_i \left( gg' \right) = D_i \left( g \right) D_i \left( g' \right)$ for $i=1,2$.
+Thus, all esential properties of $D \left( G \right)$ are already contained in the representations $D_i \left( G \right)$.
+
+We see that if $U \left( G \right)$ is a representation of the group $G$ on $V$ and $V^{\mu}$ is an invariant subspace of $V$ respect to $G$, then by restricing the action of $U \left( G \right)$ to $V^{\mu}$, we obtain a lower-dimension representation $U^{\mu} \left( G \right)$.
+If the subspace $V^{\mu}$ cannot be further reduced, $U^{\mu} \left( G \right)$ is an irreducible represenation, and we say that $V^{\mu}$ is a \textrm{proper or irreducible invariant subspace} with respect to $G$.
+
+\section{Unitary Representations}
+\textbf{Definition 2.6} (Unitary Representation): If the group representation space is a inner product space, and if the operators $U \left( g \right)$ are unitary for $g \in G$, then the representation $U \left( G \right)$ is said to be a \textit{unitary representation}.
+
+Because symmetry transformation are naturally associated with unitary operators, unitary representations play a cnetral role in studying symmetry groups.
+
+\textbf{Theorem 2.2:} If a unitary representation is reducible, then it is alos decomposable i.e., fully reducible.
+
+\textbf{Theorem 2.3:} Every representation $D \left( G \right)$ of a finite group on an inner product space is equivalent to a unitary representation, i.e., there exist a similar transformation such that $S D \left( g \right) S^{-1}$ is unitary.
+
+
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
